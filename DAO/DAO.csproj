@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="BillDao.cs" />
     <Compile Include="BillinfoDAO.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DangNhapDAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="NguyenLieuDAO.cs" />

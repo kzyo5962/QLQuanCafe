@@ -9,7 +9,7 @@ namespace DTO
 {
     public class TableDTO
     {
-        public TableDTO(string maBan, int soghe, int trangthai)
+        public TableDTO(int maBan, int soghe, int trangthai)
         {
             this.IMaBan = maBan;
             this.ISoGhe = soghe;
@@ -17,15 +17,15 @@ namespace DTO
         }
         public TableDTO(DataRow dataRow)
         {
-            this.iMaBan = (string)dataRow["MaBan"];
+            this.iMaBan = (int)dataRow["ID"];
             this.ISoGhe = (int)dataRow["SoGhe"];
             this.ITrangThai = (int)dataRow["TrangThai"];
         }
-        private string iMaBan;
+        private int iMaBan;
         private int iSoGhe;
         private int iTrangThai;
 
-        public string IMaBan { get => iMaBan; set => iMaBan = value; }
+        public int IMaBan { get => iMaBan; set => iMaBan = value; }
         public int ISoGhe { get => iSoGhe; set => iSoGhe = value; }
         public int ITrangThai { get => iTrangThai; set => iTrangThai = value; }
     }

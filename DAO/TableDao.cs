@@ -28,7 +28,7 @@ namespace DAO
         }
         public List<TableDTO> LoadListTable()
         {
-            string execGetBan = "exec getBan";
+            string execGetBan = "select * from Ban";
             List<TableDTO> list = new List<TableDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery(execGetBan);
             foreach (DataRow row in data.Rows)

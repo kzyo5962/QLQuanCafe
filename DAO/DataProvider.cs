@@ -11,7 +11,7 @@ namespace DAO
     class DataProvider
     {
         private static DataProvider instance;
-        private string connectionStr = @"Data Source=.\SQLSERVER;Initial Catalog=QuanLyCaFe;Integrated Security=True";
+        private string connectionStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyQuanCaFe;Integrated Security=True";
 
         public static DataProvider Instance
         {

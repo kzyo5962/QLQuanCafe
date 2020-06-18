@@ -54,7 +54,7 @@ namespace GUI
 
                 }
 
-                btn.Text = item.IMaBan;
+                btn.Text = item.IMaBan+"";
                 btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
                 fPannelBan.Controls.Add(btn);
             }
@@ -66,7 +66,7 @@ namespace GUI
             btnGoiMon.Visible = true;
             btnDatCho.Visible = true;
             //int MaBan = Convert.ToInt32(((sender as Button).Tag as TableDTO).IMaBan);
-            lblMaBan.Text = ((sender as Button).Tag as TableDTO).IMaBan;
+            lblMaBan.Text = ((sender as Button).Tag as TableDTO).IMaBan+"";
             int Trangthai = ((sender as Button).Tag as TableDTO).ITrangThai;
             if (Trangthai == 0)
             {

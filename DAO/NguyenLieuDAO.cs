@@ -26,7 +26,7 @@ namespace DAO
        
         public List<NguyenLieuDTO> getListNguyenLieu()
         {
-            string strSQL = "SELECT * FROM NGUYENLIEU WHERE TRANGTHAI=1 ";
+            string strSQL = "SELECT * FROM NGUYENLIEU  ";
             List<NguyenLieuDTO> listData = new List<NguyenLieuDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery(strSQL);
             foreach (DataRow row in data.Rows)
