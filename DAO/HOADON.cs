@@ -25,6 +25,7 @@ namespace DAO
         public int trangthai { get; set; }
         public int MaNV { get; set; }
         public int MaBan { get; set; }
+        public Nullable<System.DateTime> CheckOut { get; set; }
     
         public virtual BAN BAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

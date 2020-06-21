@@ -51,6 +51,7 @@
     <Compile Include="BillInfoBus.cs" />
     <Compile Include="DangNhapBUS.cs" />
     <Compile Include="LoaiMenuBus.cs" />
+    <Compile Include="MenuBus.cs" />
     <Compile Include="NguyenLieuBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="ProductBus.cs" />

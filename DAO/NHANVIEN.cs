@@ -28,6 +28,7 @@ namespace DAO
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
         public string SDT { get; set; }
         public string diachi { get; set; }
+        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONDATHANG> DONDATHANGs { get; set; }

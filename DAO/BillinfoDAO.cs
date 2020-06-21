@@ -1,55 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
-using DTO;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAO
 {
-    public class BillinfoDAO
+    public class BillInfoDao
     {
-        private static BillinfoDAO instance;
-        private BillinfoDAO()
+        private static BillInfoDao instance;
+        private BillInfoDao()
         {
 
         }
 
-        public  static BillinfoDAO Instance {
+        public static BillInfoDao Instance
+        {
             get
             {
                 if (instance == null)
-                    instance = new BillinfoDAO();
+                    instance = new BillInfoDao();
                 return instance;
             }
-            set
-            {
-                instance = value;
-            }
+
+            private set => instance = value;
         }
-        public List<BillinfoDTO> getBillInfoByBill(int soHd)
+        public List<BillInfoDTO> getBillInfoByIDTable(int idTable,ref float tongTien)
         {
-            string sql = "select * from CHITIETHOAHON Where SoHD='" + soHd+"'";
-            List<BillinfoDTO> dsBillInfo = new List<BillinfoDTO>();
-            DataTable data = DataProvider.Instance.ExecuteQuery(sql);
-            foreach(DataRow dataRow in data.Rows)
+            
+            List<BillInfoDTO> listBillInfo = new List<BillInfoDTO>();
+            string sqlQuery = "exec GetBill " + idTable;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(sqlQuery);
+            foreach(DataRow dr in dt.Rows)
             {
-                BillinfoDTO item = new BillinfoDTO(dataRow);
-                dsBillInfo.Add(item);
-
+               
+                BillInfoDTO billInfo = new BillInfoDTO(dr);
+                tongTien = tongTien + billInfo.ThanhTien;
+               listBillInfo.Add(billInfo);
             }
-            return dsBillInfo;
+            return listBillInfo;
         }
-        public int insertBillInfo(string MaThucUong1, int MaHD1,int SoLuong1)
+        public void InsertBillInfo(int maHD,int maMenu,int soLuong, float giamGia,float giaBan)
         {
-            string strSqlInsert = "insert into CHITIETHOADON(MaThucUong,SoHD,SoLuong) values('{0}',{1},{2})";
-            string strInsert = string.Format(strSqlInsert,MaThucUong1,MaHD1,SoLuong1);
-
-
-            int sqlCmd = DataProvider.Instance.ExecuteNonQuery(strInsert);
-
-            return sqlCmd;
+            string sqlInsert = "inserBillInfo @idTable @maNv";
+            object[] obj = new object[] { maHD,maHD,soLuong,giamGia,giaBan};
+            DataProvider.Instance.ExecuteNonQuery(sqlInsert, obj);
         }
     }
 }

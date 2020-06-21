@@ -18,6 +18,7 @@ namespace DAO
         public System.DateTime NgayLap { get; set; }
         public int MaNCC { get; set; }
         public int Manv { get; set; }
+        public int TrangThai { get; set; }
     
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }

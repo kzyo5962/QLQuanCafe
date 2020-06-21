@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAO;
-
+using DTO;
 namespace BUS
 {
     public class BillBus
@@ -17,7 +17,8 @@ namespace BUS
 
         }
 
-        public static BillBus Instance {
+        public static BillBus Instance
+        {
             get
             {
                 if (instance == null)
@@ -29,13 +30,9 @@ namespace BUS
                 BillBus.instance = value;
             }
         }
-        public int getCheckBillByTableIdBus(string strTableId)
+        public int GetUncheckBillIDByTableID(int id)
         {
-            return BillDao.Instance.getCheckBillByTableID(strTableId);
-        }
-        public int insertBillBus(DateTime ngayLap, string strCmnd, string strMaBan)
-        {
-            return BillDao.Instance.insertBill(ngayLap, strCmnd,strMaBan);
+            return BillDAO.Instance.GetUncheckBillIDByTableID(id);
         }
 
     }

@@ -34,5 +34,9 @@ namespace BUS
         {
             return LoaiMenuDao.Instance.ListLoaiMenu();
         }
+        public int GetIDLoaiMenu(string ten)
+        {
+            return LoaiMenuDao.Instance.GetIdLoaiMenu(ten);
+        }
     }
 }

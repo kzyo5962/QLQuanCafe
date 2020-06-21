@@ -18,6 +18,7 @@ namespace DAO
         public NGUYENLIEU()
         {
             this.CHITIETPHIEUNHAPs = new HashSet<CHITIETPHIEUNHAP>();
+            this.NHACUNGCAPs = new HashSet<NHACUNGCAP>();
         }
     
         public int ID { get; set; }
@@ -27,5 +28,7 @@ namespace DAO
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHACUNGCAP> NHACUNGCAPs { get; set; }
     }
 }

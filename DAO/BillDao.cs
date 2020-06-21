@@ -1,5 +1,4 @@
 ﻿using DTO;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,58 +8,38 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public class BillDao
+    public class BillDAO
     {
-    
-        private static BillDao instance;
-        private BillDao()
+        private static BillDAO instance;
+
+
+        public static BillDAO Instance
         {
-
-        }
-
-        public static BillDao Instance { get {
+            get
+            {
                 if (instance == null)
-                    instance = new BillDao();
+                    instance = new BillDAO();
                 return instance;
             }
-
-            private set => instance = value;
+            private set { BillDAO.Instance = value; }
         }
-        //public int inSertHoaDon(string ban,DateTime date)
-        //{
-        //    string sql="insert into HoaDon(NgayLap,CMMD,MaBan,TrangThai,CheckOut) values({0},"
-        //}
-        public int  getCheckBillByTableID(string idTable)
+        public void InsertBill(int idTable,int idNhanVien)
         {
-            string sqlInsert = "select * from HOADON where MaBan= '{0}' and TrangThai=0";
-            string sqlICmd = string.Format(sqlInsert, idTable);
-            DataTable data = DataProvider.Instance.ExecuteQuery(sqlICmd);
+            string sqlInsert = "inserBill @idTable @maNv";
+            object[] obj = new object [] { idTable, idNhanVien };
+            DataProvider.Instance.ExecuteNonQuery(sqlInsert, obj);
+        }
+        public int GetUncheckBillIDByTableID(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM HoaDon WHERE MaBan = " + id + " AND status = 0");
+
             if (data.Rows.Count > 0)
             {
-                BillDTO billDTO = new BillDTO(data.Rows[0]);
-                return billDTO.ISoHD;
+                BillDTO bill = new BillDTO(data.Rows[0]);
+                return bill.ID;
             }
+
             return -1;
         }
-        //public string getMaHDByBan(string idTable)
-        //{
-        //    DataTable data = DataProvider.Instance.ExecuteQuery("select * from HOADON where MaBan=" + idTable + "and TrangThai=0");
-        //    if (data.Rows.Count > 0)
-        //    {
-        //        BillDTO billDTO = new BillDTO(data.Rows[0]);
-        //        return billDTO.ISoHD;
-        //    }
-        //}
-        public int insertBill(DateTime  ngayLap,string strCmnd,string MaBan)
-        {
-            string strSqlInsert = "insert into HOADON(NGAYLAP,CMND,TRANGTHAI,GIAMGIA,MABAN) values('{0}','{1}','{2}','{3}','{4}')";
-            string strInsert = string.Format(strSqlInsert, ngayLap, strCmnd,0,0,MaBan);
-
-
-            int sqlCmd = DataProvider.Instance.ExecuteNonQuery(strInsert);
-            
-            return sqlCmd;
-        }
     }
-
 }

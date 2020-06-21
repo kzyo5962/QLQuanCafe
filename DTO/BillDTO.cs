@@ -9,38 +9,21 @@ namespace DTO
 {
     public class BillDTO
     {
-        string strCmnd;
-        private DateTime? NgayLap;
-        private DateTime? Checkout;
-        string strMaBan;
-        int iTrangThai;
-        float fGiamGia;
-        int iSoHD;
-        public BillDTO(int id, DateTime? ngaylap, DateTime? checkOut, String maBan, int trangThai, float giamGia)
+        public int ID { get; set; }
+        public Nullable<System.DateTime> NgayLap { get; set; }
+        public int trangthai { get; set; }
+        public int MaNV { get; set; }
+        public int MaBan { get; set; }
+        public Nullable<System.DateTime> CheckOut { get; set; }
+        public BillDTO(DataRow dataRow)
         {
-            this.ISoHD = id;
-            this.NgayLap = ngaylap;
-            this.Checkout = checkOut;
-            this.strMaBan = maBan;
-            this.iTrangThai = trangThai;
-            this.fGiamGia = giamGia;
+            this.ID = (int)dataRow["Id"];
+            this.NgayLap =Convert.ToDateTime( dataRow["NgayLap"]);
+            this.trangthai = (int)dataRow["trangthai"];
+            this.MaNV = (int)dataRow["MaNV"];
+            this.MaBan = (int)dataRow["MaBan"];
+            this.CheckOut = Convert.ToDateTime(dataRow["CheckOut"]);
 
         }
-        public BillDTO(DataRow row)
-        {
-            this.ISoHD = (int)row["SoHD"];
-            this.NgayLap1 = (DateTime?)row["NgayLap"];
-           // this.Checkout = (DateTime?)row["checkOut"];
-            this.strMaBan = (string)row["MaBan"];
-            this.iTrangThai = (int)row["TrangThai"];
-            this.fGiamGia = (int)row["GiamGia"];
-        }
-        public string StrCmnd { get => strCmnd; set => strCmnd = value; }
-        public DateTime? NgayLap1 { get => NgayLap; set => NgayLap = value; }
-        public DateTime? Checkout1 { get => Checkout; set => Checkout = value; }
-        public string StrMaBan { get => strMaBan; set => strMaBan = value; }
-        public int ITrangThai { get => iTrangThai; set => iTrangThai = value; }
-        public float FGiamGia { get => fGiamGia; set => fGiamGia = value; }
-        public int ISoHD { get => iSoHD; set => iSoHD = value; }
     }
 }

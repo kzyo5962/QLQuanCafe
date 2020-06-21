@@ -7,26 +7,29 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class BillinfoDTO
+    public  class BillInfoDTO
     {
-        private string strMaThucUong;
-        private int iSoLuong;
-        private int  iSoHd;
+        string tenMenu;
 
-        public string StrMaThucUong { get => strMaThucUong; set => strMaThucUong = value; }
-        public int ISoLuong { get => iSoLuong; set => iSoLuong = value; }
-        public int ISoHd { get => iSoHd; set => iSoHd = value; }
-        public BillinfoDTO(DataRow dr)
+        public string TenMenu { get => tenMenu; set => tenMenu = value; }
+        public float GiaBan { get => giaBan; set => giaBan = value; }
+        public int SoLuong { get => soLuong; set => soLuong = value; }
+        public float ThanhTien { get => thanhTien; set => thanhTien = value; }
+        public BillInfoDTO()
         {
-            StrMaThucUong = (string)dr["MaThucUong"];
-            ISoLuong = (int)dr["SoLuong"];
-            ISoHd = (int)dr["SoHD"];
+
         }
-        public BillinfoDTO(string maDoUong,int sl,int soHD)
+        public BillInfoDTO(DataRow dr)
         {
-            this.ISoHd = soHD;
-            this.StrMaThucUong = maDoUong;
-            this.ISoLuong = sl;
+
+            this.TenMenu = dr["TenMenu"].ToString();
+            this.GiaBan =(float) Convert.ToDouble(dr["GiaBan"].ToString());
+            this.SoLuong = (int)dr["SoLuong"];
+            this.ThanhTien= (float)Convert.ToDouble(dr["ThanhTien"].ToString());
+
         }
+        float giaBan;
+        int soLuong;
+        float thanhTien;
     }
 }

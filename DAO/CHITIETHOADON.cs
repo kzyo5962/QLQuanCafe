@@ -19,6 +19,7 @@ namespace DAO
         public Nullable<System.DateTime> NgayLap { get; set; }
         public int SoLuong { get; set; }
         public Nullable<double> GiamGia { get; set; }
+        public Nullable<double> GiaBan { get; set; }
     
         public virtual HOADON HOADON { get; set; }
         public virtual MENU MENU { get; set; }

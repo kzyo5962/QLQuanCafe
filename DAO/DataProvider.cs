@@ -22,7 +22,7 @@ namespace DAO
         {
 
         }
-
+       public  QuanLyQuanCaFeEntities _qlqcfEF = new QuanLyQuanCaFeEntities();
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

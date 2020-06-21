@@ -153,7 +153,9 @@
     <EmbeddedResource Include="QuanLySanPham.resx">
       <DependentUpon>QuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\DTO.BillInfoDTO.datasource" />
     <None Include="Properties\DataSources\DTO.LoaiMenuDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.MenuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.NhanVienDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiKhoan.datasource" />
     <None Include="Properties\Settings.settings">

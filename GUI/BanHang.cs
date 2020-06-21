@@ -16,6 +16,7 @@ namespace GUI
     {
         static int width = 70;
         static int height = 60;
+        static float tongTien = 0;
         public BanHang()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace GUI
                 btn.ImageKey = "icons8-table-26.png";
                 btn.ImageList = this.imageListIcon;
                 btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                btn.Click += btn_Click;
                 if (item.ITrangThai == 0)
                 {
                     //drvHoaDon.Visible = false;
@@ -59,15 +61,32 @@ namespace GUI
             }
         }
         //CLick Vao 1 ban
-    
 
-        private void pPhucVu_Paint(object sender, PaintEventArgs e)
+
+        private void btn_Click(object sender, EventArgs e)
         {
+            int idBan = ((sender as Button).Tag as TableDTO).IMaBan;
+            drvBillInfo.Tag = (sender as Button).Tag;
+            lblBan.Text =idBan.ToString();
+            int Trangthai = ((sender as Button).Tag as TableDTO).ITrangThai;
+            if (Trangthai == 0)
+            {
+                lblTrangThai.Text = "Trạng thái: trống";
+                drvBillInfo.DataSource = null;
 
-        }
 
-        private void fPannelBan_Paint(object sender, PaintEventArgs e)
-        {
+
+            }
+            else if (Trangthai == 1)
+            {
+
+
+              
+                lblTrangThai.Text = "Trạng thái: Đang Phục vụ";
+                drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(idBan,ref tongTien);
+                txtTongTien.Text = tongTien + "";
+               
+            }
 
         }
 
@@ -77,114 +96,23 @@ namespace GUI
             LoadBan();
         }
 
-        private void lblMaBan_Click(object sender, EventArgs e)
+        private void cboLoaiMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idLoaiMenu= (int)cboLoaiMenu.SelectedValue;
+            List<MenuDTO> listMenu = MenuBus.Instance.ListMenuByID(idLoaiMenu);
+            cboMenu.DataSource = listMenu;
+           
+        }
+
+        private void cboMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void pMenuPhucVu_Paint(object sender, PaintEventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblGioDen_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblBanCLick_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtGia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnHuyBan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pHoaDon_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDatCho_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThemMon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudSoLuong_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pButtonDatMon_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTrangThai_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGoiMon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void drvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblBan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pGoiMon_Paint(object sender, PaintEventArgs e)
-        {
-
+            TableDTO table = drvBillInfo.Tag as TableDTO;
+            int idBill = BillBus.Instance.GetUncheckBillIDByTableID(table.IMaBan);
         }
     }
 }
