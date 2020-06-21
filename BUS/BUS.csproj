@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +50,7 @@
     <Compile Include="BillBus.cs" />
     <Compile Include="BillInfoBus.cs" />
     <Compile Include="DangNhapBUS.cs" />
+    <Compile Include="LoaiMenuBus.cs" />
     <Compile Include="NguyenLieuBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="ProductBus.cs" />

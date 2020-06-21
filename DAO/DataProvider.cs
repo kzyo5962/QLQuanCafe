@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    class DataProvider
+    public class DataProvider
     {
         private static DataProvider instance;
-        private string connectionStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyQuanCaFe;Integrated Security=True";
+        private string connectionStr = @"Data Source=.;Initial Catalog=QuanLyQuanCaFe;Integrated Security=True";
 
         public static DataProvider Instance
         {

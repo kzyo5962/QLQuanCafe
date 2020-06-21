@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b74b5e33934477499760f0c0d19328a" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.BAN" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.DONDATHANG" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.HOADON" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.LOAIMENU" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.LOAITK" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.MENU" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.NGUYENLIEU" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.TAIKHOAN" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.CHITIETHOADON" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyQuanCaFeModel.CHITIETPHIEUNHAP" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_maban" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_mancc" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_manv_dondh" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_mahd_cthd" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_manv_hd" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_maloai" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_maloaitk" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_mamenu_cthd" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_manl" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_manV" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_manv_tk" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyQuanCaFeModel.fk_maphieunhap" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

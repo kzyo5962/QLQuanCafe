@@ -31,7 +31,6 @@ namespace GUI
                 btn.Width = width;
                 btn.Height = height;
                 btn.Tag = item;
-                btn.Click += btn_Click;
                 btn.ImageKey = "icons8-table-26.png";
                 btn.ImageList = this.imageListIcon;
                 btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -49,56 +48,18 @@ namespace GUI
                 else
                 {
                     // drvHoaDon.Visible = true;
-                    pButtonDatMon.Location = new Point(29, 123);
+                   
                     btn.BackColor = System.Drawing.Color.BurlyWood;
 
                 }
 
-                btn.Text = item.IMaBan+"";
+                btn.Text = "Ban "+item.IMaBan+"";
                 btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
                 fPannelBan.Controls.Add(btn);
             }
         }
         //CLick Vao 1 ban
-        private void btn_Click(object sender, EventArgs e)
-        {
-            btnHuyBan.Visible = false;
-            btnGoiMon.Visible = true;
-            btnDatCho.Visible = true;
-            //int MaBan = Convert.ToInt32(((sender as Button).Tag as TableDTO).IMaBan);
-            lblMaBan.Text = ((sender as Button).Tag as TableDTO).IMaBan+"";
-            int Trangthai = ((sender as Button).Tag as TableDTO).ITrangThai;
-            if (Trangthai == 0)
-            {
-                lblTrangThai.Text = "Trạng thái: trống";
-                pButtonDatMon.Visible = true;
-                pHoaDon.Visible = false;
-
-            }
-            else if (Trangthai == 1)
-            {
-
-
-                pButtonDatMon.Visible = false;
-                lblTrangThai.Text = "Trạng thái: đặt trước";
-                pHoaDon.Visible = false;
-            }
-
-            else
-            {
-
-
-                pButtonDatMon.Visible = false;
-                lblTrangThai.Text = "Trạng thái: đang phục vụ";
-                pHoaDon.Visible = true;
-            }
-            DateTime now = DateTime.Now;
-            int giay = now.Second;
-            int phut = now.Minute;
-            int gio = now.Hour;
-            lblGioDen.Text = "Giờ Đến: " + gio + ":" + phut + ":" + giay;
-
-        }
+    
 
         private void pPhucVu_Paint(object sender, PaintEventArgs e)
         {
@@ -112,6 +73,7 @@ namespace GUI
 
         private void BanHang_Load(object sender, EventArgs e)
         {
+            cboLoaiMenu.DataSource = LoaiMenuBus.Instance.ListLoaiMenu();
             LoadBan();
         }
 

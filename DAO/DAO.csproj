@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,21 +50,104 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAN.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
     <Compile Include="BillDao.cs" />
     <Compile Include="BillinfoDAO.cs" />
+    <Compile Include="CHITIETHOADON.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETPHIEUNHAP.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
     <Compile Include="DangNhapDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DONDATHANG.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HOADON.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOAIMENU.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiMenuDao.cs" />
+    <Compile Include="LOAITK.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MENU.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelQuanLyQuanCaFe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelQuanLyQuanCaFe.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelQuanLyQuanCaFe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelQuanLyQuanCaFe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelQuanLyQuanCaFe.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NGUYENLIEU.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
     <Compile Include="NguyenLieuDAO.cs" />
+    <Compile Include="NHACUNGCAP.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHANVIEN.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienDAO.cs" />
+    <Compile Include="PHIEUNHAP.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProductDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableDao.cs" />
+    <Compile Include="TAIKHOAN.cs">
+      <DependentUpon>ModelQuanLyQuanCaFe.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{e50bc279-5766-4032-822b-749f58ea7c9d}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelQuanLyQuanCaFe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelQuanLyQuanCaFe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModelQuanLyQuanCaFe.edmx.diagram">
+      <DependentUpon>ModelQuanLyQuanCaFe.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelQuanLyQuanCaFe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelQuanLyQuanCaFe.Context.cs</LastGenOutput>
+      <DependentUpon>ModelQuanLyQuanCaFe.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelQuanLyQuanCaFe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelQuanLyQuanCaFe.edmx</DependentUpon>
+      <LastGenOutput>ModelQuanLyQuanCaFe.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

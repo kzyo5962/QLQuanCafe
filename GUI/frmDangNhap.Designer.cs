@@ -141,6 +141,7 @@
             this.Name = "frmDangNhap";
             this.Text = "frmDangNhap";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
+            this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.grb_DangNhap.ResumeLayout(false);
             this.grb_DangNhap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
