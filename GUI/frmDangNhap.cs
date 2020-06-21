@@ -20,7 +20,7 @@ namespace GUI
 
         private void btn_DangNhap_Click(object sender, EventArgs e)
         {
-           try
+           //try
                 {
                     string userName = txtName.Text;
                     string passWord = txtPassWord.Text;
@@ -37,10 +37,10 @@ namespace GUI
                     MessageBox.Show("Đăng nhập Không thành Công", "Thông báo");
                     }
                 }
-            catch(Exception ex)
-                {
-                MessageBox.Show("Đăng nhập Không thành Công", "Thông báo");
-            }
+            //catch(Exception ex)
+            //    {
+            //    MessageBox.Show("Đăng nhập Không thành Công", "Thông báo");
+            //}
            
         }
 

@@ -38,10 +38,10 @@ namespace DAO
             }
             return list;
         }
-        public int upDateStatusBan(string strMaBan,int iTrangThai)
+        public int upDateStatusBan(int MaBan,int iTrangThai)
         {
-            string strSqlUpdate = "update Ban set trangthai={0} where MaBan='{1}'";
-            string strInsert = string.Format(strSqlUpdate,iTrangThai,strMaBan);
+            string strSqlUpdate = "update Ban set trangthai={0} where Id='{1}'";
+            string strInsert = string.Format(strSqlUpdate,iTrangThai,MaBan);
 
 
             int sqlCmd = DataProvider.Instance.ExecuteNonQuery(strInsert);

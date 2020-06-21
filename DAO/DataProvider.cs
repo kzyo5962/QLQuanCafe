@@ -95,7 +95,7 @@ namespace DAO
                         }
                     }
                 }
-                data = cmd.ExecuteNonQuery();
+                data = cmd.ExecuteScalar();
                 conn.Close();
             }
             return data;

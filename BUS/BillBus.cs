@@ -34,6 +34,14 @@ namespace BUS
         {
             return BillDAO.Instance.GetUncheckBillIDByTableID(id);
         }
-
+        public int GetMaxIDBill()
+        {
+            return BillDAO.Instance.GetMaxIDBill();
+        }
+        public void InsertBill(int idTable, int idNhanVien)
+        {
+            BillDAO.Instance.InsertBill(idTable, idNhanVien);
+        }
+     
     }
 }

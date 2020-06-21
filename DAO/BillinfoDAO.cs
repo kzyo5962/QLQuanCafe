@@ -44,9 +44,10 @@ namespace DAO
         }
         public void InsertBillInfo(int maHD,int maMenu,int soLuong, float giamGia,float giaBan)
         {
-            string sqlInsert = "inserBillInfo @idTable @maNv";
-            object[] obj = new object[] { maHD,maHD,soLuong,giamGia,giaBan};
-            DataProvider.Instance.ExecuteNonQuery(sqlInsert, obj);
+            string sqlInsert = "exec insertBillInfo {0},{1},{2},{3},{4}";
+            string sqlData = string.Format(sqlInsert, maHD, maMenu, soLuong, giamGia, giaBan);
+          
+            DataProvider.Instance.ExecuteNonQuery(sqlData);
         }
     }
 }
