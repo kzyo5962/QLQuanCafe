@@ -41,10 +41,8 @@ namespace DAO
 
             return -1;
         }
-<<<<<<< HEAD
 
-       
-=======
+
         public int GetMaxIDBill()
         {
             return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(id) FROM HoaDon");
@@ -57,7 +55,5 @@ namespace DAO
             //    return 1;
             //}
         }
-
->>>>>>> de3e77cbbc3566eb0797ae4b44f1cd697d59a3de
     }
 }
