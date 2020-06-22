@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.Runtime.InteropServices;
 
 namespace GUI
 {
@@ -17,6 +18,7 @@ namespace GUI
         static int width = 70;
         static int height = 60;
         static float tongTien = 0;
+        static int MaBan = 0;
         public BanHang()
         {
             InitializeComponent();
@@ -66,6 +68,7 @@ namespace GUI
         private void btn_Click(object sender, EventArgs e)
         {
             int idBan = ((sender as Button).Tag as TableDTO).IMaBan;
+            MaBan = idBan;
             drvBillInfo.Tag = (sender as Button).Tag;
             lblBan.Text =idBan.ToString();
             int Trangthai = ((sender as Button).Tag as TableDTO).ITrangThai;
@@ -113,6 +116,12 @@ namespace GUI
         {
             TableDTO table = drvBillInfo.Tag as TableDTO;
             int idBill = BillBus.Instance.GetUncheckBillIDByTableID(table.IMaBan);
+        }
+
+        private void btnLapHD_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frm = new frmHoaDon();
+            frm.ShowDialog();
         }
     }
 }

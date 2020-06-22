@@ -36,5 +36,9 @@ namespace BUS
             
             return BillInfoDao.Instance.getBillInfoByIDTable(idTable,ref tongTien);
         }
+        public List<BillInfoDTO> getBillInfoByIDTable(int idTable)
+        {
+            return BillInfoDao.Instance.getBillInfoByIDTable(idTable);
+        }
     }
 }

@@ -26,7 +26,6 @@ namespace DTO
             this.strTENNL=tenNL;
             this.StrDONVITINH = dvt;
             this.IDONGIA = donGia;
-           
 
         }
         public NguyenLieuDTO(DataRow dataRow)

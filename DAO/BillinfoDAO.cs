@@ -48,5 +48,22 @@ namespace DAO
             object[] obj = new object[] { maHD,maHD,soLuong,giamGia,giaBan};
             DataProvider.Instance.ExecuteNonQuery(sqlInsert, obj);
         }
+
+
+        public List<BillInfoDTO> getBillInfoByIDTable(int idTable)
+        {
+
+            List<BillInfoDTO> listBillInfo = new List<BillInfoDTO>();
+            string sqlQuery = "exec GetBill " + idTable;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(sqlQuery);
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                BillInfoDTO billInfo = new BillInfoDTO(dr);
+                
+                listBillInfo.Add(billInfo);
+            }
+            return listBillInfo;
+        }
     }
 }
