@@ -14,7 +14,7 @@ namespace DTO
         public int trangthai { get; set; }
         public int MaNV { get; set; }
         public int MaBan { get; set; }
-        public Nullable<System.DateTime> CheckOut { get; set; }
+        public DateTime? CheckOut { get; set; }
         public BillDTO(DataRow dataRow)
         {
             this.ID = (int)dataRow["Id"];
@@ -22,7 +22,7 @@ namespace DTO
             this.trangthai = (int)dataRow["trangthai"];
             this.MaNV = (int)dataRow["MaNV"];
             this.MaBan = (int)dataRow["MaBan"];
-            this.CheckOut = Convert.ToDateTime(dataRow["CheckOut"]);
+         
 
         }
     }

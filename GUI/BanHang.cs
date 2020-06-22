@@ -18,7 +18,12 @@ namespace GUI
         static int width = 70;
         static int height = 60;
         static float tongTien = 0;
+<<<<<<< HEAD
         static int MaBan = 0;
+=======
+        static int maBanClick = -1;
+        static int maNV = 1;
+>>>>>>> de3e77cbbc3566eb0797ae4b44f1cd697d59a3de
         public BanHang()
         {
             InitializeComponent();
@@ -67,8 +72,13 @@ namespace GUI
 
         private void btn_Click(object sender, EventArgs e)
         {
+            tongTien = 0;
             int idBan = ((sender as Button).Tag as TableDTO).IMaBan;
+<<<<<<< HEAD
             MaBan = idBan;
+=======
+            maBanClick = idBan;
+>>>>>>> de3e77cbbc3566eb0797ae4b44f1cd697d59a3de
             drvBillInfo.Tag = (sender as Button).Tag;
             lblBan.Text =idBan.ToString();
             int Trangthai = ((sender as Button).Tag as TableDTO).ITrangThai;
@@ -77,14 +87,9 @@ namespace GUI
                 lblTrangThai.Text = "Trạng thái: trống";
                 drvBillInfo.DataSource = null;
 
-
-
             }
             else if (Trangthai == 1)
             {
-
-
-              
                 lblTrangThai.Text = "Trạng thái: Đang Phục vụ";
                 drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(idBan,ref tongTien);
                 txtTongTien.Text = tongTien + "";
@@ -97,6 +102,7 @@ namespace GUI
         {
             cboLoaiMenu.DataSource = LoaiMenuBus.Instance.ListLoaiMenu();
             LoadBan();
+            cboBanTrong.DataSource = TableBus.Instance.LoadListTableNull();
         }
 
         private void cboLoaiMenu_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,8 +120,32 @@ namespace GUI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            TableDTO table = drvBillInfo.Tag as TableDTO;
-            int idBill = BillBus.Instance.GetUncheckBillIDByTableID(table.IMaBan);
+            
+            int idBill = BillBus.Instance.GetUncheckBillIDByTableID(maBanClick);
+            int idMenu = (cboMenu.SelectedItem as MenuDTO).ID;
+            float giamGia = (float)numGiamGia.Value;
+            int soLuong = (int)numSoLuong.Value;
+            int exec;
+
+            if(idBill==-1)
+            {
+                BillBus.Instance.InsertBill(maBanClick,maNV);
+                int maHD = BillBus.Instance.GetMaxIDBill();
+                BillInfoBus.Instance.InsertBillInfo(maHD, idMenu, soLuong, giamGia, 15000);
+                exec = TableBus.Instance.UpdateStatusBan(maBanClick, 1);
+                fPannelBan.Controls.Clear();
+                LoadBan();
+                drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
+            }
+            else
+            {
+                BillInfoBus.Instance.InsertBillInfo(idBill, idMenu, soLuong, giamGia, 15000);
+            }
+        }
+
+        private void lblBan_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnLapHD_Click(object sender, EventArgs e)

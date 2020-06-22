@@ -33,8 +33,12 @@ namespace BUS
         }
         public List<BillInfoDTO> getBillInfoByIDTable(int idTable, ref float tongTien)
         {
-            
-            return BillInfoDao.Instance.getBillInfoByIDTable(idTable,ref tongTien);
+
+            return BillInfoDao.Instance.getBillInfoByIDTable(idTable, ref tongTien);
+        }
+        public void InsertBillInfo(int maHD, int maMenu, int soLuong, float giamGia, float giaBan)
+        {
+            BillInfoDao.Instance.InsertBillInfo(maHD, maMenu, soLuong, giamGia, giaBan);
         }
         public List<BillInfoDTO> getBillInfoByIDTable(int idTable)
         {

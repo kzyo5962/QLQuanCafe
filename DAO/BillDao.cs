@@ -25,13 +25,13 @@ namespace DAO
         }
         public void InsertBill(int idTable,int idNhanVien)
         {
-            string sqlInsert = "inserBill @idTable @maNv";
-            object[] obj = new object [] { idTable, idNhanVien };
-            DataProvider.Instance.ExecuteNonQuery(sqlInsert, obj);
+            string sqlInsert = "exec inserBill "+idTable+", "+idNhanVien;
+            
+            DataProvider.Instance.ExecuteNonQuery(sqlInsert);
         }
         public int GetUncheckBillIDByTableID(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM HoaDon WHERE MaBan = " + id + " AND status = 0");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM HoaDon WHERE MaBan = " + id + " AND trangthai = 1");
 
             if (data.Rows.Count > 0)
             {
@@ -41,7 +41,23 @@ namespace DAO
 
             return -1;
         }
+<<<<<<< HEAD
 
        
+=======
+        public int GetMaxIDBill()
+        {
+            return (int)DataProvider.Instance.ExecuteScalar("SELECT MAX(id) FROM HoaDon");
+            //try
+            //{
+                
+            //}
+            //catch
+            //{
+            //    return 1;
+            //}
+        }
+
+>>>>>>> de3e77cbbc3566eb0797ae4b44f1cd697d59a3de
     }
 }

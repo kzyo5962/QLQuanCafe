@@ -38,16 +38,28 @@ namespace DAO
             }
             return list;
         }
-        public int upDateStatusBan(string strMaBan,int iTrangThai)
+        public int upDateStatusBan(int MaBan,int iTrangThai)
         {
-            string strSqlUpdate = "update Ban set trangthai={0} where MaBan='{1}'";
-            string strInsert = string.Format(strSqlUpdate,iTrangThai,strMaBan);
+            string strSqlUpdate = "update Ban set trangthai={0} where Id='{1}'";
+            string strInsert = string.Format(strSqlUpdate,iTrangThai,MaBan);
 
 
             int sqlCmd = DataProvider.Instance.ExecuteNonQuery(strInsert);
 
             return sqlCmd;
 
+        }
+        public List<TableDTO> LoadListTableNull()
+        {
+            string execGetBan = "select * from Ban where trangthai=0";
+            List<TableDTO> list = new List<TableDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery(execGetBan);
+            foreach (DataRow row in data.Rows)
+            {
+                TableDTO item = new TableDTO(row);
+                list.Add(item);
+            }
+            return list;
         }
     }
 }

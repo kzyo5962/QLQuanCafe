@@ -31,9 +31,13 @@ namespace BUS
         {
             return TableDao.Instance.LoadListTable();
         }
-        public int UpdateStatusBan(string strMaBan, int iTrangThai)
+        public int UpdateStatusBan(int strMaBan, int iTrangThai)
         {
             return TableDao.Instance.upDateStatusBan(strMaBan, iTrangThai);
+        }
+        public List<TableDTO> LoadListTableNull()
+        {
+            return TableDao.Instance.LoadListTableNull();
         }
     }
 }

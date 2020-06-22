@@ -1,12 +1,5 @@
-C:\Users\DELL\Desktop\DuAn\QLQuanCafe\DTO\bin\Debug\DTO.dll
-C:\Users\DELL\Desktop\DuAn\QLQuanCafe\DTO\bin\Debug\DTO.pdb
-C:\Users\DELL\Desktop\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
-C:\Users\DELL\Desktop\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-C:\Users\DELL\Desktop\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.dll
-C:\Users\DELL\Desktop\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.pdb
 D:\DuAn\QLQuanCafe\DTO\bin\Debug\DTO.dll
 D:\DuAn\QLQuanCafe\DTO\bin\Debug\DTO.pdb
-D:\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
 D:\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 D:\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.dll
 D:\DuAn\QLQuanCafe\DTO\obj\Debug\DTO.pdb
