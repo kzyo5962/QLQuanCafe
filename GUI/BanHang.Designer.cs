@@ -60,12 +60,15 @@
             this.numGiamGia = new System.Windows.Forms.NumericUpDown();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.tableDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.loaiMenuDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drvBillInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billInfoDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGiamGia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // imageListIcon
@@ -127,7 +130,7 @@
             this.cboMenu.DataSource = this.menuDTOBindingSource;
             this.cboMenu.DisplayMember = "TenMenu";
             this.cboMenu.FormattingEnabled = true;
-            this.cboMenu.Location = new System.Drawing.Point(345, 72);
+            this.cboMenu.Location = new System.Drawing.Point(344, 83);
             this.cboMenu.Name = "cboMenu";
             this.cboMenu.Size = new System.Drawing.Size(198, 21);
             this.cboMenu.TabIndex = 7;
@@ -165,6 +168,7 @@
             // drvBillInfo
             // 
             this.drvBillInfo.AutoGenerateColumns = false;
+            this.drvBillInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.drvBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.drvBillInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenMenuDataGridViewTextBoxColumn,
@@ -229,9 +233,10 @@
             this.lblBan.AutoSize = true;
             this.lblBan.Location = new System.Drawing.Point(326, 22);
             this.lblBan.Name = "lblBan";
-            this.lblBan.Size = new System.Drawing.Size(35, 13);
+            this.lblBan.Size = new System.Drawing.Size(19, 13);
             this.lblBan.TabIndex = 14;
-            this.lblBan.Text = "label4";
+            this.lblBan.Text = "00";
+            this.lblBan.Click += new System.EventHandler(this.lblBan_Click);
             // 
             // lblTrangThai
             // 
@@ -272,11 +277,14 @@
             // 
             // cboBanTrong
             // 
+            this.cboBanTrong.DataSource = this.tableDTOBindingSource;
+            this.cboBanTrong.DisplayMember = "IMaBan";
             this.cboBanTrong.FormattingEnabled = true;
             this.cboBanTrong.Location = new System.Drawing.Point(359, 282);
             this.cboBanTrong.Name = "cboBanTrong";
             this.cboBanTrong.Size = new System.Drawing.Size(121, 21);
             this.cboBanTrong.TabIndex = 21;
+            this.cboBanTrong.ValueMember = "IMaBan";
             // 
             // button1
             // 
@@ -307,10 +315,24 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.Location = new System.Drawing.Point(484, 318);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(75, 46);
+            this.btnThanhToan.TabIndex = 25;
+            this.btnThanhToan.Text = "Lập Hóa Đơn";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            // 
+            // tableDTOBindingSource
+            // 
+            this.tableDTOBindingSource.DataSource = typeof(DTO.TableDTO);
+            // 
             // BanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.numGiamGia);
             this.Controls.Add(this.button1);
@@ -339,6 +361,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.drvBillInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billInfoDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numGiamGia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,5 +398,7 @@
         private System.Windows.Forms.NumericUpDown numGiamGia;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.BindingSource tableDTOBindingSource;
     }
 }

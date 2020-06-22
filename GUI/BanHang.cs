@@ -67,6 +67,7 @@ namespace GUI
 
         private void btn_Click(object sender, EventArgs e)
         {
+            tongTien = 0;
             int idBan = ((sender as Button).Tag as TableDTO).IMaBan;
             maBanClick = idBan;
             drvBillInfo.Tag = (sender as Button).Tag;
@@ -92,6 +93,7 @@ namespace GUI
         {
             cboLoaiMenu.DataSource = LoaiMenuBus.Instance.ListLoaiMenu();
             LoadBan();
+            cboBanTrong.DataSource = TableBus.Instance.LoadListTableNull();
         }
 
         private void cboLoaiMenu_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,11 +126,17 @@ namespace GUI
                 exec = TableBus.Instance.UpdateStatusBan(maBanClick, 1);
                 fPannelBan.Controls.Clear();
                 LoadBan();
+                drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
             }
             else
             {
                 BillInfoBus.Instance.InsertBillInfo(idBill, idMenu, soLuong, giamGia, 15000);
             }
+        }
+
+        private void lblBan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

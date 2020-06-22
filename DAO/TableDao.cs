@@ -49,5 +49,17 @@ namespace DAO
             return sqlCmd;
 
         }
+        public List<TableDTO> LoadListTableNull()
+        {
+            string execGetBan = "select * from Ban where trangthai=0";
+            List<TableDTO> list = new List<TableDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery(execGetBan);
+            foreach (DataRow row in data.Rows)
+            {
+                TableDTO item = new TableDTO(row);
+                list.Add(item);
+            }
+            return list;
+        }
     }
 }

@@ -157,6 +157,7 @@
     <None Include="Properties\DataSources\DTO.LoaiMenuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.MenuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.NhanVienDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.TableDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiKhoan.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

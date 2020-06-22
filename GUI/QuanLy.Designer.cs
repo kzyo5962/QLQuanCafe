@@ -49,8 +49,8 @@
             this.quảnLýHóaĐơnToolStripMenuItem,
             this.quảnLýNhânViênToolStripMenuItem,
             this.quảnLýSảnPhẩmToolStripMenuItem,
-            this.quảnLýDoanhThuToolStripMenuItem,
             this.quảnLýBànToolStripMenuItem,
+            this.quảnLýDoanhThuToolStripMenuItem,
             this.quảnLýLoạiBànToolStripMenuItem});
             this.menuQuanLy.Location = new System.Drawing.Point(0, 0);
             this.menuQuanLy.Name = "menuQuanLy";
