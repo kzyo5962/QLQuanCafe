@@ -32,11 +32,12 @@
             this.quảnLýHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýDoanhThuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýLoạiBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quanLyHoaDon1 = new GUI.QuanLyHoaDon();
             this.quanLyNhanVien1 = new GUI.QuanLyNhanVien();
+            this.quanLyBan1 = new GUI.QuanLyBan();
             this.menuQuanLy.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.quảnLýLoạiBànToolStripMenuItem});
             this.menuQuanLy.Location = new System.Drawing.Point(0, 0);
             this.menuQuanLy.Name = "menuQuanLy";
-            this.menuQuanLy.Size = new System.Drawing.Size(1251, 28);
+            this.menuQuanLy.Size = new System.Drawing.Size(1251, 30);
             this.menuQuanLy.TabIndex = 0;
             this.menuQuanLy.Text = "menuStrip1";
             // 
@@ -78,18 +79,19 @@
             this.quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản Lý Sản Phẩm";
             this.quảnLýSảnPhẩmToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSảnPhẩmToolStripMenuItem_Click);
             // 
+            // quảnLýBànToolStripMenuItem
+            // 
+            this.quảnLýBànToolStripMenuItem.Name = "quảnLýBànToolStripMenuItem";
+            this.quảnLýBànToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
+            this.quảnLýBànToolStripMenuItem.Text = "Quản Lý Bàn";
+            this.quảnLýBànToolStripMenuItem.Click += new System.EventHandler(this.quảnLýBànToolStripMenuItem_Click);
+            // 
             // quảnLýDoanhThuToolStripMenuItem
             // 
             this.quảnLýDoanhThuToolStripMenuItem.Name = "quảnLýDoanhThuToolStripMenuItem";
             this.quảnLýDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.quảnLýDoanhThuToolStripMenuItem.Text = "Quản Lý Doanh Thu";
             this.quảnLýDoanhThuToolStripMenuItem.Click += new System.EventHandler(this.quảnLýDoanhThuToolStripMenuItem_Click);
-            // 
-            // quảnLýBànToolStripMenuItem
-            // 
-            this.quảnLýBànToolStripMenuItem.Name = "quảnLýBànToolStripMenuItem";
-            this.quảnLýBànToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
-            this.quảnLýBànToolStripMenuItem.Text = "Quản Lý Bàn";
             // 
             // quảnLýLoạiBànToolStripMenuItem
             // 
@@ -100,29 +102,37 @@
             // quanLyHoaDon1
             // 
             this.quanLyHoaDon1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quanLyHoaDon1.Location = new System.Drawing.Point(0, 28);
+            this.quanLyHoaDon1.Location = new System.Drawing.Point(0, 30);
             this.quanLyHoaDon1.Margin = new System.Windows.Forms.Padding(4);
             this.quanLyHoaDon1.Name = "quanLyHoaDon1";
-            this.quanLyHoaDon1.Size = new System.Drawing.Size(1251, 677);
+            this.quanLyHoaDon1.Size = new System.Drawing.Size(1251, 675);
             this.quanLyHoaDon1.TabIndex = 1;
             // 
             // quanLyNhanVien1
             // 
             this.quanLyNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quanLyNhanVien1.Location = new System.Drawing.Point(0, 28);
+            this.quanLyNhanVien1.Location = new System.Drawing.Point(0, 30);
             this.quanLyNhanVien1.Margin = new System.Windows.Forms.Padding(4);
             this.quanLyNhanVien1.Name = "quanLyNhanVien1";
-            this.quanLyNhanVien1.Size = new System.Drawing.Size(1251, 677);
+            this.quanLyNhanVien1.Size = new System.Drawing.Size(1251, 675);
             this.quanLyNhanVien1.TabIndex = 2;
+            // 
+            // quanLyBan1
+            // 
+            this.quanLyBan1.Location = new System.Drawing.Point(0, 28);
+            this.quanLyBan1.Name = "quanLyBan1";
+            this.quanLyBan1.Size = new System.Drawing.Size(1261, 618);
+            this.quanLyBan1.TabIndex = 3;
             // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.quanLyBan1);
             this.Controls.Add(this.quanLyNhanVien1);
             this.Controls.Add(this.quanLyHoaDon1);
             this.Controls.Add(this.menuQuanLy);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLy";
             this.Size = new System.Drawing.Size(1251, 705);
             this.Load += new System.EventHandler(this.QuanLy_Load);
@@ -144,5 +154,6 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýLoạiBànToolStripMenuItem;
         private QuanLyHoaDon quanLyHoaDon1;
         private QuanLyNhanVien quanLyNhanVien1;
+        private QuanLyBan quanLyBan1;
     }
 }

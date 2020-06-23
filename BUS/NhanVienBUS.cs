@@ -29,18 +29,18 @@ namespace BUS
             return NhanVienDAO.Intance.getListNhanVien();
         }
 
-        public int ThemNhanVien(string cmnd,string tenNV, string ngaySinh, string sdt, string ngayVaoLam)
+        public int ThemNhanVien(string TenNV, string DiaChi, string SDT, string NgayVaoLam, string HinhAnh)
         {
-            return DAO.NhanVienDAO.Intance.ThemNhanVien(cmnd,tenNV,ngaySinh,sdt,ngayVaoLam);
+            return DAO.NhanVienDAO.Intance.ThemNhanVien(TenNV,DiaChi,SDT,NgayVaoLam,HinhAnh);
         }
 
         public int CapNhatNhanVien(string cmnd, string tenNV, string ngaySinh, string sdt, string ngayVaoLam)
         {
             return DAO.NhanVienDAO.Intance.CapNhatNhanVien(cmnd, tenNV, ngaySinh, sdt, ngayVaoLam);
         }
-        public int XoaNhanVien(string cmnd)
+        public int XoaNhanVien(int ID)
         {
-            return DAO.NhanVienDAO.Intance.XoaNhanVien(cmnd);
+            return DAO.NhanVienDAO.Intance.XoaNhanVien(ID);
         }
 
         public List<NhanVienDTO> TimKiemNV(string name)

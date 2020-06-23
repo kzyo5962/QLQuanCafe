@@ -87,7 +87,6 @@
             this.fPannelBan.Name = "fPannelBan";
             this.fPannelBan.Size = new System.Drawing.Size(353, 549);
             this.fPannelBan.TabIndex = 4;
-            //this.fPannelBan.Paint += new System.Windows.Forms.PaintEventHandler(this.fPannelBan_Paint);
             // 
             // label2
             // 
@@ -156,14 +155,15 @@
             this.btnAdd.Location = new System.Drawing.Point(731, 55);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(61, 58);
+            this.btnAdd.Size = new System.Drawing.Size(74, 74);
             this.btnAdd.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnAdd, "Thêm Món");
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // numSoLuong
             // 
-            this.numSoLuong.Location = new System.Drawing.Point(800, 74);
+            this.numSoLuong.Location = new System.Drawing.Point(851, 62);
             this.numSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.numSoLuong.Name = "numSoLuong";
             this.numSoLuong.Size = new System.Drawing.Size(93, 22);
@@ -275,7 +275,7 @@
             // lblTongTien
             // 
             this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Location = new System.Drawing.Point(371, 405);
+            this.lblTongTien.Location = new System.Drawing.Point(579, 398);
             this.lblTongTien.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(73, 17);
@@ -328,7 +328,7 @@
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(479, 395);
+            this.txtTongTien.Location = new System.Drawing.Point(688, 395);
             this.txtTongTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.ReadOnly = true;
@@ -343,10 +343,10 @@
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(645, 391);
+            this.btnThanhToan.Location = new System.Drawing.Point(837, 395);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(100, 57);
+            this.btnThanhToan.Size = new System.Drawing.Size(83, 57);
             this.btnThanhToan.TabIndex = 25;
             this.btnThanhToan.Text = "Lập Hóa Đơn";
             this.btnThanhToan.UseVisualStyleBackColor = true;
@@ -377,7 +377,7 @@
             this.Controls.Add(this.fPannelBan);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BanHang";
-            this.Size = new System.Drawing.Size(1181, 553);
+            this.Size = new System.Drawing.Size(1196, 553);
             ((System.ComponentModel.ISupportInitialize)(this.loaiMenuDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();

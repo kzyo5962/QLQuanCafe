@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class BanHang : UserControl
+    public partial class QuanLyBan : UserControl
     {
-        public BanHang()
+        public QuanLyBan()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void QuanLyBan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

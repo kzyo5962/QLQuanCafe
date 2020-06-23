@@ -15,6 +15,9 @@ namespace GUI
         public QuanLyNhanVien()
         {
             InitializeComponent();
+
+            dgvNhanVien.DataSource = BUS.NhanVienBUS.Instance.listNhanVien();
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -40,37 +43,37 @@ namespace GUI
             }
         }
 
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+            if (BUS.NhanVienBUS.Instance.ThemNhanVien(txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Text, "aaa.jpg")>=1)
+            {
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+        }
+
+        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            if (e.RowIndex < 0)
+                return;
+            else
             {
-                this.nHANVIENTableAdapter.FillBy(this.quanLyQuanCaFeDataSet.NHANVIEN);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillByToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnThemNV_Click(object sender, EventArgs e)
-        {
-
+                txtDiaChi.Text =  dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtTenNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }                
         }
     }
 }

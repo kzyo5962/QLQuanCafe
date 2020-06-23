@@ -83,3 +83,4 @@ D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.exe.config
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.frmHoaDon.resources
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\RdlCompile.cache
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\RdlCompile.compiled
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyBan.resources

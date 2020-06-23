@@ -41,5 +41,10 @@ namespace GUI
         {
             quanLyHoaDon1.BringToFront();
         }
+
+        private void quảnLýBànToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            quanLyBan1.BringToFront();
+        }
     }
 }

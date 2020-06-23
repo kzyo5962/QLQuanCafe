@@ -27,7 +27,7 @@ namespace DAO
 
         public List<NhanVienDTO> getListNhanVien()
         {
-            string strSQL = "SELECT * FROM NHANVIEN WHERE TrangThai=1";
+            string strSQL = "SELECT * FROM NHANVIEN ";
             List<NhanVienDTO> listData = new List<NhanVienDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery(strSQL);
             foreach (DataRow row in data.Rows)
@@ -38,11 +38,11 @@ namespace DAO
             return listData;
         }
 
-        public int ThemNhanVien(string cmnd, string tenNV, string ngaySinh, string sdt, string ngayVaoLam)
+        public int ThemNhanVien( string TenNV, string DiaChi, string SDT, string NgayVaoLam, string HinhAnh)
         {
             
             int result = 0;
-            string sql =string.Format("INSERT INTO NHANVIEN(CMND,TenNV,NgaySinh,SDT, NgayVaoLam) VALUES('{0}', N'{1}','{2}','{3}','{4}')",cmnd,tenNV,ngaySinh,sdt,ngayVaoLam);
+            string sql =string.Format("INSERT INTO NHANVIEN(TenNV, NgayVaoLam,SDT, diachi, HinhAnh) VALUES(N'{0}', '{1}','{2}',N'{3}',N'{4}')",TenNV,NgayVaoLam,SDT,DiaChi,HinhAnh);
             result = DataProvider.Instance.ExecuteNonQuery(sql);
             return result;
         }
@@ -50,15 +50,15 @@ namespace DAO
         public int CapNhatNhanVien(string cmnd, string tenNV, string ngaySinh, string sdt, string ngayVaoLam)
         {
             int result = 0;
-            string sql = string.Format("UPDATE NHANVIEN SET TenNV='{0}', NgaySinh='{1}',SDT='{2}', NgayVaoLam='{3}' WHERE CMND='{4}' ", tenNV, ngaySinh, sdt, ngayVaoLam, cmnd);
+            string sql = string.Format("UPDATE NHANVIEN SET TenNV=N'{0}', NgaySinh='{1}',SDT='{2}', NgayVaoLam='{3}' WHERE CMND='{4}' ", tenNV, ngaySinh, sdt, ngayVaoLam, cmnd);
             result = DataProvider.Instance.ExecuteNonQuery(sql);
             return result;
         }
 
-        public int XoaNhanVien(string cmnd)
+        public int XoaNhanVien(int ID)
         {
             int result = 0;
-            string sql = string.Format("UPDATE NHANVIEN SET TrangThai=0 WHERE CMND='{0}'", cmnd);
+            string sql = string.Format("UPDATE NHANVIEN SET TrangThai=0 WHERE ID={0}", ID);
             result = DataProvider.Instance.ExecuteNonQuery(sql);
             return result;
         }
