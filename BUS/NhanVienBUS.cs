@@ -34,9 +34,9 @@ namespace BUS
             return DAO.NhanVienDAO.Intance.ThemNhanVien(TenNV,DiaChi,SDT,NgayVaoLam,HinhAnh);
         }
 
-        public int CapNhatNhanVien(string cmnd, string tenNV, string ngaySinh, string sdt, string ngayVaoLam)
+        public int CapNhatNhanVien(string tenNV, string diachi, string sdt, string ngayVaoLam, int id,string chucvu)
         {
-            return DAO.NhanVienDAO.Intance.CapNhatNhanVien(cmnd, tenNV, ngaySinh, sdt, ngayVaoLam);
+            return DAO.NhanVienDAO.Intance.CapNhatNhanVien(tenNV, diachi, sdt, ngayVaoLam,id, chucvu);
         }
         public int XoaNhanVien(int ID)
         {
@@ -47,6 +47,10 @@ namespace BUS
         {
 
             return DAO.NhanVienDAO.Intance.TimKiemNV(name);
+        }
+        public List<NhanVienDTO> ChucVuNV()
+        {
+            return DAO.NhanVienDAO.Intance.ChucVuNV();
         }
 
 

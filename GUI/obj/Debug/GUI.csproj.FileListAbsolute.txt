@@ -60,7 +60,6 @@ D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.exe
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.pdb
-D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
 D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.Design.DLL
 D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
@@ -84,3 +83,5 @@ D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.frmHoaDon.resources
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\RdlCompile.cache
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\RdlCompile.compiled
 D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyBan.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.cobMaPhieuNhap.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
