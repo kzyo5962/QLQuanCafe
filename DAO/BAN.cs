@@ -23,6 +23,7 @@ namespace DAO
         public int ID { get; set; }
         public int SoGhe { get; set; }
         public int TrangThai { get; set; }
+        public Nullable<int> TinhTrang { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }

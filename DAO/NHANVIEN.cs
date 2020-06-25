@@ -29,6 +29,7 @@ namespace DAO
         public string SDT { get; set; }
         public string diachi { get; set; }
         public string HinhAnh { get; set; }
+        public Nullable<int> trangthai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DONDATHANG> DONDATHANGs { get; set; }

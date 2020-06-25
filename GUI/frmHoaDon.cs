@@ -1,5 +1,4 @@
-﻿using BUS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,20 +15,27 @@ namespace GUI
 {
     public partial class frmHoaDon : Form
     {
-        public frmHoaDon()
+        List<BillInfoDTO> _list;
+        string _total, _cash, _change, _date, _dateCheckout;
+        public frmHoaDon(List<BillInfoDTO> dataSource, string total, string cash, string change, string date, string dateCheckout)
         {
             InitializeComponent();
+            _list = dataSource;
+            _total = total;
+            _cash = cash;
+            _change = change;
+            _date = date;
+            _dateCheckout = dateCheckout;
         }
         
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
 
-            this.rpvHoaDon.RefreshReport();
+            
+            this.reportViewer1.RefreshReport();
         }
 
-        //public void HoaDon()
-        //{
-        //    List<BillInfoDTO> lstSanPham = BillInfoBus.Instance.getBillInfoByIDTable()
-        //}
+        
+
     }
 }

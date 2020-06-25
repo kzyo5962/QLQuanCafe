@@ -19,6 +19,7 @@ namespace DAO
         public string pass { get; set; }
         public int MaLoai { get; set; }
         public int MaNV { get; set; }
+        public Nullable<int> trangthai { get; set; }
     
         public virtual LOAITK LOAITK { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }

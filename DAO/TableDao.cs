@@ -51,7 +51,7 @@ namespace DAO
         }
         public List<TableDTO> LoadListTableNull()
         {
-            string execGetBan = "select * from Ban where trangthai=0";
+            string execGetBan = "select * from Ban where trangthai=1";
             List<TableDTO> list = new List<TableDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery(execGetBan);
             foreach (DataRow row in data.Rows)
@@ -61,5 +61,7 @@ namespace DAO
             }
             return list;
         }
+       
+
     }
 }

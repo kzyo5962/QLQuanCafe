@@ -32,6 +32,12 @@
             this.lb_Tiltle = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
@@ -56,12 +62,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pic = new System.Windows.Forms.PictureBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -121,6 +121,48 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(581, 427);
             this.dgvNhanVien.TabIndex = 5;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            // 
+            // colMaNV
+            // 
+            this.colMaNV.DataPropertyName = "ID1";
+            this.colMaNV.HeaderText = "Mã NV";
+            this.colMaNV.MinimumWidth = 6;
+            this.colMaNV.Name = "colMaNV";
+            // 
+            // colTenNV
+            // 
+            this.colTenNV.DataPropertyName = "TenNV1";
+            this.colTenNV.HeaderText = "Họ tên";
+            this.colTenNV.MinimumWidth = 6;
+            this.colTenNV.Name = "colTenNV";
+            // 
+            // colNgayVaoLam
+            // 
+            this.colNgayVaoLam.DataPropertyName = "NgayVaoLam1";
+            this.colNgayVaoLam.HeaderText = "Ngày vào làm";
+            this.colNgayVaoLam.MinimumWidth = 6;
+            this.colNgayVaoLam.Name = "colNgayVaoLam";
+            // 
+            // colSDT
+            // 
+            this.colSDT.DataPropertyName = "SDT1";
+            this.colSDT.HeaderText = "SĐT";
+            this.colSDT.MinimumWidth = 6;
+            this.colSDT.Name = "colSDT";
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.DataPropertyName = "DiaChi1";
+            this.colDiaChi.HeaderText = "Địa chỉ";
+            this.colDiaChi.MinimumWidth = 6;
+            this.colDiaChi.Name = "colDiaChi";
+            // 
+            // colChucVu
+            // 
+            this.colChucVu.DataPropertyName = "LoaiNV1";
+            this.colChucVu.HeaderText = "Chức vụ";
+            this.colChucVu.MinimumWidth = 6;
+            this.colChucVu.Name = "colChucVu";
             // 
             // label1
             // 
@@ -216,15 +258,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1254, 529);
             this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::GUI.Properties.Resources.icons8_update_left_rotation_50;
-            this.button1.Location = new System.Drawing.Point(1047, 413);
+            this.button1.Location = new System.Drawing.Point(993, 420);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 65);
+            this.button1.Size = new System.Drawing.Size(78, 58);
             this.button1.TabIndex = 65;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -242,9 +285,9 @@
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
-            this.btnXoa.Location = new System.Drawing.Point(812, 413);
+            this.btnXoa.Location = new System.Drawing.Point(812, 422);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(92, 65);
+            this.btnXoa.Size = new System.Drawing.Size(68, 56);
             this.btnXoa.TabIndex = 63;
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -254,9 +297,9 @@
             this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = global::GUI.Properties.Resources.icons8_save_64;
-            this.btnLuu.Location = new System.Drawing.Point(926, 413);
+            this.btnLuu.Location = new System.Drawing.Point(900, 420);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(90, 65);
+            this.btnLuu.Size = new System.Drawing.Size(74, 58);
             this.btnLuu.TabIndex = 62;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -266,9 +309,9 @@
             this.btnThemNV.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemNV.Image = global::GUI.Properties.Resources.icons8_add_64;
-            this.btnThemNV.Location = new System.Drawing.Point(714, 413);
+            this.btnThemNV.Location = new System.Drawing.Point(714, 422);
             this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.Size = new System.Drawing.Size(78, 65);
+            this.btnThemNV.Size = new System.Drawing.Size(78, 56);
             this.btnThemNV.TabIndex = 59;
             this.btnThemNV.UseVisualStyleBackColor = false;
             this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
@@ -386,55 +429,13 @@
             this.btn_TimKiem.BackColor = System.Drawing.Color.MistyRose;
             this.btn_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TimKiem.Image = global::GUI.Properties.Resources.icons8_search_40;
-            this.btn_TimKiem.Location = new System.Drawing.Point(485, 20);
+            this.btn_TimKiem.Image = global::GUI.Properties.Resources.icons8_search_35;
+            this.btn_TimKiem.Location = new System.Drawing.Point(485, 29);
             this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(111, 48);
+            this.btn_TimKiem.Size = new System.Drawing.Size(87, 39);
             this.btn_TimKiem.TabIndex = 3;
             this.btn_TimKiem.UseVisualStyleBackColor = false;
-            // 
-            // colMaNV
-            // 
-            this.colMaNV.DataPropertyName = "ID1";
-            this.colMaNV.HeaderText = "Mã NV";
-            this.colMaNV.MinimumWidth = 6;
-            this.colMaNV.Name = "colMaNV";
-            // 
-            // colTenNV
-            // 
-            this.colTenNV.DataPropertyName = "TenNV1";
-            this.colTenNV.HeaderText = "Họ tên";
-            this.colTenNV.MinimumWidth = 6;
-            this.colTenNV.Name = "colTenNV";
-            // 
-            // colNgayVaoLam
-            // 
-            this.colNgayVaoLam.DataPropertyName = "NgayVaoLam1";
-            this.colNgayVaoLam.HeaderText = "Ngày vào làm";
-            this.colNgayVaoLam.MinimumWidth = 6;
-            this.colNgayVaoLam.Name = "colNgayVaoLam";
-            // 
-            // colSDT
-            // 
-            this.colSDT.DataPropertyName = "SDT1";
-            this.colSDT.HeaderText = "SĐT";
-            this.colSDT.MinimumWidth = 6;
-            this.colSDT.Name = "colSDT";
-            // 
-            // colDiaChi
-            // 
-            this.colDiaChi.DataPropertyName = "DiaChi1";
-            this.colDiaChi.HeaderText = "Địa chỉ";
-            this.colDiaChi.MinimumWidth = 6;
-            this.colDiaChi.Name = "colDiaChi";
-            // 
-            // colChucVu
-            // 
-            this.colChucVu.DataPropertyName = "LoaiNV1";
-            this.colChucVu.HeaderText = "Chức vụ";
-            this.colChucVu.MinimumWidth = 6;
-            this.colChucVu.Name = "colChucVu";
             // 
             // QuanLyNhanVien
             // 

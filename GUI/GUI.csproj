@@ -161,11 +161,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyQuanCaFeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QuanLySanPham.cs">
+    <Compile Include="QuanLyNguyenLieu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLySanPham.Designer.cs">
-      <DependentUpon>QuanLySanPham.cs</DependentUpon>
+    <Compile Include="QuanLyNguyenLieu.Designer.cs">
+      <DependentUpon>QuanLyNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctThongKe.Designer.cs">
+      <DependentUpon>uctThongKe.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BanHang.resx">
       <DependentUpon>BanHang.cs</DependentUpon>
@@ -213,14 +219,19 @@
     <EmbeddedResource Include="QuanLyNhanVien.resx">
       <DependentUpon>QuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuanLySanPham.resx">
-      <DependentUpon>QuanLySanPham.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyNguyenLieu.resx">
+      <DependentUpon>QuanLyNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc" />
+    <EmbeddedResource Include="uctThongKe.resx">
+      <DependentUpon>uctThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\DTO.BillDTO.datasource" />
     <None Include="Properties\DataSources\DTO.BillInfoDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.DoanhThuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.LoaiMenuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.MenuDTO.datasource" />
+    <None Include="Properties\DataSources\DTO.NguyenLieuDTO.datasource" />
     <None Include="Properties\DataSources\DTO.NhanVienDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TableDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiKhoan.datasource" />
@@ -284,6 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-update-left-rotation-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-35.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

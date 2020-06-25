@@ -39,5 +39,6 @@ namespace BUS
         {
             return TableDao.Instance.LoadListTableNull();
         }
+       
     }
 }

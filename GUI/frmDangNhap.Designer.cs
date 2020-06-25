@@ -50,7 +50,7 @@
             this.grb_DangNhap.Controls.Add(this.txtName);
             this.grb_DangNhap.Controls.Add(this.lb_MatKhau);
             this.grb_DangNhap.Controls.Add(this.lb_TenDangNhap);
-            this.grb_DangNhap.Location = new System.Drawing.Point(97, 284);
+            this.grb_DangNhap.Location = new System.Drawing.Point(1, 236);
             this.grb_DangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grb_DangNhap.Name = "grb_DangNhap";
             this.grb_DangNhap.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -90,6 +90,7 @@
             this.txtPassWord.PasswordChar = '*';
             this.txtPassWord.Size = new System.Drawing.Size(179, 22);
             this.txtPassWord.TabIndex = 3;
+            this.txtPassWord.Text = "123456";
             this.txtPassWord.UseWaitCursor = true;
             // 
             // txtName
@@ -99,6 +100,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(179, 22);
             this.txtName.TabIndex = 2;
+            this.txtName.Text = "minhhai";
             // 
             // lb_MatKhau
             // 
@@ -124,7 +126,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(97, 48);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(565, 230);
@@ -135,13 +137,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 495);
+            this.ClientSize = new System.Drawing.Size(565, 428);
             this.Controls.Add(this.grb_DangNhap);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDangNhap";
+            this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.grb_DangNhap.ResumeLayout(false);

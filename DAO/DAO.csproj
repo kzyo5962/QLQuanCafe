@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="DangNhapDAO.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="DoanhThuDAO.cs" />
     <Compile Include="DONDATHANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colMaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgvQLBan = new System.Windows.Forms.DataGridView();
+            this.tableDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_Tiltle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTrangThai = new System.Windows.Forms.GroupBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtTrangThai = new System.Windows.Forms.TextBox();
             this.txtSoGhe = new System.Windows.Forms.TextBox();
             this.txtMaBan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,44 +45,45 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboTinhTrang = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.tableDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.iMaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSoGheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTrangThaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTinhTrangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvQLBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.cboTrangThai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtgvQLBan
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaBan,
-            this.colSoGhe,
-            this.colTrangThai});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 138);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(565, 464);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgvQLBan.AutoGenerateColumns = false;
+            this.dtgvQLBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvQLBan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvQLBan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iMaBanDataGridViewTextBoxColumn,
+            this.iSoGheDataGridViewTextBoxColumn,
+            this.iTrangThaiDataGridViewTextBoxColumn,
+            this.iTinhTrangDataGridViewTextBoxColumn});
+            this.dtgvQLBan.DataSource = this.tableDTOBindingSource1;
+            this.dtgvQLBan.Location = new System.Drawing.Point(20, 138);
+            this.dtgvQLBan.Name = "dtgvQLBan";
+            this.dtgvQLBan.RowHeadersWidth = 51;
+            this.dtgvQLBan.RowTemplate.Height = 24;
+            this.dtgvQLBan.Size = new System.Drawing.Size(565, 464);
+            this.dtgvQLBan.TabIndex = 0;
+            this.dtgvQLBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLBan_CellClick);
             // 
-            // colMaBan
+            // tableDTOBindingSource1
             // 
-            this.colMaBan.HeaderText = "Mã Bàn";
-            this.colMaBan.MinimumWidth = 6;
-            this.colMaBan.Name = "colMaBan";
-            // 
-            // colSoGhe
-            // 
-            this.colSoGhe.HeaderText = "Số ghê";
-            this.colSoGhe.MinimumWidth = 6;
-            this.colSoGhe.Name = "colSoGhe";
-            // 
-            // colTrangThai
-            // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
+            this.tableDTOBindingSource1.DataSource = typeof(DTO.TableDTO);
             // 
             // panel1
             // 
@@ -108,30 +107,42 @@
             this.lb_Tiltle.TabIndex = 0;
             this.lb_Tiltle.Text = "QUẢN LÝ BÀN";
             // 
-            // groupBox1
+            // cboTrangThai
             // 
-            this.groupBox1.Controls.Add(this.btnXoa);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.btnThem);
-            this.groupBox1.Controls.Add(this.txtTrangThai);
-            this.groupBox1.Controls.Add(this.txtSoGhe);
-            this.groupBox1.Controls.Add(this.txtMaBan);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(621, 138);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(626, 464);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin bàn";
+            this.cboTrangThai.Controls.Add(this.comboBox2);
+            this.cboTrangThai.Controls.Add(this.cboTinhTrang);
+            this.cboTrangThai.Controls.Add(this.label4);
+            this.cboTrangThai.Controls.Add(this.btnXoa);
+            this.cboTrangThai.Controls.Add(this.button2);
+            this.cboTrangThai.Controls.Add(this.btnThem);
+            this.cboTrangThai.Controls.Add(this.txtSoGhe);
+            this.cboTrangThai.Controls.Add(this.txtMaBan);
+            this.cboTrangThai.Controls.Add(this.label3);
+            this.cboTrangThai.Controls.Add(this.label2);
+            this.cboTrangThai.Controls.Add(this.label1);
+            this.cboTrangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTrangThai.Location = new System.Drawing.Point(621, 138);
+            this.cboTrangThai.Name = "cboTrangThai";
+            this.cboTrangThai.Size = new System.Drawing.Size(626, 464);
+            this.cboTrangThai.TabIndex = 13;
+            this.cboTrangThai.TabStop = false;
+            this.cboTrangThai.Text = "Thông tin bàn";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
+            this.btnXoa.Location = new System.Drawing.Point(372, 348);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 70);
+            this.btnXoa.TabIndex = 8;
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.Image = global::GUI.Properties.Resources.icons8_save_64;
-            this.button2.Location = new System.Drawing.Point(261, 276);
+            this.button2.Location = new System.Drawing.Point(261, 348);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(79, 70);
             this.button2.TabIndex = 7;
@@ -141,29 +152,22 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnThem.Image = global::GUI.Properties.Resources.icons8_add_64;
-            this.btnThem.Location = new System.Drawing.Point(144, 276);
+            this.btnThem.Location = new System.Drawing.Point(144, 348);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(84, 70);
             this.btnThem.TabIndex = 6;
             this.btnThem.UseVisualStyleBackColor = false;
             // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Location = new System.Drawing.Point(203, 201);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(244, 34);
-            this.txtTrangThai.TabIndex = 5;
-            // 
             // txtSoGhe
             // 
-            this.txtSoGhe.Location = new System.Drawing.Point(203, 138);
+            this.txtSoGhe.Location = new System.Drawing.Point(203, 118);
             this.txtSoGhe.Name = "txtSoGhe";
             this.txtSoGhe.Size = new System.Drawing.Size(244, 34);
             this.txtSoGhe.TabIndex = 4;
             // 
             // txtMaBan
             // 
-            this.txtMaBan.Location = new System.Drawing.Point(203, 73);
+            this.txtMaBan.Location = new System.Drawing.Point(203, 65);
             this.txtMaBan.Name = "txtMaBan";
             this.txtMaBan.ReadOnly = true;
             this.txtMaBan.Size = new System.Drawing.Size(244, 34);
@@ -173,7 +177,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 201);
+            this.label3.Location = new System.Drawing.Point(62, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 24);
             this.label3.TabIndex = 2;
@@ -183,7 +187,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 138);
+            this.label2.Location = new System.Drawing.Point(89, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 24);
             this.label2.TabIndex = 1;
@@ -222,30 +226,96 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // btnXoa
+            // tableDTOBindingSource
             // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
-            this.btnXoa.Location = new System.Drawing.Point(372, 276);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 70);
-            this.btnXoa.TabIndex = 8;
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.tableDTOBindingSource.DataSource = typeof(DTO.TableDTO);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(61, 237);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tình trạng :";
+            // 
+            // cboTinhTrang
+            // 
+            this.cboTinhTrang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboTinhTrang.FormattingEnabled = true;
+            this.cboTinhTrang.Items.AddRange(new object[] {
+            "Bàn hư",
+            "Có thể sử dụng"});
+            this.cboTinhTrang.Location = new System.Drawing.Point(203, 229);
+            this.cboTinhTrang.Name = "cboTinhTrang";
+            this.cboTinhTrang.Size = new System.Drawing.Size(244, 37);
+            this.cboTinhTrang.TabIndex = 10;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Đang phục vụ",
+            "Trống"});
+            this.comboBox2.Location = new System.Drawing.Point(203, 176);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(244, 37);
+            this.comboBox2.TabIndex = 11;
+            // 
+            // tableDTOBindingSource2
+            // 
+            this.tableDTOBindingSource2.DataSource = typeof(DTO.TableDTO);
+            // 
+            // iMaBanDataGridViewTextBoxColumn
+            // 
+            this.iMaBanDataGridViewTextBoxColumn.DataPropertyName = "IMaBan";
+            this.iMaBanDataGridViewTextBoxColumn.HeaderText = "Mã bàn";
+            this.iMaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iMaBanDataGridViewTextBoxColumn.Name = "iMaBanDataGridViewTextBoxColumn";
+            // 
+            // iSoGheDataGridViewTextBoxColumn
+            // 
+            this.iSoGheDataGridViewTextBoxColumn.DataPropertyName = "ISoGhe";
+            this.iSoGheDataGridViewTextBoxColumn.HeaderText = "Số ghế";
+            this.iSoGheDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iSoGheDataGridViewTextBoxColumn.Name = "iSoGheDataGridViewTextBoxColumn";
+            // 
+            // iTrangThaiDataGridViewTextBoxColumn
+            // 
+            this.iTrangThaiDataGridViewTextBoxColumn.DataPropertyName = "ITrangThai";
+            this.iTrangThaiDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
+            this.iTrangThaiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iTrangThaiDataGridViewTextBoxColumn.Name = "iTrangThaiDataGridViewTextBoxColumn";
+            this.iTrangThaiDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // iTinhTrangDataGridViewTextBoxColumn
+            // 
+            this.iTinhTrangDataGridViewTextBoxColumn.DataPropertyName = "ITinhTrang";
+            this.iTinhTrangDataGridViewTextBoxColumn.HeaderText = "Tình trạng";
+            this.iTinhTrangDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iTinhTrangDataGridViewTextBoxColumn.Name = "iTinhTrangDataGridViewTextBoxColumn";
+            this.iTinhTrangDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // QuanLyBan
             // 
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.cboTrangThai);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvQLBan);
             this.Name = "QuanLyBan";
             this.Size = new System.Drawing.Size(1261, 618);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.QuanLyBan_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvQLBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.cboTrangThai.ResumeLayout(false);
+            this.cboTrangThai.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,16 +323,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSoGhe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.DataGridView dtgvQLBan;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_Tiltle;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox cboTrangThai;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtTrangThai;
         private System.Windows.Forms.TextBox txtSoGhe;
         private System.Windows.Forms.TextBox txtMaBan;
         private System.Windows.Forms.Label label3;
@@ -272,5 +338,15 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.BindingSource tableDTOBindingSource;
+        private System.Windows.Forms.BindingSource tableDTOBindingSource1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.BindingSource tableDTOBindingSource2;
+        private System.Windows.Forms.ComboBox cboTinhTrang;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iMaBanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSoGheDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iTrangThaiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iTinhTrangDataGridViewTextBoxColumn;
     }
 }

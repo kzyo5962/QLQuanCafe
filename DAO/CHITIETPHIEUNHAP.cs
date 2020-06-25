@@ -18,6 +18,8 @@ namespace DAO
         public int MaPhieuNhap { get; set; }
         public int SoLuong { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
+        public Nullable<double> DonGia { get; set; }
+        public Nullable<int> DVT { get; set; }
     
         public virtual NGUYENLIEU NGUYENLIEU { get; set; }
         public virtual PHIEUNHAP PHIEUNHAP { get; set; }

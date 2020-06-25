@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,33 +10,33 @@ namespace DTO
 {
     public class NguyenLieuDTO
     {
-        private string strMANL;
-        private string strTENNL;
-        private string strDONVITINH;
-        private int iDONGIA;
-       
-        public string StrNguyenLieu { get => strMANL; set => strMANL = value; }
-        public string StrTENNL { get => strTENNL; set => strTENNL = value; }
-        public string StrDONVITINH { get => strDONVITINH; set => strDONVITINH = value; }
-        public int IDONGIA { get => iDONGIA; set => iDONGIA = value; }
-       
+        private int ID;
+        private string TenNL;
+        private string DVT;
+        private float DonGia;
+        private float SLTon;
 
-        public NguyenLieuDTO(string maNL, string tenNL, string dvt, int donGia, int trangThai)
+        public int ID1 { get => ID; set => ID = value; }
+        public string TenNL1 { get => TenNL; set => TenNL = value; }
+        public string DVT1 { get => DVT; set => DVT = value; }
+        public float DonGia1 { get => DonGia; set => DonGia = value; }
+        public float SLTon1 { get => SLTon; set => SLTon = value; }
+
+        public NguyenLieuDTO(int id, string tenNL, string dvt, float donGia, float SLTon)
         {
-            this.strMANL = maNL;
-            this.strTENNL=tenNL;
-            this.StrDONVITINH = dvt;
-            this.IDONGIA = donGia;
-
+            this.ID = id;
+            this.TenNL = tenNL;
+            this.DVT = dvt;
+            this.DonGia = donGia;
+            this.SLTon = SLTon;
         }
         public NguyenLieuDTO(DataRow dataRow)
         {
-            this.strMANL = (string)dataRow["MANL"]; 
-            this.strTENNL = (string)dataRow["TENNL"]; 
-            this.StrDONVITINH = (string)dataRow["DONVITINH"]; 
-            this.iDONGIA = (int)dataRow["DONGIA"];
-          
-            
+            this.ID = (int)dataRow["ID"];
+            this.TenNL = (string)dataRow["TenNL"];
+            this.DVT = (string)dataRow["DVT"];
+            this.DonGia = float.Parse(dataRow["DonGia"].ToString());
+            this.SLTon = float.Parse(dataRow["SLTon"].ToString());
         } 
     }
 }

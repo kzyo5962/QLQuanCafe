@@ -15,11 +15,27 @@ namespace GUI
         public QuanLyDoanhThu()
         {
             InitializeComponent();
+            Load();
         }
 
         private void QuanLyDoanhThu_Load(object sender, EventArgs e)
         {
+           
+        }
+
+        private void panDanhThuContent_Paint(object sender, PaintEventArgs e)
+        {
 
         }
+        private void Load()
+        {
+            dgvSanPhamBanDuoc.DataSource = BUS.DoanhThuBUS.Instance.getSanPhamDaBan();
+            dgvNguyenLieuTrongKho.DataSource = BUS.NguyenLieuBUS.Instance.listNguyenLieu();
+            txtTongQuyHienTai.Text = BUS.DoanhThuBUS.Instance.getTongDoanhThu();
+            txtDoanhThuThangNay.Text = BUS.DoanhThuBUS.Instance.getDoanhThuTheoThang();
+            
+        }
+        
+        
     }
 }

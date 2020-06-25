@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyQuanCaFeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyQuanCaFeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAN">
           <Key>
             <PropertyRef Name="ID" />
@@ -12,6 +12,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SoGhe" Type="int" Nullable="false" />
           <Property Name="TrangThai" Type="int" Nullable="false" />
+          <Property Name="TinhTrang" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETHOADON' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -40,6 +41,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="MaPhieuNhap" Type="int" Nullable="false" />
           <Property Name="SoLuong" Type="int" Nullable="false" />
           <Property Name="NgayLap" Type="datetime" />
+          <Property Name="DonGia" Type="float" />
+          <Property Name="DVT" Type="int" />
         </EntityType>
         <EntityType Name="DONDATHANG">
           <Key>
@@ -95,6 +98,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="TenNL" Type="nvarchar" MaxLength="255" />
           <Property Name="DVT" Type="nvarchar" MaxLength="20" />
           <Property Name="DonGia" Type="float" Nullable="false" />
+          <Property Name="TrangThai" Type="int" />
+          <Property Name="SLTon" Type="float" />
         </EntityType>
         <EntityType Name="NHACUNGCAP">
           <Key>
@@ -117,6 +122,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="SDT" Type="varchar" MaxLength="11" Nullable="false" />
           <Property Name="diachi" Type="nvarchar" MaxLength="255" />
           <Property Name="HinhAnh" Type="varchar" MaxLength="255" />
+          <Property Name="trangthai" Type="int" />
         </EntityType>
         <EntityType Name="PHIEUNHAP">
           <Key>
@@ -125,6 +131,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaNV" Type="int" Nullable="false" />
           <Property Name="NgayLap" Type="datetime" />
+          <Property Name="TrangThai" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -145,6 +152,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="pass" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MaLoai" Type="int" Nullable="false" />
           <Property Name="MaNV" Type="int" Nullable="false" />
+          <Property Name="trangthai" Type="int" />
         </EntityType>
         <Association Name="fk_maban">
           <End Role="BAN" Type="Self.BAN" Multiplicity="1" />
@@ -368,7 +376,9 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
     [CHITIETPHIEUNHAP].[MaNL] AS [MaNL], 
     [CHITIETPHIEUNHAP].[MaPhieuNhap] AS [MaPhieuNhap], 
     [CHITIETPHIEUNHAP].[SoLuong] AS [SoLuong], 
-    [CHITIETPHIEUNHAP].[NgayLap] AS [NgayLap]
+    [CHITIETPHIEUNHAP].[NgayLap] AS [NgayLap], 
+    [CHITIETPHIEUNHAP].[DonGia] AS [DonGia], 
+    [CHITIETPHIEUNHAP].[DVT] AS [DVT]
     FROM [dbo].[CHITIETPHIEUNHAP] AS [CHITIETPHIEUNHAP]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="fk_maban" Association="Self.fk_maban">
@@ -424,8 +434,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
             <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAP" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyQuanCaFeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -437,6 +446,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="SoGhe" Type="Int32" Nullable="false" />
           <Property Name="TrangThai" Type="Int32" Nullable="false" />
           <NavigationProperty Name="HOADONs" Relationship="Self.fk_maban" FromRole="BAN" ToRole="HOADON" />
+          <Property Name="TinhTrang" Type="Int32" />
         </EntityType>
         <EntityType Name="DONDATHANG">
           <Key>
@@ -503,6 +513,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="DonGia" Type="Double" Nullable="false" />
           <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_manl" FromRole="NGUYENLIEU" ToRole="CHITIETPHIEUNHAP" />
           <NavigationProperty Name="NHACUNGCAPs" Relationship="Self.fk_manl_nguyenlieu" FromRole="NGUYENLIEU" ToRole="NHACUNGCAP" />
+          <Property Name="TrangThai" Type="Int32" />
+          <Property Name="SLTon" Type="Double" />
         </EntityType>
         <EntityType Name="NHACUNGCAP">
           <Key>
@@ -531,6 +543,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <NavigationProperty Name="HOADONs" Relationship="Self.fk_manv_hd" FromRole="NHANVIEN" ToRole="HOADON" />
           <NavigationProperty Name="PHIEUNHAPs" Relationship="Self.fk_manV" FromRole="NHANVIEN" ToRole="PHIEUNHAP" />
           <NavigationProperty Name="TAIKHOANs" Relationship="Self.fk_manv_tk" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
+          <Property Name="trangthai" Type="Int32" />
         </EntityType>
         <EntityType Name="PHIEUNHAP">
           <Key>
@@ -541,6 +554,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manV" FromRole="PHIEUNHAP" ToRole="NHANVIEN" />
           <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_maphieunhap" FromRole="PHIEUNHAP" ToRole="CHITIETPHIEUNHAP" />
+          <Property Name="TrangThai" Type="Int32" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -563,6 +577,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="MaNV" Type="Int32" Nullable="false" />
           <NavigationProperty Name="LOAITK" Relationship="Self.fk_maloaitk" FromRole="TAIKHOAN" ToRole="LOAITK" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manv_tk" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
+          <Property Name="trangthai" Type="Int32" />
         </EntityType>
         <EntityType Name="CHITIETHOADON">
           <Key>
@@ -591,6 +606,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
           <NavigationProperty Name="NGUYENLIEU" Relationship="Self.fk_manl" FromRole="CHITIETPHIEUNHAP" ToRole="NGUYENLIEU" />
           <NavigationProperty Name="PHIEUNHAP" Relationship="Self.fk_maphieunhap" FromRole="CHITIETPHIEUNHAP" ToRole="PHIEUNHAP" />
+          <Property Name="DonGia" Type="Double" />
+          <Property Name="DVT" Type="Int32" />
         </EntityType>
         <Association Name="fk_maban">
           <End Role="BAN" Type="Self.BAN" Multiplicity="1" />
@@ -816,7 +833,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
             <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
           </AssociationSet>
           <FunctionImport Name="GetBill" ReturnType="Collection(QuanLyQuanCaFeModel.GetBill_Result)">
-            <Parameter Name="maBan" Mode="In" Type="Int32" />
+          <Parameter Name="maBan" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="inserBill">
             <Parameter Name="idTable" Mode="In" Type="Int32" />
@@ -879,6 +896,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="BANs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.BAN">
               <MappingFragment StoreEntitySet="BAN">
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
@@ -939,6 +957,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="NGUYENLIEUx">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.NGUYENLIEU">
               <MappingFragment StoreEntitySet="NGUYENLIEU">
+                <ScalarProperty Name="SLTon" ColumnName="SLTon" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TenNL" ColumnName="TenNL" />
                 <ScalarProperty Name="DVT" ColumnName="DVT" />
@@ -961,6 +981,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="NHANVIENs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TenNV" ColumnName="TenNV" />
                 <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
@@ -973,6 +994,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="PHIEUNHAPs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.PHIEUNHAP">
               <MappingFragment StoreEntitySet="PHIEUNHAP">
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
@@ -993,6 +1015,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="TAIKHOANs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="pass" ColumnName="pass" />
@@ -1016,6 +1039,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="CHITIETPHIEUNHAPs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.CHITIETPHIEUNHAP">
               <MappingFragment StoreEntitySet="CHITIETPHIEUNHAP">
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="MaNL" ColumnName="MaNL" />
                 <ScalarProperty Name="MaPhieuNhap" ColumnName="MaPhieuNhap" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />

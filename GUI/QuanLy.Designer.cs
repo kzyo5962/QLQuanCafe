@@ -38,6 +38,8 @@
             this.quanLyHoaDon1 = new GUI.QuanLyHoaDon();
             this.quanLyNhanVien1 = new GUI.QuanLyNhanVien();
             this.quanLyBan1 = new GUI.QuanLyBan();
+            this.quanLySanPham1 = new GUI.QuanLyNguyenLieu();
+            this.quanLyDoanhThu2 = new GUI.QuanLyDoanhThu();
             this.menuQuanLy.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,16 +121,37 @@
             // 
             // quanLyBan1
             // 
-            this.quanLyBan1.Location = new System.Drawing.Point(0, 28);
+            this.quanLyBan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLyBan1.Location = new System.Drawing.Point(0, 30);
             this.quanLyBan1.Name = "quanLyBan1";
-            this.quanLyBan1.Size = new System.Drawing.Size(1261, 618);
+            this.quanLyBan1.Size = new System.Drawing.Size(1251, 675);
             this.quanLyBan1.TabIndex = 3;
+            this.quanLyBan1.Load += new System.EventHandler(this.quanLyBan1_Load);
+            // 
+            // quanLySanPham1
+            // 
+            this.quanLySanPham1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLySanPham1.Location = new System.Drawing.Point(0, 30);
+            this.quanLySanPham1.Margin = new System.Windows.Forms.Padding(4);
+            this.quanLySanPham1.Name = "quanLySanPham1";
+            this.quanLySanPham1.Size = new System.Drawing.Size(1251, 675);
+            this.quanLySanPham1.TabIndex = 4;
+            // 
+            // quanLyDoanhThu2
+            // 
+            this.quanLyDoanhThu2.Location = new System.Drawing.Point(13, 312);
+            this.quanLyDoanhThu2.Margin = new System.Windows.Forms.Padding(4);
+            this.quanLyDoanhThu2.Name = "quanLyDoanhThu2";
+            this.quanLyDoanhThu2.Size = new System.Drawing.Size(1251, 677);
+            this.quanLyDoanhThu2.TabIndex = 5;
             // 
             // QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.quanLyBan1);
+            this.Controls.Add(this.quanLyDoanhThu2);
+            this.Controls.Add(this.quanLySanPham1);
             this.Controls.Add(this.quanLyNhanVien1);
             this.Controls.Add(this.quanLyHoaDon1);
             this.Controls.Add(this.menuQuanLy);
@@ -155,5 +178,8 @@
         private QuanLyHoaDon quanLyHoaDon1;
         private QuanLyNhanVien quanLyNhanVien1;
         private QuanLyBan quanLyBan1;
+        private QuanLyNguyenLieu quanLySanPham1;
+        private QuanLyDoanhThu quanLyDoanhThu1;
+        private QuanLyDoanhThu quanLyDoanhThu2;
     }
 }

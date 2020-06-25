@@ -52,7 +52,7 @@ namespace GUI
             } 
             else
             {
-                if (BUS.NhanVienBUS.Instance.ThemNhanVien(txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Text, "aaa.jpg") >= 1)
+                if (BUS.NhanVienBUS.Instance.ThemNhanVien(txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Text, "",cboChucVu.Text) >= 1)
                 {
                     MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     load();
@@ -146,6 +146,11 @@ namespace GUI
             cboChucVu.DataSource = BUS.NhanVienBUS.Instance.ChucVuNV();
             cboChucVu.DisplayMember = "TenLoai";
             cboChucVu.ValueMember = "TenLoai";
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

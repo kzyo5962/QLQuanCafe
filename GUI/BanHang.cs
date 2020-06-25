@@ -15,9 +15,20 @@ namespace GUI
         public BanHang()
         {
             InitializeComponent();
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void billInfoDTOBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }

@@ -38,11 +38,11 @@ namespace DAO
             return listData;
         }
 
-        public int ThemNhanVien( string TenNV, string DiaChi, string SDT, string NgayVaoLam, string HinhAnh)
+        public int ThemNhanVien( string TenNV, string DiaChi, string SDT, string NgayVaoLam, string HinhAnh,string chucvu)
         {
             
             int result = 0;
-            string sql =string.Format("INSERT INTO NHANVIEN(TenNV, NgayVaoLam,SDT, diachi, HinhAnh) VALUES(N'{0}', '{1}','{2}',N'{3}',N'{4}')",TenNV,NgayVaoLam,SDT,DiaChi,HinhAnh);
+            string sql =string.Format("INSERT INTO NHANVIEN(TenNV, NgayVaoLam,SDT, diachi, HinhAnh) VALUES(N'{0}', '{1}','{2}',N'{3}',N'{4}') INSERT INTO NHANVIEN",TenNV,NgayVaoLam,SDT,DiaChi,HinhAnh);
             result = DataProvider.Instance.ExecuteNonQuery(sql);
             return result;
         }
