@@ -16,7 +16,7 @@ namespace DTO
             this.ITrangThai = trangthai;
             this.ITinhTrang = tinhtrang;
         }
-        public TableDTO(DataRow dataRow)
+        public TableDTO(DataRow dataRow )
         {
             int SoBan = (int)dataRow["ID"];
             if(SoBan < 10)
@@ -30,6 +30,15 @@ namespace DTO
                 this.IMaBan = "BAN" + SoBan;
             }
             
+            this.ISoGhe = (int)dataRow["SoGhe"];
+            this.ITrangThai = (int)dataRow["TrangThai"];
+            this.iTinhTrang = (int)dataRow["TinhTrang"];
+        }
+        public TableDTO(DataRow dataRow, int q )
+        {
+            int SoBan = (int)dataRow["ID"];
+            iMaBan = SoBan + "";
+
             this.ISoGhe = (int)dataRow["SoGhe"];
             this.ITrangThai = (int)dataRow["TrangThai"];
             this.iTinhTrang = (int)dataRow["TinhTrang"];

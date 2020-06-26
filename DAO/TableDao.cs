@@ -11,7 +11,13 @@ namespace DAO
     public class TableDao
     {
         private static TableDao instance;
+        int ChangeMaban(string maBan)
+        {
+            string ma = maBan.Substring(3);
 
+            int soBan = Convert.ToInt32(ma);
+            return soBan;
+        }
         public static TableDao Instance
         {
             get
@@ -51,12 +57,13 @@ namespace DAO
         }
         public List<TableDTO> LoadListTableNull()
         {
-            string execGetBan = "select * from Ban where trangthai=1";
+            string execGetBan = "select * from Ban where trangthai=0";
             List<TableDTO> list = new List<TableDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery(execGetBan);
             foreach (DataRow row in data.Rows)
             {
-                TableDTO item = new TableDTO(row);
+              
+                TableDTO item = new TableDTO(row,1);
                 list.Add(item);
             }
             return list;
