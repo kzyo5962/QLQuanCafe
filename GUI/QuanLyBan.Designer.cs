@@ -30,10 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtgvQLBan = new System.Windows.Forms.DataGridView();
+            this.iMaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iSoGheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTrangThaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iTinhTrangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_Tiltle = new System.Windows.Forms.Label();
             this.cboTrangThai = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboTinhTrang = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -46,14 +53,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.tableDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboTinhTrang = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tableDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.iMaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iSoGheDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iTrangThaiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iTinhTrangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableDTOBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -80,6 +80,36 @@
             this.dtgvQLBan.Size = new System.Drawing.Size(565, 464);
             this.dtgvQLBan.TabIndex = 0;
             this.dtgvQLBan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLBan_CellClick);
+            // 
+            // iMaBanDataGridViewTextBoxColumn
+            // 
+            this.iMaBanDataGridViewTextBoxColumn.DataPropertyName = "IMaBan";
+            this.iMaBanDataGridViewTextBoxColumn.HeaderText = "Mã bàn";
+            this.iMaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iMaBanDataGridViewTextBoxColumn.Name = "iMaBanDataGridViewTextBoxColumn";
+            // 
+            // iSoGheDataGridViewTextBoxColumn
+            // 
+            this.iSoGheDataGridViewTextBoxColumn.DataPropertyName = "ISoGhe";
+            this.iSoGheDataGridViewTextBoxColumn.HeaderText = "Số ghế";
+            this.iSoGheDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iSoGheDataGridViewTextBoxColumn.Name = "iSoGheDataGridViewTextBoxColumn";
+            // 
+            // iTrangThaiDataGridViewTextBoxColumn
+            // 
+            this.iTrangThaiDataGridViewTextBoxColumn.DataPropertyName = "ITrangThai";
+            this.iTrangThaiDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
+            this.iTrangThaiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iTrangThaiDataGridViewTextBoxColumn.Name = "iTrangThaiDataGridViewTextBoxColumn";
+            this.iTrangThaiDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // iTinhTrangDataGridViewTextBoxColumn
+            // 
+            this.iTinhTrangDataGridViewTextBoxColumn.DataPropertyName = "ITinhTrang";
+            this.iTinhTrangDataGridViewTextBoxColumn.HeaderText = "Tình trạng";
+            this.iTinhTrangDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iTinhTrangDataGridViewTextBoxColumn.Name = "iTinhTrangDataGridViewTextBoxColumn";
+            this.iTinhTrangDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // tableDTOBindingSource1
             // 
@@ -127,6 +157,40 @@
             this.cboTrangThai.TabIndex = 13;
             this.cboTrangThai.TabStop = false;
             this.cboTrangThai.Text = "Thông tin bàn";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Đang phục vụ",
+            "Trống"});
+            this.comboBox2.Location = new System.Drawing.Point(203, 176);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(244, 37);
+            this.comboBox2.TabIndex = 11;
+            // 
+            // cboTinhTrang
+            // 
+            this.cboTinhTrang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboTinhTrang.FormattingEnabled = true;
+            this.cboTinhTrang.Items.AddRange(new object[] {
+            "Bàn hư",
+            "Có thể sử dụng"});
+            this.cboTinhTrang.Location = new System.Drawing.Point(203, 229);
+            this.cboTinhTrang.Name = "cboTinhTrang";
+            this.cboTinhTrang.Size = new System.Drawing.Size(244, 37);
+            this.cboTinhTrang.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(61, 237);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Tình trạng :";
             // 
             // btnXoa
             // 
@@ -211,7 +275,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(245, 95);
+            this.textBox1.Location = new System.Drawing.Point(283, 95);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(209, 22);
             this.textBox1.TabIndex = 15;
@@ -219,84 +283,20 @@
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btnTimKiem.Location = new System.Drawing.Point(468, 88);
+            this.btnTimKiem.Image = global::GUI.Properties.Resources.icons8_search_30;
+            this.btnTimKiem.Location = new System.Drawing.Point(498, 88);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(117, 36);
+            this.btnTimKiem.Size = new System.Drawing.Size(87, 37);
             this.btnTimKiem.TabIndex = 16;
-            this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
             // tableDTOBindingSource
             // 
             this.tableDTOBindingSource.DataSource = typeof(DTO.TableDTO);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 237);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Tình trạng :";
-            // 
-            // cboTinhTrang
-            // 
-            this.cboTinhTrang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboTinhTrang.FormattingEnabled = true;
-            this.cboTinhTrang.Items.AddRange(new object[] {
-            "Bàn hư",
-            "Có thể sử dụng"});
-            this.cboTinhTrang.Location = new System.Drawing.Point(203, 229);
-            this.cboTinhTrang.Name = "cboTinhTrang";
-            this.cboTinhTrang.Size = new System.Drawing.Size(244, 37);
-            this.cboTinhTrang.TabIndex = 10;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Đang phục vụ",
-            "Trống"});
-            this.comboBox2.Location = new System.Drawing.Point(203, 176);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(244, 37);
-            this.comboBox2.TabIndex = 11;
-            // 
             // tableDTOBindingSource2
             // 
             this.tableDTOBindingSource2.DataSource = typeof(DTO.TableDTO);
-            // 
-            // iMaBanDataGridViewTextBoxColumn
-            // 
-            this.iMaBanDataGridViewTextBoxColumn.DataPropertyName = "IMaBan";
-            this.iMaBanDataGridViewTextBoxColumn.HeaderText = "Mã bàn";
-            this.iMaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iMaBanDataGridViewTextBoxColumn.Name = "iMaBanDataGridViewTextBoxColumn";
-            // 
-            // iSoGheDataGridViewTextBoxColumn
-            // 
-            this.iSoGheDataGridViewTextBoxColumn.DataPropertyName = "ISoGhe";
-            this.iSoGheDataGridViewTextBoxColumn.HeaderText = "Số ghế";
-            this.iSoGheDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iSoGheDataGridViewTextBoxColumn.Name = "iSoGheDataGridViewTextBoxColumn";
-            // 
-            // iTrangThaiDataGridViewTextBoxColumn
-            // 
-            this.iTrangThaiDataGridViewTextBoxColumn.DataPropertyName = "ITrangThai";
-            this.iTrangThaiDataGridViewTextBoxColumn.HeaderText = "Trạng thái";
-            this.iTrangThaiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iTrangThaiDataGridViewTextBoxColumn.Name = "iTrangThaiDataGridViewTextBoxColumn";
-            this.iTrangThaiDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // iTinhTrangDataGridViewTextBoxColumn
-            // 
-            this.iTinhTrangDataGridViewTextBoxColumn.DataPropertyName = "ITinhTrang";
-            this.iTinhTrangDataGridViewTextBoxColumn.HeaderText = "Tình trạng";
-            this.iTinhTrangDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iTinhTrangDataGridViewTextBoxColumn.Name = "iTinhTrangDataGridViewTextBoxColumn";
-            this.iTinhTrangDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // QuanLyBan
             // 

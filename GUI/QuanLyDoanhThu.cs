@@ -31,9 +31,11 @@ namespace GUI
         {
             dgvSanPhamBanDuoc.DataSource = BUS.DoanhThuBUS.Instance.getSanPhamDaBan();
             dgvNguyenLieuTrongKho.DataSource = BUS.NguyenLieuBUS.Instance.listNguyenLieu();
-            txtTongQuyHienTai.Text = BUS.DoanhThuBUS.Instance.getTongDoanhThu();
-            txtDoanhThuThangNay.Text = BUS.DoanhThuBUS.Instance.getDoanhThuTheoThang();
-            
+            txtTongQuyHienTai.Text = BUS.DoanhThuBUS.Instance.getTongDoanhThu() + " " + "VNĐ";
+            txtDoanhThuThangNay.Text = BUS.DoanhThuBUS.Instance.getDoanhThuTheoThang()+ " " + "VNĐ";
+            txtDoanhThuHomNay.Text = BUS.DoanhThuBUS.Instance.getDoanhThuTheoNgay()+ " " + "VNĐ";
+            txtChi.Text = BUS.DoanhThuBUS.Instance.getChiHomNay()+ " " + "VNĐ";
+
         }
         
         

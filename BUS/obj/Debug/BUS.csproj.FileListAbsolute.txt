@@ -1,0 +1,16 @@
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\BUS.dll
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\BUS.pdb
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\DAO.dll
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\DTO.dll
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\EntityFramework.dll
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\DAO.pdb
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\DAO.dll.config
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\DTO.pdb
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\EntityFramework.xml
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\obj\Debug\BUS.dll
+D:\Desktop\GitDoAn\QLQuanCafe\BUS\obj\Debug\BUS.pdb

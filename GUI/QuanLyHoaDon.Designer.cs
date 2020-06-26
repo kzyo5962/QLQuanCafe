@@ -36,6 +36,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dtgvChiTietHD = new System.Windows.Forms.DataGridView();
+            this.tenMenuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.billInfoDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -48,22 +53,17 @@
             this.lbMaHD = new System.Windows.Forms.Label();
             this.lbThongTinHoaDon = new System.Windows.Forms.Label();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
-            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trangthai = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tenMenuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.billInfoDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayLapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiamGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trangthai = new System.Windows.Forms.DataGridViewButtonColumn();
             this.billDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.billInfoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.billInfoDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -71,8 +71,8 @@
             this.panel2.SuspendLayout();
             this.pannel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billInfoDTOBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.billInfoDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuDTOBindingSource)).BeginInit();
@@ -176,6 +176,38 @@
             this.dtgvChiTietHD.Size = new System.Drawing.Size(519, 282);
             this.dtgvChiTietHD.TabIndex = 58;
             this.dtgvChiTietHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // tenMenuDataGridViewTextBoxColumn
+            // 
+            this.tenMenuDataGridViewTextBoxColumn.DataPropertyName = "TenMenu";
+            this.tenMenuDataGridViewTextBoxColumn.HeaderText = "Tên món";
+            this.tenMenuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenMenuDataGridViewTextBoxColumn.Name = "tenMenuDataGridViewTextBoxColumn";
+            // 
+            // giaBanDataGridViewTextBoxColumn
+            // 
+            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "GiaBan";
+            this.giaBanDataGridViewTextBoxColumn.HeaderText = "Giá";
+            this.giaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
+            // 
+            // soLuongDataGridViewTextBoxColumn
+            // 
+            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
+            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SL";
+            this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
+            // 
+            // thanhTienDataGridViewTextBoxColumn
+            // 
+            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "ThanhTien";
+            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
+            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
+            // 
+            // billInfoDTOBindingSource2
+            // 
+            this.billInfoDTOBindingSource2.DataSource = typeof(DTO.BillInfoDTO);
             // 
             // textBox2
             // 
@@ -307,79 +339,6 @@
             this.dgvHoaDon.Size = new System.Drawing.Size(599, 558);
             this.dgvHoaDon.TabIndex = 27;
             // 
-            // GiamGia
-            // 
-            this.GiamGia.DataPropertyName = "ID";
-            this.GiamGia.HeaderText = "Giảm giá";
-            this.GiamGia.MinimumWidth = 6;
-            this.GiamGia.Name = "GiamGia";
-            // 
-            // trangthai
-            // 
-            this.trangthai.DataPropertyName = "ID";
-            this.trangthai.HeaderText = "Quản lý";
-            this.trangthai.MinimumWidth = 6;
-            this.trangthai.Name = "trangthai";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.Coral;
-            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTimKiem.Image = global::GUI.Properties.Resources.icons8_search_40;
-            this.btnTimKiem.Location = new System.Drawing.Point(515, 10);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(101, 56);
-            this.btnTimKiem.TabIndex = 26;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(261, 27);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(248, 22);
-            this.txtTimKiem.TabIndex = 25;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // tenMenuDataGridViewTextBoxColumn
-            // 
-            this.tenMenuDataGridViewTextBoxColumn.DataPropertyName = "TenMenu";
-            this.tenMenuDataGridViewTextBoxColumn.HeaderText = "Tên món";
-            this.tenMenuDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenMenuDataGridViewTextBoxColumn.Name = "tenMenuDataGridViewTextBoxColumn";
-            // 
-            // giaBanDataGridViewTextBoxColumn
-            // 
-            this.giaBanDataGridViewTextBoxColumn.DataPropertyName = "GiaBan";
-            this.giaBanDataGridViewTextBoxColumn.HeaderText = "Giá";
-            this.giaBanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.giaBanDataGridViewTextBoxColumn.Name = "giaBanDataGridViewTextBoxColumn";
-            // 
-            // soLuongDataGridViewTextBoxColumn
-            // 
-            this.soLuongDataGridViewTextBoxColumn.DataPropertyName = "SoLuong";
-            this.soLuongDataGridViewTextBoxColumn.HeaderText = "SL";
-            this.soLuongDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.soLuongDataGridViewTextBoxColumn.Name = "soLuongDataGridViewTextBoxColumn";
-            // 
-            // thanhTienDataGridViewTextBoxColumn
-            // 
-            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "ThanhTien";
-            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
-            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
-            // 
-            // billInfoDTOBindingSource2
-            // 
-            this.billInfoDTOBindingSource2.DataSource = typeof(DTO.BillInfoDTO);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -408,6 +367,13 @@
             this.checkOutDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.checkOutDataGridViewTextBoxColumn.Name = "checkOutDataGridViewTextBoxColumn";
             // 
+            // GiamGia
+            // 
+            this.GiamGia.DataPropertyName = "ID";
+            this.GiamGia.HeaderText = "Giảm giá";
+            this.GiamGia.MinimumWidth = 6;
+            this.GiamGia.Name = "GiamGia";
+            // 
             // maNVDataGridViewTextBoxColumn
             // 
             this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
@@ -415,9 +381,43 @@
             this.maNVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
             // 
+            // trangthai
+            // 
+            this.trangthai.DataPropertyName = "ID";
+            this.trangthai.HeaderText = "Quản lý";
+            this.trangthai.MinimumWidth = 6;
+            this.trangthai.Name = "trangthai";
+            // 
             // billDTOBindingSource
             // 
             this.billDTOBindingSource.DataSource = typeof(DTO.BillDTO);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.PapayaWhip;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTimKiem.Image = global::GUI.Properties.Resources.icons8_search_30;
+            this.btnTimKiem.Location = new System.Drawing.Point(515, 19);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(89, 39);
+            this.btnTimKiem.TabIndex = 26;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(261, 27);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(248, 22);
+            this.txtTimKiem.TabIndex = 25;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // billInfoDTOBindingSource
             // 
@@ -447,8 +447,8 @@
             this.pannel.ResumeLayout(false);
             this.pannel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChiTietHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billInfoDTOBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.billInfoDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuDTOBindingSource)).EndInit();

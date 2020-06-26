@@ -47,11 +47,7 @@
             this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnThemNV = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +56,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThemNV = new System.Windows.Forms.Button();
             this.pic = new System.Windows.Forms.PictureBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -260,18 +260,6 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::GUI.Properties.Resources.icons8_update_left_rotation_50;
-            this.button1.Location = new System.Drawing.Point(993, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 58);
-            this.button1.TabIndex = 65;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(9, 0);
@@ -280,41 +268,6 @@
             this.button2.TabIndex = 64;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
-            this.btnXoa.Location = new System.Drawing.Point(812, 422);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(68, 56);
-            this.btnXoa.TabIndex = 63;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::GUI.Properties.Resources.icons8_save_64;
-            this.btnLuu.Location = new System.Drawing.Point(900, 420);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(74, 58);
-            this.btnLuu.TabIndex = 62;
-            this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnThemNV
-            // 
-            this.btnThemNV.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNV.Image = global::GUI.Properties.Resources.icons8_add_64;
-            this.btnThemNV.Location = new System.Drawing.Point(714, 422);
-            this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.Size = new System.Drawing.Size(78, 56);
-            this.btnThemNV.TabIndex = 59;
-            this.btnThemNV.UseVisualStyleBackColor = false;
-            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // panel3
             // 
@@ -412,6 +365,53 @@
             this.label2.TabIndex = 57;
             this.label2.Text = "Mã NV:";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::GUI.Properties.Resources.icons8_update_left_rotation_50;
+            this.button1.Location = new System.Drawing.Point(993, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 58);
+            this.button1.TabIndex = 65;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
+            this.btnXoa.Location = new System.Drawing.Point(812, 422);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(68, 56);
+            this.btnXoa.TabIndex = 63;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::GUI.Properties.Resources.icons8_save_64;
+            this.btnLuu.Location = new System.Drawing.Point(900, 420);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(74, 58);
+            this.btnLuu.TabIndex = 62;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThemNV
+            // 
+            this.btnThemNV.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNV.Image = global::GUI.Properties.Resources.icons8_add_64;
+            this.btnThemNV.Location = new System.Drawing.Point(714, 422);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.Size = new System.Drawing.Size(78, 56);
+            this.btnThemNV.TabIndex = 59;
+            this.btnThemNV.UseVisualStyleBackColor = false;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
+            // 
             // pic
             // 
             this.pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -429,7 +429,7 @@
             this.btn_TimKiem.BackColor = System.Drawing.Color.MistyRose;
             this.btn_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TimKiem.Image = global::GUI.Properties.Resources.icons8_search_35;
+            this.btn_TimKiem.Image = global::GUI.Properties.Resources.icons8_search_30;
             this.btn_TimKiem.Location = new System.Drawing.Point(485, 29);
             this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_TimKiem.Name = "btn_TimKiem";

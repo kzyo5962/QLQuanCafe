@@ -46,13 +46,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dgv_NguyenLieu = new System.Windows.Forms.DataGridView();
-            this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.txt_TimKiem = new System.Windows.Forms.TextBox();
-            this.nguyenLieuDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tenNL1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dVT1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGia1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLTon1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nguyenLieuDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_TimKiem = new System.Windows.Forms.Button();
+            this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -238,7 +238,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(104, 17);
+            this.label5.Location = new System.Drawing.Point(49, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(309, 32);
             this.label5.TabIndex = 21;
@@ -248,7 +248,7 @@
             // 
             this.dgv_NguyenLieu.AutoGenerateColumns = false;
             this.dgv_NguyenLieu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_NguyenLieu.BackgroundColor = System.Drawing.Color.Moccasin;
+            this.dgv_NguyenLieu.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_NguyenLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_NguyenLieu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tenNL1DataGridViewTextBoxColumn,
@@ -265,32 +265,6 @@
             this.dgv_NguyenLieu.Size = new System.Drawing.Size(627, 464);
             this.dgv_NguyenLieu.TabIndex = 10;
             this.dgv_NguyenLieu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_NguyenLieu_CellClick);
-            // 
-            // btn_TimKiem
-            // 
-            this.btn_TimKiem.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_TimKiem.Image = global::GUI.Properties.Resources.icons8_search_40;
-            this.btn_TimKiem.Location = new System.Drawing.Point(544, 18);
-            this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(101, 45);
-            this.btn_TimKiem.TabIndex = 9;
-            this.btn_TimKiem.UseVisualStyleBackColor = false;
-            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
-            // 
-            // txt_TimKiem
-            // 
-            this.txt_TimKiem.Location = new System.Drawing.Point(374, 30);
-            this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.Size = new System.Drawing.Size(164, 22);
-            this.txt_TimKiem.TabIndex = 8;
-            // 
-            // nguyenLieuDTOBindingSource
-            // 
-            this.nguyenLieuDTOBindingSource.DataSource = typeof(DTO.NguyenLieuDTO);
             // 
             // tenNL1DataGridViewTextBoxColumn
             // 
@@ -322,6 +296,32 @@
             this.sLTon1DataGridViewTextBoxColumn.HeaderText = "Số lượng tồn";
             this.sLTon1DataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sLTon1DataGridViewTextBoxColumn.Name = "sLTon1DataGridViewTextBoxColumn";
+            // 
+            // nguyenLieuDTOBindingSource
+            // 
+            this.nguyenLieuDTOBindingSource.DataSource = typeof(DTO.NguyenLieuDTO);
+            // 
+            // btn_TimKiem
+            // 
+            this.btn_TimKiem.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_TimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TimKiem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_TimKiem.Image = global::GUI.Properties.Resources.icons8_search_30;
+            this.btn_TimKiem.Location = new System.Drawing.Point(544, 21);
+            this.btn_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_TimKiem.Name = "btn_TimKiem";
+            this.btn_TimKiem.Size = new System.Drawing.Size(87, 43);
+            this.btn_TimKiem.TabIndex = 9;
+            this.btn_TimKiem.UseVisualStyleBackColor = false;
+            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
+            // 
+            // txt_TimKiem
+            // 
+            this.txt_TimKiem.Location = new System.Drawing.Point(374, 30);
+            this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_TimKiem.Name = "txt_TimKiem";
+            this.txt_TimKiem.Size = new System.Drawing.Size(164, 22);
+            this.txt_TimKiem.TabIndex = 8;
             // 
             // QuanLyNguyenLieu
             // 

@@ -42,5 +42,13 @@ namespace BUS
         {
             return DAO.DoanhThuDAO.Instance.getDoanhThuTheoThang();
         }
+        public string getDoanhThuTheoNgay()
+        {
+            return DAO.DoanhThuDAO.Instance.getDoanhThuTheoNgay();
+        }
+        public string getChiHomNay()
+        {
+            return DAO.DoanhThuDAO.Instance.getChiHomNay();
+        }
     }
 }

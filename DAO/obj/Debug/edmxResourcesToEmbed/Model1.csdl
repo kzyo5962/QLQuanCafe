@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyQuanCaFeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SoGhe" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.fk_maban" FromRole="BAN" ToRole="HOADON" />
+    <Property Name="TinhTrang" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DONDATHANG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayLap" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MaNCC" Type="Int32" Nullable="false" />
+    <Property Name="Manv" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.fk_mancc" FromRole="DONDATHANG" ToRole="NHACUNGCAP" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manv_dondh" FromRole="DONDATHANG" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="trangthai" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="MaBan" Type="Int32" Nullable="false" />
+    <Property Name="CheckOut" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BAN" Relationship="Self.fk_maban" FromRole="HOADON" ToRole="BAN" />
+    <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.fk_mahd_cthd" FromRole="HOADON" ToRole="CHITIETHOADON" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manv_hd" FromRole="HOADON" ToRole="NHANVIEN" />
+  </EntityType>
+  <EntityType Name="LOAIMENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoai" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MENUs" Relationship="Self.fk_maloai" FromRole="LOAIMENU" ToRole="MENU" />
+  </EntityType>
+  <EntityType Name="LOAITK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quyen" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TAIKHOANs" Relationship="Self.fk_maloaitk" FromRole="LOAITK" ToRole="TAIKHOAN" />
+  </EntityType>
+  <EntityType Name="MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenMenu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MaLoai" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LOAIMENU" Relationship="Self.fk_maloai" FromRole="MENU" ToRole="LOAIMENU" />
+    <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.fk_mamenu_cthd" FromRole="MENU" ToRole="CHITIETHOADON" />
+  </EntityType>
+  <EntityType Name="NGUYENLIEU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DVT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Double" Nullable="false" />
+    <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_manl" FromRole="NGUYENLIEU" ToRole="CHITIETPHIEUNHAP" />
+    <NavigationProperty Name="NHACUNGCAPs" Relationship="Self.fk_manl_nguyenlieu" FromRole="NGUYENLIEU" ToRole="NHACUNGCAP" />
+    <Property Name="TrangThai" Type="Int32" />
+    <Property Name="SLTon" Type="Double" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNCC" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Soluong" Type="Int32" />
+    <Property Name="MaNL" Type="Int32" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="Self.fk_mancc" FromRole="NHACUNGCAP" ToRole="DONDATHANG" />
+    <NavigationProperty Name="NGUYENLIEU" Relationship="Self.fk_manl_nguyenlieu" FromRole="NHACUNGCAP" ToRole="NGUYENLIEU" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNV" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NgayVaoLam" Type="DateTime" Precision="3" />
+    <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="diachi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DONDATHANGs" Relationship="Self.fk_manv_dondh" FromRole="NHANVIEN" ToRole="DONDATHANG" />
+    <NavigationProperty Name="HOADONs" Relationship="Self.fk_manv_hd" FromRole="NHANVIEN" ToRole="HOADON" />
+    <NavigationProperty Name="PHIEUNHAPs" Relationship="Self.fk_manV" FromRole="NHANVIEN" ToRole="PHIEUNHAP" />
+    <NavigationProperty Name="TAIKHOANs" Relationship="Self.fk_manv_tk" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
+    <Property Name="trangthai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PHIEUNHAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manV" FromRole="PHIEUNHAP" ToRole="NHANVIEN" />
+    <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_maphieunhap" FromRole="PHIEUNHAP" ToRole="CHITIETPHIEUNHAP" />
+    <Property Name="TrangThai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaLoai" Type="Int32" Nullable="false" />
+    <Property Name="MaNV" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LOAITK" Relationship="Self.fk_maloaitk" FromRole="TAIKHOAN" ToRole="LOAITK" />
+    <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manv_tk" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
+    <Property Name="trangthai" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CHITIETHOADON">
+    <Key>
+      <PropertyRef Name="MaHD" />
+      <PropertyRef Name="MaMenu" />
+      <PropertyRef Name="SoLuong" />
+    </Key>
+    <Property Name="MaHD" Type="Int32" Nullable="false" />
+    <Property Name="MaMenu" Type="Int32" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="GiamGia" Type="Double" />
+    <Property Name="GiaBan" Type="Double" />
+    <NavigationProperty Name="HOADON" Relationship="Self.fk_mahd_cthd" FromRole="CHITIETHOADON" ToRole="HOADON" />
+    <NavigationProperty Name="MENU" Relationship="Self.fk_mamenu_cthd" FromRole="CHITIETHOADON" ToRole="MENU" />
+  </EntityType>
+  <EntityType Name="CHITIETPHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MaNL" />
+      <PropertyRef Name="MaPhieuNhap" />
+      <PropertyRef Name="SoLuong" />
+    </Key>
+    <Property Name="MaNL" Type="Int32" Nullable="false" />
+    <Property Name="MaPhieuNhap" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="NGUYENLIEU" Relationship="Self.fk_manl" FromRole="CHITIETPHIEUNHAP" ToRole="NGUYENLIEU" />
+    <NavigationProperty Name="PHIEUNHAP" Relationship="Self.fk_maphieunhap" FromRole="CHITIETPHIEUNHAP" ToRole="PHIEUNHAP" />
+    <Property Name="DonGia" Type="Double" />
+    <Property Name="DVT" Type="Int32" />
+  </EntityType>
+  <Association Name="fk_maban">
+    <End Role="BAN" Type="Self.BAN" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MaBan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mancc">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_manv_dondh">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="DONDATHANG" Type="Self.DONDATHANG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DONDATHANG">
+        <PropertyRef Name="Manv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mahd_cthd">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_manv_hd">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_maloai">
+    <End Role="LOAIMENU" Type="Self.LOAIMENU" Multiplicity="1" />
+    <End Role="MENU" Type="Self.MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIMENU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MENU">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_maloaitk">
+    <End Role="LOAITK" Type="Self.LOAITK" Multiplicity="1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAITK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mamenu_cthd">
+    <End Role="MENU" Type="Self.MENU" Multiplicity="1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MENU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="MaMenu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_manl">
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+    <End Role="CHITIETPHIEUNHAP" Type="Self.CHITIETPHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUYENLIEU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETPHIEUNHAP">
+        <PropertyRef Name="MaNL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_manl_nguyenlieu">
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="0..1" />
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUYENLIEU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="NHACUNGCAP">
+        <PropertyRef Name="MaNL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_manV">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PHIEUNHAP">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_manv_tk">
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHANVIEN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_maphieunhap">
+    <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="1" />
+    <End Role="CHITIETPHIEUNHAP" Type="Self.CHITIETPHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUNHAP">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CHITIETPHIEUNHAP">
+        <PropertyRef Name="MaPhieuNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuanLyQuanCaFeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BANs" EntityType="Self.BAN" />
+    <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
+    <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+    <EntitySet Name="LOAIMENUs" EntityType="Self.LOAIMENU" />
+    <EntitySet Name="LOAITKs" EntityType="Self.LOAITK" />
+    <EntitySet Name="MENUs" EntityType="Self.MENU" />
+    <EntitySet Name="NGUYENLIEUx" EntityType="Self.NGUYENLIEU" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="PHIEUNHAPs" EntityType="Self.PHIEUNHAP" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
+    <EntitySet Name="CHITIETHOADONs" EntityType="Self.CHITIETHOADON" />
+    <EntitySet Name="CHITIETPHIEUNHAPs" EntityType="Self.CHITIETPHIEUNHAP" />
+    <AssociationSet Name="fk_maban" Association="Self.fk_maban">
+      <End Role="BAN" EntitySet="BANs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mancc" Association="Self.fk_mancc">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_manv_dondh" Association="Self.fk_manv_dondh">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="DONDATHANG" EntitySet="DONDATHANGs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mahd_cthd" Association="Self.fk_mahd_cthd">
+      <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_manv_hd" Association="Self.fk_manv_hd">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="HOADON" EntitySet="HOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_maloai" Association="Self.fk_maloai">
+      <End Role="LOAIMENU" EntitySet="LOAIMENUs" />
+      <End Role="MENU" EntitySet="MENUs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_maloaitk" Association="Self.fk_maloaitk">
+      <End Role="LOAITK" EntitySet="LOAITKs" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mamenu_cthd" Association="Self.fk_mamenu_cthd">
+      <End Role="MENU" EntitySet="MENUs" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_manl" Association="Self.fk_manl">
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+      <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_manl_nguyenlieu" Association="Self.fk_manl_nguyenlieu">
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_manV" Association="Self.fk_manV">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_manv_tk" Association="Self.fk_manv_tk">
+      <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_maphieunhap" Association="Self.fk_maphieunhap">
+      <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+      <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
+    </AssociationSet>
+    <FunctionImport Name="GetBill" ReturnType="Collection(QuanLyQuanCaFeModel.GetBill_Result)">
+      <Parameter Name="maBan" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="inserBill">
+      <Parameter Name="idTable" Mode="In" Type="Int32" />
+      <Parameter Name="maNv" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QuanLyQuanCaFeModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QuanLyQuanCaFeModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="GetBill_Result">
+    <Property Type="String" Name="TenMenu" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="GiaBan" Nullable="true" />
+    <Property Type="Int32" Name="SoLuong" Nullable="true" />
+    <Property Type="Double" Name="ThanhTien" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

@@ -17,10 +17,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void quảnLýHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            quanLyHoaDon1.BringToFront();
-        }
+     
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -36,7 +33,7 @@ namespace GUI
 
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            quanLyHoaDon1.BringToFront();
+            quanLyNhanVien1.BringToFront();
         }
 
         private void quảnLýBànToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,6 +47,11 @@ namespace GUI
         }
 
         private void quanLyBan1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanLyDoanhThu2_Load(object sender, EventArgs e)
         {
 
         }

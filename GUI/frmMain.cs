@@ -29,15 +29,15 @@ namespace GUI
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
-            panHover.Top = btnTrangChu.Top;
-            panHover.Height = btnTrangChu.Height;
+            //panHover.Top = btnTrangChu.Top;
+            //panHover.Height = btnTrangChu.Height;
         }
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
 
-            panHover.Top = btnBanHang.Top;
-            panHover.Height = btnBanHang.Height;
+            //panHover.Top = btnBanHang.Top;
+            //panHover.Height = btnBanHang.Height;
             banHang1.BringToFront();
 
         }
@@ -45,8 +45,8 @@ namespace GUI
         private void btnQuanLy_Click(object sender, EventArgs e)
         {
 
-            panHover.Top = btnQuanLy.Top;
-            panHover.Height = btnQuanLy.Height;
+            //panHover.Top = btnQuanLy.Top;
+            //panHover.Height = btnQuanLy.Height;
             quanLy1.BringToFront();
 
         }
@@ -54,15 +54,15 @@ namespace GUI
         private void btnThongKe_Click(object sender, EventArgs e)
         {
 
-            panHover.Top = btnThongKe.Top;
-            panHover.Height = btnThongKe.Height;
+            //panHover.Top = btnThongKe.Top;
+            //panHover.Height = btnThongKe.Height;
         }
 
         private void btnInfomation_Click(object sender, EventArgs e)
         {
 
-            panHover.Top = btnInfomation.Top;
-            panHover.Height = btnInfomation.Height;
+            //panHover.Top = btnInfomation.Top;
+            //panHover.Height = btnInfomation.Height;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -125,6 +125,11 @@ namespace GUI
             {
                 lblGio.Text = gio + "" + ":";
             }
+        }
+
+        private void panTop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

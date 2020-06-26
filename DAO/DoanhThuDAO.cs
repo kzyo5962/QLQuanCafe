@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DTO;
 using System.Data.Entity.Core.Metadata.Edm;
+using System.Runtime.Remoting.Messaging;
 
 namespace DAO
 {
@@ -60,14 +61,13 @@ namespace DAO
         public string getDoanhThuTheoNgay()
         {
             string result ="";
-            string query = "";
-            return result;
-        }
+            string query = "SELECT SUM(SoLuong*GiaBan-(SoLuong*GiaBan*GiamGia)) tongtien FROM CHITIETHOADON WHERE DAY(NgayLap)= DAY(getdate())";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow dataRow in data.Rows)
+            {
+                result = dataRow["tongtien"].ToString();
+            }
 
-        //Lấy doanh thu theo tuần
-        public string getDoanhThuTheoTuan()
-        {
-            string result ="";
             return result;
         }
 
@@ -83,6 +83,19 @@ namespace DAO
                 Result = dataRow["tongtien"].ToString();
             }
             return Result;
+        }
+
+        //Lấy doanh thu được chi hôm nay
+        public string getChiHomNay()
+        {
+            string result = "";
+            string query = "SELECT SUM(SoLuong*DonGia) tongtien FROM CHITIETPHIEUNHAP WHERE DAY(NgayLap)= DAY(getdate())";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow dataRow in data.Rows)
+            {
+                result = dataRow["tongtien"].ToString();
+            }    
+            return result;
         }
     }
 }
