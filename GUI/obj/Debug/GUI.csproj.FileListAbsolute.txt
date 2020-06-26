@@ -135,6 +135,7 @@ C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CoreCom
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\GUI\obj\Debug\GUI.exe
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\GUI\obj\Debug\GUI.pdb
+<<<<<<< HEAD
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\bin\Debug\GUI.exe.config
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\bin\Debug\GUI.exe
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\bin\Debug\GUI.pdb
@@ -215,3 +216,64 @@ C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CoreCom
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\obj\Debug\GUI.exe
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\GUI\obj\Debug\GUI.pdb
+=======
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\GUI.exe.config
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\GUI.exe
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\GUI.pdb
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\BUS.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\DTO.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\EntityFramework.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.DataVisualization.DLL
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.Design.DLL
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.WebDesign.DLL
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\DAO.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\EnvDTE.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\EnvDTE80.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\stdole.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\Microsoft.MSXML.dll
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\BUS.pdb
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\DTO.pdb
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\EntityFramework.xml
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\DAO.pdb
+D:\Desktop\Doan\QLQuanCafe\GUI\bin\Debug\DAO.dll.config
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.csprojAssemblyReference.cache
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.exe.config
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.BanHang.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.Form1.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.frmDangNhap.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.frmHoaDon.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.frmMain.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.frmThongTinTaiKhoan.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.cobMaPhieuNhap.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLy.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyBan.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyDoanhThu.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyHoaDon.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyNhanVien.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyNguyenLieu.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.uctThongKe.resources
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\RdlCompile.cache
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\RdlCompile.compiled
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.csproj.CopyComplete
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.exe
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.pdb
+D:\Desktop\Doan\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyTaiKhoan.resources
+D:\Desktop\GitDoAn\QLQuanCafe\GUI\obj\Debug\GUI.QuanLyTaiKhoan.resources
+>>>>>>> a9cafd16bdd8a09f1c6cdceb5fac0d9904c5a8a6

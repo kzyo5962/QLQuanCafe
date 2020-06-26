@@ -9,9 +9,17 @@ C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DTO\obj\Debug\DTO.csprojAssembly
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DTO\obj\Debug\DTO.dll
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DTO\obj\Debug\DTO.pdb
+<<<<<<< HEAD
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\DTO\bin\Debug\DTO.dll
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\DTO\bin\Debug\DTO.pdb
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\DTO\obj\Debug\DTO.dll
 C:\Users\DELL\Desktop\New folder (5)\QLQuanCafe\DTO\obj\Debug\DTO.pdb
+=======
+D:\Desktop\Doan\QLQuanCafe\DTO\bin\Debug\DTO.dll
+D:\Desktop\Doan\QLQuanCafe\DTO\bin\Debug\DTO.pdb
+D:\Desktop\Doan\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Desktop\Doan\QLQuanCafe\DTO\obj\Debug\DTO.dll
+D:\Desktop\Doan\QLQuanCafe\DTO\obj\Debug\DTO.pdb
+>>>>>>> a9cafd16bdd8a09f1c6cdceb5fac0d9904c5a8a6
