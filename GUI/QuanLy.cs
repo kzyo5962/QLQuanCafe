@@ -55,5 +55,10 @@ namespace GUI
         {
 
         }
+
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            quanLyTaiKhoan1.BringToFront();
+        }
     }
 }

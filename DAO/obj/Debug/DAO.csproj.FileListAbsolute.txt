@@ -26,3 +26,17 @@ C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CoreCom
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DAO\obj\Debug\DAO.dll
 C:\Users\DELL\Desktop\New folder (4)\QLQuanCafe\DAO\obj\Debug\DAO.pdb
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\DAO.dll.config
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\DAO.dll
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\DAO.pdb
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\DTO.dll
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\EntityFramework.dll
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\DTO.pdb
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\EntityFramework.xml
+D:\Desktop\Doan\QLQuanCafe\DAO\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desktop\Doan\QLQuanCafe\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+D:\Desktop\Doan\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\Desktop\Doan\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\Desktop\Doan\QLQuanCafe\DAO\obj\Debug\DAO.dll
+D:\Desktop\Doan\QLQuanCafe\DAO\obj\Debug\DAO.pdb

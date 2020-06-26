@@ -167,6 +167,12 @@
     <Compile Include="QuanLyNguyenLieu.Designer.cs">
       <DependentUpon>QuanLyNguyenLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     <EmbeddedResource Include="QuanLyNguyenLieu.resx">
       <DependentUpon>QuanLyNguyenLieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyTaiKhoan.resx">
+      <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc" />
     <EmbeddedResource Include="uctThongKe.resx">
       <DependentUpon>uctThongKe.cs</DependentUpon>
@@ -235,6 +244,7 @@
     <None Include="Properties\DataSources\DTO.NhanVienDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TableDTO.datasource" />
     <None Include="Properties\DataSources\DTO.TaiKhoan.datasource" />
+    <None Include="Properties\DataSources\DTO.TaiKhoanDTO1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
