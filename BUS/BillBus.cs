@@ -42,6 +42,10 @@ namespace BUS
         {
             BillDAO.Instance.InsertBill(idTable, idNhanVien);
         }
-     
+        public void DoiBan(int idCu, int idMoi)
+        {
+            BillDAO.Instance.DoiBan(idCu, idMoi);
+        }
+
     }
 }

@@ -55,5 +55,11 @@ namespace DAO
             //    return 1;
             //}
         }
+        public void DoiBan(int idCu, int idMoi)
+        {
+
+            string execChuyenBan = "exec ChuyenBan " + idCu + " , " + idMoi;
+            int exec = DataProvider.Instance.ExecuteNonQuery(execChuyenBan);
+        }
     }
 }
