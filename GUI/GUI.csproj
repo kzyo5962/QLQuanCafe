@@ -173,6 +173,12 @@
     <Compile Include="QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +244,9 @@
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc" />
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uctHoaDon.resx">
       <DependentUpon>uctHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-export-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trangchu.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
