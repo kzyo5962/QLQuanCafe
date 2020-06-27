@@ -131,9 +131,12 @@ namespace GUI
                             int maHD = BillBus.Instance.GetMaxIDBill();
                             BillInfoBus.Instance.InsertBillInfo(maHD, idMenu, soLuong, giamGia, gia);
                             exec = TableBus.Instance.UpdateStatusBan(maBanClick, 1);
+                            
+                            
                             fPannelBan.Controls.Clear();
+
                             LoadBan();
-                            drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
+                        
 
                         }
                         else
@@ -145,6 +148,7 @@ namespace GUI
                     {
                         BillInfoBus.Instance.InsertBillInfo(idBill, idMenu, soLuong, giamGia, 15000);
                     }
+                    drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
                     cboBanTrong.DataSource = TableBus.Instance.LoadListTableNull();
                 }
                 else
