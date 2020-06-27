@@ -7,14 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace GUI
 {
     public partial class frmMain : Form
     {
+        public TaiKhoan TaiKhoan1 = new TaiKhoan();
         public void funData(TextBox txtUser)
         {
             lblLoaiTaiKhoan.Text = txtUser.Text;
+        }
+        public void funDataTk(TaiKhoan tkUser)
+        {
+            TaiKhoan1 = tkUser;
+            lblLoaiTaiKhoan.Text = tkUser.UserName;
         }
         public frmMain()
         {
@@ -24,8 +31,20 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            banHang1.maNV = TaiKhoan1.MaNV;
+            if(TaiKhoan1.MaLoai==2)
+            {
+                btnQuanLy.Enabled = false;
+                btnThongKe.Enabled = false;
+            }
+            else if(TaiKhoan1.MaLoai==3)
+            {
+                btnThongKe.Enabled = false;
+            }
 
         }
+        
+       
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
@@ -67,7 +86,11 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            this.Close();
+            frmDangNhap frm = new frmDangNhap();
 
+            frm.ShowDialog();
         }
 
         private void timeBlock_Tick(object sender, EventArgs e)
@@ -130,6 +153,17 @@ namespace GUI
         private void panTop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void banHang1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmDangNhap frm = new frmDangNhap();
+            frm.Show();
         }
     }
 }

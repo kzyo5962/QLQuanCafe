@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using DTO;
+using System.Data.Entity;
+
 namespace DAO
 {
     public class TaiKhoanDAO
@@ -21,7 +23,20 @@ namespace DAO
             }
             private set { TaiKhoanDAO.Intance = value; }
         }
-
+        public TaiKhoan ChonTaiKhoanDangNhap(string user)
+        {
+            TaiKhoan tk = new TaiKhoan();
+            tk = DataProvider.Instance._qlqcfEF.TAIKHOANs.Where(u => u.username == user).Select(v =>
+                new TaiKhoan
+                {
+                    Id=v.ID,
+                    MaNV=v.MaNV,
+                    MaLoai=v.MaLoai,
+                    Pass=v.pass,
+                    UserName=v.username
+                }).FirstOrDefault <TaiKhoan>();
+            return tk;
+        }
         public List<TaiKhoanDTO> GetListTaiKhoan()
         {
             List<TaiKhoanDTO> list = new List<TaiKhoanDTO>();

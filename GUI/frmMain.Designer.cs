@@ -149,7 +149,7 @@
             this.panTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panTop.Location = new System.Drawing.Point(156, 0);
             this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(872, 58);
+            this.panTop.Size = new System.Drawing.Size(1048, 58);
             this.panTop.TabIndex = 2;
             this.panTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panTop_Paint);
             // 
@@ -255,16 +255,18 @@
             // 
             this.banHang1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.banHang1.Location = new System.Drawing.Point(0, 0);
-            this.banHang1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.banHang1.maNV = 0;
+            this.banHang1.Margin = new System.Windows.Forms.Padding(4);
             this.banHang1.Name = "banHang1";
             this.banHang1.Size = new System.Drawing.Size(972, 591);
             this.banHang1.TabIndex = 1;
+            this.banHang1.Load += new System.EventHandler(this.banHang1_Load);
             // 
             // quanLy1
             // 
             this.quanLy1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quanLy1.Location = new System.Drawing.Point(0, 0);
-            this.quanLy1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.quanLy1.Margin = new System.Windows.Forms.Padding(4);
             this.quanLy1.Name = "quanLy1";
             this.quanLy1.Size = new System.Drawing.Size(972, 591);
             this.quanLy1.TabIndex = 0;
@@ -277,13 +279,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1204, 609);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panTop);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Quản Lí Cửa Hàng Cafe";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             this.panTop.ResumeLayout(false);

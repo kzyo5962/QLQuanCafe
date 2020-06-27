@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DTO;
 namespace GUI
 {
     public partial class frmDangNhap : Form
     {
         public delegate void delPassUser(TextBox text);
+        public delegate void delPasssTaiKhoan(TaiKhoan tk);
         public frmDangNhap()
         {
             InitializeComponent();
@@ -24,12 +26,17 @@ namespace GUI
            //     {
                     string userName = txtName.Text;
                     string passWord = txtPassWord.Text;
-                    if(DangNhapBUS.Instance.Login(userName,passWord))
+            TaiKhoan tKhoan = new TaiKhoan();
+            if (DangNhapBUS.Instance.Login(userName,passWord))
                     {
                     frmMain main = new frmMain();
                     this.Hide();
-                    delPassUser del = new delPassUser(main.funData);
-                    del(this.txtName);
+                //Lay Ra Tai Khoan
+                    tKhoan = TaiKhoanBUS.Intance.ChonTaiKhoanDangNhap(userName);
+                    delPasssTaiKhoan delTk=new delPasssTaiKhoan(main.funDataTk);
+                delTk(tKhoan);
+                    //delPassUser del = new delPassUser(main.funData);
+                    //del(this.txtName);
                     main.ShowDialog();
                     }
                     else

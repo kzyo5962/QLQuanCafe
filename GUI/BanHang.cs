@@ -17,7 +17,8 @@ namespace GUI
         static int height = 80;
         static float tongTien = 0;
         static int maBanClick = -1;
-        static int maNV = 1;
+         public   int maNV { get; set; }
+        
         Button myButtonClick = new Button();
         public BanHang()
         {
@@ -56,6 +57,7 @@ namespace GUI
                 btn.Text = "Ban " + MaBan + "";
                 btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
                 fPannelBan.Controls.Add(btn);
+             
             }
         }
         int  ChangeMaban(string maBan)
@@ -90,50 +92,107 @@ namespace GUI
                 drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
                 txtTongTien.Text = tongTien + "";
             }
-       
+            myButtonClick = (sender as Button);
+
+
 
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //lau ra bill hien tai
-            if(numSoLuong.Value>0)
+            if(maBanClick>0)
             {
-                int idBill = BillBus.Instance.GetUncheckBillIDByTableID(maBanClick);
-                int idMenu = (cboMenu.SelectedItem as MenuDTO).ID;
-                float giamGia = (float)numGiamGia.Value;
-                int soLuong = (int)numSoLuong.Value;
-                int exec;
-
-                if (idBill == -1)
+                //lau ra bill hien tai
+                if (numSoLuong.Value > 0)
                 {
-                    BillBus.Instance.InsertBill(maBanClick, maNV);
-                    int maHD = BillBus.Instance.GetMaxIDBill();
-                    BillInfoBus.Instance.InsertBillInfo(maHD, idMenu, soLuong, giamGia, 15000);
-                    exec = TableBus.Instance.UpdateStatusBan(maBanClick, 1);
-                    fPannelBan.Controls.Clear();
-                    LoadBan();
-                    drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
+                    int idBill = BillBus.Instance.GetUncheckBillIDByTableID(maBanClick);
+                    int idMenu = (cboMenu.SelectedItem as MenuDTO).ID;
+                    float giamGia = (float)numGiamGia.Value;
+                    int soLuong = (int)numSoLuong.Value;
+                    int gia = 0;
+
+                    int exec;
+
+                    if (idBill == -1)
+                    {
+                        try
+                        {
+                            gia = Convert.ToInt32(txtGia.Text);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Vui Lòng Nhập Lại Giá!", "Thông Báo");
+                        }
+
+                        if (gia > 0)
+                        {
+                            BillBus.Instance.InsertBill(maBanClick, maNV);
+                            int maHD = BillBus.Instance.GetMaxIDBill();
+                            BillInfoBus.Instance.InsertBillInfo(maHD, idMenu, soLuong, giamGia, gia);
+                            exec = TableBus.Instance.UpdateStatusBan(maBanClick, 1);
+                            fPannelBan.Controls.Clear();
+                            LoadBan();
+                            drvBillInfo.DataSource = BillInfoBus.Instance.getBillInfoByIDTable(maBanClick, ref tongTien);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui Lòng Nhập Lại Giá!", "Thông Báo");
+                        }
+                    }
+                    else
+                    {
+                        BillInfoBus.Instance.InsertBillInfo(idBill, idMenu, soLuong, giamGia, 15000);
+                    }
+                    cboBanTrong.DataSource = TableBus.Instance.LoadListTableNull();
                 }
                 else
                 {
-                    BillInfoBus.Instance.InsertBillInfo(idBill, idMenu, soLuong, giamGia, 15000);
+                    //Neu so luong la 0
+                    MessageBox.Show("Vui Lòng Nhập Số Lượng", "Thông Báo");
                 }
-                cboBanTrong.DataSource = TableBus.Instance.LoadListTableNull();
+
             }
             else
             {
-                //Neu so luong la 0
-                MessageBox.Show("Vui Lòng Nhập Số Lượng", "Thông Báo");
+                MessageBox.Show("Bạn Chưa Chọn Bàn Để Thanh Toán", "Thông Báo");
             }
+       
            
 
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                int idBill = BillBus.Instance.GetUncheckBillIDByTableID(maBanClick);
+                bool resultBill;
+                if (idBill == -1)
+                {
+                    MessageBox.Show("Vui lòng chọn bàn đang phục vụ", "Thông báo");
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Xác Nhận Thanh Toán!", "Xác Nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if(dialogResult==DialogResult.Yes)
+                    {
+                        resultBill = BillBus.Instance.UpdateBill(idBill);
+                        resultBill = TableBus.Instance.CapNhatBan(maBanClick, 0);
+                        LoadBan();
+                        uctHoaDon uctHd = new uctHoaDon();
+                        uctHd.BringToFront();
+                    }
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn 1 bàn đang phục vụ", "Thông báo");
+            }
+          
         }
 
         private void billInfoDTOBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -206,6 +265,22 @@ namespace GUI
         private void drvBillInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtGia_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtGia.Text, "  ^ [0-9]"))
+            {
+                txtGia.Text = "";
+            }
+        }
+
+        private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

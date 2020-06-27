@@ -46,6 +46,10 @@ namespace BUS
         {
             BillDAO.Instance.DoiBan(idCu, idMoi);
         }
+        public bool UpdateBill(int Mabill)
+        {
+            return BillDAO.Instance.UpdateBill(Mabill);
+        }
 
     }
 }

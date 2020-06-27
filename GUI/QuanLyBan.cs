@@ -26,8 +26,8 @@ namespace GUI
 
         private void QuanLyBan_Load_1(object sender, EventArgs e)
         {
-            //List<TableDTO> lstTable = TableBus.Instance.LoadListManageTable();
-            //dtgvQLBan.DataSource = lstTable;
+            List<TableDTO> lstTable = TableBus.Instance.LoadTable();
+            dtgvQLBan.DataSource = lstTable;
         }
 
         private void dtgvQLBan_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -46,6 +46,12 @@ namespace GUI
                 
                 
             }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            int soGhe = Convert.ToInt32(txtSoGhe.Text);
+           
         }
     }
 }

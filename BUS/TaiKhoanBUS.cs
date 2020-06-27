@@ -31,5 +31,9 @@ namespace BUS
         {
             return DAO.TaiKhoanDAO.Intance.AddTaiKhoan(username, pass, maloai);
         }
+        public TaiKhoan ChonTaiKhoanDangNhap(string user)
+        {
+            return TaiKhoanDAO.Intance.ChonTaiKhoanDangNhap(user);
+        }
     }
 }

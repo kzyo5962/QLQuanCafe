@@ -11,7 +11,7 @@ namespace DAO
     public class BillDAO
     {
         private static BillDAO instance;
-
+        private QuanLyQuanCaFeEntities _qlcfEf = new QuanLyQuanCaFeEntities();
 
         public static BillDAO Instance
         {
@@ -31,7 +31,7 @@ namespace DAO
         }
         public int GetUncheckBillIDByTableID(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM HoaDon WHERE MaBan = " + id + " AND trangthai = 1");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM HoaDon WHERE MaBan = " + id + " AND trangthai = 0");
 
             if (data.Rows.Count > 0)
             {
@@ -60,6 +60,25 @@ namespace DAO
 
             string execChuyenBan = "exec ChuyenBan " + idCu + " , " + idMoi;
             int exec = DataProvider.Instance.ExecuteNonQuery(execChuyenBan);
+        }
+        public bool UpdateBill(int Mabill)
+        {
+            try
+            {
+                HOADON bill = new HOADON();
+                bill = _qlcfEf.HOADONs.SingleOrDefault(u => u.ID==Mabill);
+                DateTime now=DateTime.Now;
+                bill.trangthai = 1;
+                bill.CheckOut = now;
+                _qlcfEf.SaveChanges();
+                return true;
+
+
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
     }
 }

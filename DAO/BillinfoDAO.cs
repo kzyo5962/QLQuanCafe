@@ -42,15 +42,6 @@ namespace DAO
             }
             return listBillInfo;
         }
-        public void InsertBillInfo(int maHD,int maMenu,int soLuong, float giamGia,float giaBan)
-        {
-            string sqlInsert = "exec insertBillInfo {0},{1},{2},{3},{4}";
-            string sqlData = string.Format(sqlInsert, maHD, maMenu, soLuong, giamGia, giaBan);
-          
-            DataProvider.Instance.ExecuteNonQuery(sqlData);
-        }
-
-
         public List<BillInfoDTO> getBillInfoByIDTable(int idTable)
         {
 
@@ -61,10 +52,20 @@ namespace DAO
             {
 
                 BillInfoDTO billInfo = new BillInfoDTO(dr);
-                
+          
                 listBillInfo.Add(billInfo);
             }
             return listBillInfo;
         }
+        public void InsertBillInfo(int maHD,int maMenu,int soLuong, float giamGia,float giaBan)
+        {
+            string sqlInsert = "exec insertBillInfo {0},{1},{2},{3},{4}";
+            string sqlData = string.Format(sqlInsert, maHD, maMenu, soLuong, giamGia, giaBan);
+          
+            DataProvider.Instance.ExecuteNonQuery(sqlData);
+        }
+
+
+      
     }
 }

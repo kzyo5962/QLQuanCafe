@@ -133,7 +133,7 @@
             this.lb_Tiltle.ForeColor = System.Drawing.Color.Black;
             this.lb_Tiltle.Location = new System.Drawing.Point(515, 13);
             this.lb_Tiltle.Name = "lb_Tiltle";
-            this.lb_Tiltle.Size = new System.Drawing.Size(173, 26);
+            this.lb_Tiltle.Size = new System.Drawing.Size(142, 22);
             this.lb_Tiltle.TabIndex = 0;
             this.lb_Tiltle.Text = "QUẢN LÝ BÀN";
             // 
@@ -161,25 +161,27 @@
             // comboBox2
             // 
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Đang phục vụ",
             "Trống"});
             this.comboBox2.Location = new System.Drawing.Point(203, 176);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(244, 37);
+            this.comboBox2.Size = new System.Drawing.Size(244, 30);
             this.comboBox2.TabIndex = 11;
             // 
             // cboTinhTrang
             // 
             this.cboTinhTrang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboTinhTrang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTinhTrang.FormattingEnabled = true;
             this.cboTinhTrang.Items.AddRange(new object[] {
             "Bàn hư",
             "Có thể sử dụng"});
             this.cboTinhTrang.Location = new System.Drawing.Point(203, 229);
             this.cboTinhTrang.Name = "cboTinhTrang";
-            this.cboTinhTrang.Size = new System.Drawing.Size(244, 37);
+            this.cboTinhTrang.Size = new System.Drawing.Size(244, 30);
             this.cboTinhTrang.TabIndex = 10;
             // 
             // label4
@@ -188,7 +190,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(61, 237);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 24);
+            this.label4.Size = new System.Drawing.Size(93, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = "Tình trạng :";
             // 
@@ -221,12 +223,13 @@
             this.btnThem.Size = new System.Drawing.Size(84, 70);
             this.btnThem.TabIndex = 6;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // txtSoGhe
             // 
             this.txtSoGhe.Location = new System.Drawing.Point(203, 118);
             this.txtSoGhe.Name = "txtSoGhe";
-            this.txtSoGhe.Size = new System.Drawing.Size(244, 34);
+            this.txtSoGhe.Size = new System.Drawing.Size(244, 28);
             this.txtSoGhe.TabIndex = 4;
             // 
             // txtMaBan
@@ -234,7 +237,7 @@
             this.txtMaBan.Location = new System.Drawing.Point(203, 65);
             this.txtMaBan.Name = "txtMaBan";
             this.txtMaBan.ReadOnly = true;
-            this.txtMaBan.Size = new System.Drawing.Size(244, 34);
+            this.txtMaBan.Size = new System.Drawing.Size(244, 28);
             this.txtMaBan.TabIndex = 3;
             // 
             // label3
@@ -243,7 +246,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(62, 184);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 24);
+            this.label3.Size = new System.Drawing.Size(93, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Trạng thái :";
             // 
@@ -253,7 +256,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(89, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 24);
+            this.label2.Size = new System.Drawing.Size(71, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Số ghế :";
             // 
@@ -263,7 +266,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(92, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 24);
+            this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Bàn:";
             // 
@@ -277,7 +280,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(283, 95);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 22);
+            this.textBox1.Size = new System.Drawing.Size(209, 20);
             this.textBox1.TabIndex = 15;
             // 
             // btnTimKiem

@@ -9,12 +9,16 @@ namespace DTO
 {
     public class BillDTO
     {
+        public BillDTO()
+        {
+
+        }
         public int ID { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public int trangthai { get; set; }
         public int MaNV { get; set; }
         public int MaBan { get; set; }
-        public DateTime? CheckOut { get; set; }
+        public Nullable<System.DateTime> CheckOut { get; set; }
         public BillDTO(DataRow dataRow)
         {
             this.ID = (int)dataRow["Id"];
@@ -25,5 +29,6 @@ namespace DTO
          
 
         }
+     
     }
 }

@@ -173,6 +173,12 @@
     <Compile Include="QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="uctHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uctHoaDon.Designer.cs">
+      <DependentUpon>uctHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="uctThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +238,9 @@
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc" />
+    <EmbeddedResource Include="uctHoaDon.resx">
+      <DependentUpon>uctHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uctThongKe.resx">
       <DependentUpon>uctThongKe.cs</DependentUpon>
     </EmbeddedResource>
