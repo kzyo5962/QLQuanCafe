@@ -86,10 +86,10 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
+            
             frmDangNhap frm = new frmDangNhap();
-
+            this.Hide();
+            
             frm.ShowDialog();
         }
 

@@ -62,6 +62,7 @@ namespace GUI
             if (MessageBox.Show("Bạn có thật sựu muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
+                Application.Exit();
             }
         }
 
