@@ -200,7 +200,6 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Image = global::GUI.Properties.Resources.icons8_export_301;
             this.button1.Location = new System.Drawing.Point(751, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 31);

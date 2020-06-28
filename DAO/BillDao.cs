@@ -80,5 +80,19 @@ namespace DAO
                 return false;
             }
         }
+
+        public List<BillDTO> getListHD(string tuNgay, string denNgay)
+        {
+            
+            string query = string.Format("SELECT a.ID, b.TenNV, a.NgayLap, a.trangthai, a.MaBan, a.CheckOut from HOADON a, NHANVIEN b where a.MaNV = B.ID and a.Checkout between '{0}' and '{1}'", tuNgay, denNgay);
+            List<BillDTO> lst = new List<BillDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                BillDTO item = new BillDTO(row);
+                lst.Add(item);
+            }
+            return lst;
+        }
     }
 }

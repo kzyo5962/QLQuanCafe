@@ -14,3 +14,19 @@ C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\BUS\bin\Debug\EntityFramework.Sq
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\BUS\obj\Debug\BUS.dll
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\BUS\obj\Debug\BUS.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\BUS.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\BUS.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\DAO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\DTO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\EntityFramework.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\DAO.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\DAO.dll.config
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\DTO.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\EntityFramework.xml
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\obj\Debug\BUS.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\BUS\obj\Debug\BUS.pdb

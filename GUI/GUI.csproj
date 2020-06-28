@@ -100,12 +100,6 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHoaDon.Designer.cs">
-      <DependentUpon>frmHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,11 +167,11 @@
     <Compile Include="QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="uctHoaDon.cs">
+    <Compile Include="ThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="uctHoaDon.Designer.cs">
-      <DependentUpon>uctHoaDon.cs</DependentUpon>
+    <Compile Include="ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="uctThongKe.cs">
       <SubType>UserControl</SubType>
@@ -193,9 +187,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHoaDon.resx">
-      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -238,8 +229,9 @@
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc" />
-    <EmbeddedResource Include="uctHoaDon.resx">
-      <DependentUpon>uctHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="rptThongKeHD.rdlc" />
+    <EmbeddedResource Include="ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="uctThongKe.resx">
       <DependentUpon>uctThongKe.cs</DependentUpon>
@@ -329,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-export-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

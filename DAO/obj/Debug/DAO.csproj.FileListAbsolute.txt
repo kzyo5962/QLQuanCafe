@@ -12,3 +12,17 @@ C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CoreCom
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DAO\obj\Debug\DAO.dll
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DAO\obj\Debug\DAO.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\DAO.dll.config
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\DAO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\DAO.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\DTO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\EntityFramework.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\DTO.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\EntityFramework.xml
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\obj\Debug\DAO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DAO\obj\Debug\DAO.pdb

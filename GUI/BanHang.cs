@@ -185,8 +185,8 @@ namespace GUI
                         resultBill = BillBus.Instance.UpdateBill(idBill);
                         resultBill = TableBus.Instance.CapNhatBan(maBanClick, 0);
                         LoadBan();
-                        uctHoaDon uctHd = new uctHoaDon();
-                        uctHd.BringToFront();
+                        //uctHoaDon uctHd = new uctHoaDon();
+                        //uctHd.BringToFront();
                     }
 
                 }
@@ -268,7 +268,13 @@ namespace GUI
 
         private void drvBillInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //if (drvBillInfo.Columns[e.ColumnIndex].Name == "Delete")
+            //{
+            //    if(MessageBox.Show("Bạn muốn hủy món này ?", "Hủy món", MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            //    {
+            //        billInfoDTOBindingSource.RemoveCurrent();
+            //    }    
+            //}
         }
 
         private void txtGia_TextChanged(object sender, EventArgs e)
