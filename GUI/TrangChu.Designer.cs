@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class uctHoaDon
+    partial class TrangChu
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,30 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptHoaDon = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rptHoaDon
+            // TrangChu
             // 
-            this.rptHoaDon.Location = new System.Drawing.Point(0, 3);
-            this.rptHoaDon.Name = "rptHoaDon";
-            this.rptHoaDon.Size = new System.Drawing.Size(617, 346);
-            this.rptHoaDon.TabIndex = 0;
-            // 
-            // uctHoaDon
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.rptHoaDon);
-            this.Name = "uctHoaDon";
-            this.Size = new System.Drawing.Size(777, 398);
-            this.Load += new System.EventHandler(this.uctHoaDon_Load);
+            this.AutoSize = true;
+            this.BackgroundImage = global::GUI.Properties.Resources.Trangchu;
+            this.Name = "TrangChu";
+            this.Size = new System.Drawing.Size(1347, 666);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer rptHoaDon;
     }
 }

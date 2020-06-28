@@ -61,3 +61,21 @@ C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCom
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DTO\obj\Debug\DTO.dll
 C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DTO\obj\Debug\DTO.pdb
+<<<<<<< HEAD
+=======
+C:\Users\DELL\Desktop\New folder (3)\QLQuanCafe\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+<<<<<<< HEAD
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS-PC\Desktop\DoAnNhom\QLQuanCafe\DTO\obj\Debug\DTO.pdb
+=======
+D:\Desktop\GitDoAn\QLQuanCafe\DTO\bin\Debug\DTO.dll
+D:\Desktop\GitDoAn\QLQuanCafe\DTO\bin\Debug\DTO.pdb
+D:\Desktop\GitDoAn\QLQuanCafe\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\Desktop\GitDoAn\QLQuanCafe\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\Desktop\GitDoAn\QLQuanCafe\DTO\obj\Debug\DTO.dll
+D:\Desktop\GitDoAn\QLQuanCafe\DTO\obj\Debug\DTO.pdb
+>>>>>>> 34c5a8ecb923d3e8de5fab8277aeecd828c007b2
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec

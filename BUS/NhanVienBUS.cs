@@ -29,7 +29,7 @@ namespace BUS
             return NhanVienDAO.Intance.getListNhanVien();
         }
 
-        public int ThemNhanVien(string TenNV, string DiaChi, string SDT, string NgayVaoLam, string HinhAnh,string chucvu)
+        public int ThemNhanVien(string TenNV, string DiaChi, string SDT, DateTime NgayVaoLam, string HinhAnh,string chucvu)
         {
             return DAO.NhanVienDAO.Intance.ThemNhanVien(TenNV,DiaChi,SDT,NgayVaoLam,HinhAnh,chucvu);
         }

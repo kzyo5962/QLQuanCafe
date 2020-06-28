@@ -31,6 +31,7 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            trangChu1.BringToFront();
             banHang1.maNV = TaiKhoan1.MaNV;
             if(TaiKhoan1.MaLoai==2)
             {
@@ -49,6 +50,7 @@ namespace GUI
 
         private void btnTrangChu_Click(object sender, EventArgs e)
         {
+            trangChu1.BringToFront();
             //panHover.Top = btnTrangChu.Top;
             //panHover.Height = btnTrangChu.Height;
         }

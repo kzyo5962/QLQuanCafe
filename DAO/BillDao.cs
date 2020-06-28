@@ -80,14 +80,24 @@ namespace DAO
                 return false;
             }
         }
+<<<<<<< HEAD
         public List<BillDTO> getListHD(string tuNgay, string denNgay)
         {
             string query = string.Format("exec getListHD '{0}', '{1}'", tuNgay, denNgay);
             List<BillDTO> listData = new List<BillDTO>();
+=======
+
+        public List<BillDTO> getListHD(string tuNgay, string denNgay)
+        {
+            
+            string query = string.Format("SELECT a.ID, b.TenNV, a.NgayLap, a.trangthai, a.MaBan, a.CheckOut from HOADON a, NHANVIEN b where a.MaNV = B.ID and a.Checkout between '{0}' and '{1}'", tuNgay, denNgay);
+            List<BillDTO> lst = new List<BillDTO>();
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
                 BillDTO item = new BillDTO(row);
+<<<<<<< HEAD
                 listData.Add(item);
             }
             return listData;
@@ -103,6 +113,11 @@ namespace DAO
                 listData.Add(item);
             }
             return listData;
+=======
+                lst.Add(item);
+            }
+            return lst;
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
         }
     }
 }

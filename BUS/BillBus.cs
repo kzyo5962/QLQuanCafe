@@ -54,10 +54,13 @@ namespace BUS
         {
             return BillDAO.Instance.getListHD(tuNgay, denNgay);
         }
+<<<<<<< HEAD
         public List<BillDTO> getListHD()
         {
             return BillDAO.Instance.getListHD();
         }
 
+=======
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
     }
 }
