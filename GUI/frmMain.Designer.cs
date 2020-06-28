@@ -49,6 +49,7 @@
             this.banHang1 = new GUI.BanHang();
             this.quanLy1 = new GUI.QuanLy();
             this.timeBlock = new System.Windows.Forms.Timer(this.components);
+            this.uctThongKe1 = new GUI.uctThongKe();
             this.panel1.SuspendLayout();
             this.panTop.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -244,6 +245,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.uctThongKe1);
             this.panel2.Controls.Add(this.banHang1);
             this.panel2.Controls.Add(this.quanLy1);
             this.panel2.Location = new System.Drawing.Point(156, 58);
@@ -274,6 +276,15 @@
             // timeBlock
             // 
             this.timeBlock.Tick += new System.EventHandler(this.timeBlock_Tick);
+            // 
+            // uctThongKe1
+            // 
+            this.uctThongKe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uctThongKe1.Location = new System.Drawing.Point(0, 0);
+            this.uctThongKe1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctThongKe1.Name = "uctThongKe1";
+            this.uctThongKe1.Size = new System.Drawing.Size(972, 591);
+            this.uctThongKe1.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -317,5 +328,6 @@
         private QuanLy quanLy1;
         private System.Windows.Forms.Timer timeBlock;
         private System.Windows.Forms.Label label1;
+        private uctThongKe uctThongKe1;
     }
 }

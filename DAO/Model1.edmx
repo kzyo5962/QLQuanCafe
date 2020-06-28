@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QuanLyQuanCaFeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QuanLyQuanCaFeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BAN">
           <Key>
             <PropertyRef Name="ID" />
@@ -28,6 +28,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETHOADON' does not have a 
           <Property Name="SoLuong" Type="int" Nullable="false" />
           <Property Name="GiamGia" Type="float" />
           <Property Name="GiaBan" Type="float" />
+          <Property Name="trangthai" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -89,6 +90,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="TenMenu" Type="nvarchar" MaxLength="255" />
           <Property Name="MaLoai" Type="int" Nullable="false" />
           <Property Name="TrangThai" Type="int" Nullable="false" />
+          <Property Name="DonGia" Type="float" />
         </EntityType>
         <EntityType Name="NGUYENLIEU">
           <Key>
@@ -132,16 +134,6 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="MaNV" Type="int" Nullable="false" />
           <Property Name="NgayLap" Type="datetime" />
           <Property Name="TrangThai" Type="int" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -310,44 +302,40 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="ChuyenBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDCu" Type="int" Mode="In" />
+          <Parameter Name="IDMoi" Type="int" Mode="In" />
+        </Function>
         <Function Name="GetBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="maBan" Type="int" Mode="In" />
+        </Function>
+        <Function Name="getListHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TuNgay" Type="datetime" Mode="In" />
+          <Parameter Name="DenNgay" Type="datetime" Mode="In" />
         </Function>
         <Function Name="inserBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idTable" Type="int" Mode="In" />
           <Parameter Name="maNv" Type="int" Mode="In" />
         </Function>
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="inserBillInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHd" Type="int" Mode="In" />
+          <Parameter Name="MaMenu" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="GiamGia" Type="float" Mode="In" />
+          <Parameter Name="GiaBan" Type="float" Mode="In" />
         </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        <Function Name="insertBillInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHd" Type="int" Mode="In" />
+          <Parameter Name="MaMenu" Type="int" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="GiamGia" Type="float" Mode="In" />
+          <Parameter Name="GiaBan" Type="float" Mode="In" />
         </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
+        <Function Name="QuanLyBan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="updteBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maHd" Type="int" Mode="In" />
+          <Parameter Name="Ngay" Type="datetime" Mode="In" />
         </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QuanLyQuanCaFeModelStoreContainer">
           <EntitySet Name="BAN" EntityType="Self.BAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
@@ -359,7 +347,6 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHIEUNHAP" EntityType="Self.PHIEUNHAP" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIETHOADON" EntityType="Self.CHITIETHOADON" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -368,7 +355,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
     [CHITIETHOADON].[NgayLap] AS [NgayLap], 
     [CHITIETHOADON].[SoLuong] AS [SoLuong], 
     [CHITIETHOADON].[GiamGia] AS [GiamGia], 
-    [CHITIETHOADON].[GiaBan] AS [GiaBan]
+    [CHITIETHOADON].[GiaBan] AS [GiaBan], 
+    [CHITIETHOADON].[trangthai] AS [trangthai]
     FROM [dbo].[CHITIETHOADON] AS [CHITIETHOADON]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="CHITIETPHIEUNHAP" EntityType="Self.CHITIETPHIEUNHAP" store:Type="Tables" store:Schema="dbo">
@@ -434,7 +422,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
             <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAP" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyQuanCaFeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -445,8 +434,8 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SoGhe" Type="Int32" Nullable="false" />
           <Property Name="TrangThai" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="HOADONs" Relationship="Self.fk_maban" FromRole="BAN" ToRole="HOADON" />
           <Property Name="TinhTrang" Type="Int32" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.fk_maban" FromRole="BAN" ToRole="HOADON" />
         </EntityType>
         <EntityType Name="DONDATHANG">
           <Key>
@@ -500,6 +489,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="TenMenu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="MaLoai" Type="Int32" Nullable="false" />
           <Property Name="TrangThai" Type="Int32" Nullable="false" />
+          <Property Name="DonGia" Type="Double" />
           <NavigationProperty Name="LOAIMENU" Relationship="Self.fk_maloai" FromRole="MENU" ToRole="LOAIMENU" />
           <NavigationProperty Name="CHITIETHOADONs" Relationship="Self.fk_mamenu_cthd" FromRole="MENU" ToRole="CHITIETHOADON" />
         </EntityType>
@@ -511,10 +501,10 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="TenNL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="DVT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DonGia" Type="Double" Nullable="false" />
-          <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_manl" FromRole="NGUYENLIEU" ToRole="CHITIETPHIEUNHAP" />
-          <NavigationProperty Name="NHACUNGCAPs" Relationship="Self.fk_manl_nguyenlieu" FromRole="NGUYENLIEU" ToRole="NHACUNGCAP" />
           <Property Name="TrangThai" Type="Int32" />
           <Property Name="SLTon" Type="Double" />
+          <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_manl" FromRole="NGUYENLIEU" ToRole="CHITIETPHIEUNHAP" />
+          <NavigationProperty Name="NHACUNGCAPs" Relationship="Self.fk_manl_nguyenlieu" FromRole="NGUYENLIEU" ToRole="NHACUNGCAP" />
         </EntityType>
         <EntityType Name="NHACUNGCAP">
           <Key>
@@ -539,11 +529,11 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="SDT" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="diachi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="trangthai" Type="Int32" />
           <NavigationProperty Name="DONDATHANGs" Relationship="Self.fk_manv_dondh" FromRole="NHANVIEN" ToRole="DONDATHANG" />
           <NavigationProperty Name="HOADONs" Relationship="Self.fk_manv_hd" FromRole="NHANVIEN" ToRole="HOADON" />
           <NavigationProperty Name="PHIEUNHAPs" Relationship="Self.fk_manV" FromRole="NHANVIEN" ToRole="PHIEUNHAP" />
           <NavigationProperty Name="TAIKHOANs" Relationship="Self.fk_manv_tk" FromRole="NHANVIEN" ToRole="TAIKHOAN" />
-          <Property Name="trangthai" Type="Int32" />
         </EntityType>
         <EntityType Name="PHIEUNHAP">
           <Key>
@@ -552,19 +542,9 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaNV" Type="Int32" Nullable="false" />
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
+          <Property Name="TrangThai" Type="Int32" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manV" FromRole="PHIEUNHAP" ToRole="NHANVIEN" />
           <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.fk_maphieunhap" FromRole="PHIEUNHAP" ToRole="CHITIETPHIEUNHAP" />
-          <Property Name="TrangThai" Type="Int32" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -575,9 +555,9 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaLoai" Type="Int32" Nullable="false" />
           <Property Name="MaNV" Type="Int32" Nullable="false" />
+          <Property Name="trangthai" Type="Int32" />
           <NavigationProperty Name="LOAITK" Relationship="Self.fk_maloaitk" FromRole="TAIKHOAN" ToRole="LOAITK" />
           <NavigationProperty Name="NHANVIEN" Relationship="Self.fk_manv_tk" FromRole="TAIKHOAN" ToRole="NHANVIEN" />
-          <Property Name="trangthai" Type="Int32" />
         </EntityType>
         <EntityType Name="CHITIETHOADON">
           <Key>
@@ -591,6 +571,7 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="GiamGia" Type="Double" />
           <Property Name="GiaBan" Type="Double" />
+          <Property Name="trangthai" Type="Int32" />
           <NavigationProperty Name="HOADON" Relationship="Self.fk_mahd_cthd" FromRole="CHITIETHOADON" ToRole="HOADON" />
           <NavigationProperty Name="MENU" Relationship="Self.fk_mamenu_cthd" FromRole="CHITIETHOADON" ToRole="MENU" />
         </EntityType>
@@ -604,10 +585,10 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Name="MaPhieuNhap" Type="Int32" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" Nullable="false" />
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="NGUYENLIEU" Relationship="Self.fk_manl" FromRole="CHITIETPHIEUNHAP" ToRole="NGUYENLIEU" />
-          <NavigationProperty Name="PHIEUNHAP" Relationship="Self.fk_maphieunhap" FromRole="CHITIETPHIEUNHAP" ToRole="PHIEUNHAP" />
           <Property Name="DonGia" Type="Double" />
           <Property Name="DVT" Type="Int32" />
+          <NavigationProperty Name="NGUYENLIEU" Relationship="Self.fk_manl" FromRole="CHITIETPHIEUNHAP" ToRole="NGUYENLIEU" />
+          <NavigationProperty Name="PHIEUNHAP" Relationship="Self.fk_maphieunhap" FromRole="CHITIETPHIEUNHAP" ToRole="PHIEUNHAP" />
         </EntityType>
         <Association Name="fk_maban">
           <End Role="BAN" Type="Self.BAN" Multiplicity="1" />
@@ -776,7 +757,6 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
           <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
           <EntitySet Name="PHIEUNHAPs" EntityType="Self.PHIEUNHAP" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TAIKHOANs" EntityType="Self.TAIKHOAN" />
           <EntitySet Name="CHITIETHOADONs" EntityType="Self.CHITIETHOADON" />
           <EntitySet Name="CHITIETPHIEUNHAPs" EntityType="Self.CHITIETPHIEUNHAP" />
@@ -832,43 +812,40 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
             <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
             <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
           </AssociationSet>
+          <FunctionImport Name="ChuyenBan">
+            <Parameter Name="IDCu" Mode="In" Type="Int32" />
+            <Parameter Name="IDMoi" Mode="In" Type="Int32" />
+          </FunctionImport>
           <FunctionImport Name="GetBill" ReturnType="Collection(QuanLyQuanCaFeModel.GetBill_Result)">
-          <Parameter Name="maBan" Mode="In" Type="Int32" />
+            <Parameter Name="maBan" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="getListHD" ReturnType="Collection(QuanLyQuanCaFeModel.getListHD_Result)">
+            <Parameter Name="TuNgay" Mode="In" Type="DateTime" />
+            <Parameter Name="DenNgay" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="inserBill">
             <Parameter Name="idTable" Mode="In" Type="Int32" />
             <Parameter Name="maNv" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="inserBillInfo">
+            <Parameter Name="MaHd" Mode="In" Type="Int32" />
+            <Parameter Name="MaMenu" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="GiamGia" Mode="In" Type="Double" />
+            <Parameter Name="GiaBan" Mode="In" Type="Double" />
           </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
+          <FunctionImport Name="insertBillInfo">
+            <Parameter Name="MaHd" Mode="In" Type="Int32" />
+            <Parameter Name="MaMenu" Mode="In" Type="Int32" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="GiamGia" Mode="In" Type="Double" />
+            <Parameter Name="GiaBan" Mode="In" Type="Double" />
           </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          <FunctionImport Name="QuanLyBan" ReturnType="Collection(QuanLyQuanCaFeModel.QuanLyBan_Result)" />
+          <FunctionImport Name="updteBill">
+            <Parameter Name="maHd" Mode="In" Type="Int32" />
+            <Parameter Name="Ngay" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(QuanLyQuanCaFeModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(QuanLyQuanCaFeModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
         <ComplexType Name="GetBill_Result">
           <Property Type="String" Name="TenMenu" Nullable="true" MaxLength="255" />
@@ -876,16 +853,19 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <Property Type="Int32" Name="SoLuong" Nullable="true" />
           <Property Type="Double" Name="ThanhTien" Nullable="true" />
         </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+        <ComplexType Name="getListHD_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+          <Property Type="String" Name="TenNV" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="NgayLap" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="CheckOut" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="trangthai" Nullable="false" />
+          <Property Type="Int32" Name="MaBan" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="QuanLyBan_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="SoGhe" Nullable="false" />
+          <Property Type="String" Name="TrangThai" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="TinhTrang" Nullable="false" MaxLength="9" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -896,10 +876,10 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="BANs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.BAN">
               <MappingFragment StoreEntitySet="BAN">
-                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -951,18 +931,19 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
                 <ScalarProperty Name="TenMenu" ColumnName="TenMenu" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NGUYENLIEUx">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.NGUYENLIEU">
               <MappingFragment StoreEntitySet="NGUYENLIEU">
-                <ScalarProperty Name="SLTon" ColumnName="SLTon" />
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TenNL" ColumnName="TenNL" />
                 <ScalarProperty Name="DVT" ColumnName="DVT" />
                 <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="SLTon" ColumnName="SLTon" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -981,46 +962,35 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
           <EntitySetMapping Name="NHANVIENs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
-                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TenNV" ColumnName="TenNV" />
                 <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="diachi" ColumnName="diachi" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PHIEUNHAPs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.PHIEUNHAP">
               <MappingFragment StoreEntitySet="PHIEUNHAP">
-                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TAIKHOANs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
-                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1033,21 +1003,23 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
                 <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CHITIETPHIEUNHAPs">
             <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.CHITIETPHIEUNHAP">
               <MappingFragment StoreEntitySet="CHITIETPHIEUNHAP">
-                <ScalarProperty Name="DVT" ColumnName="DVT" />
-                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
                 <ScalarProperty Name="MaNL" ColumnName="MaNL" />
                 <ScalarProperty Name="MaPhieuNhap" ColumnName="MaPhieuNhap" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ChuyenBan" FunctionName="QuanLyQuanCaFeModel.Store.ChuyenBan" />
           <FunctionImportMapping FunctionImportName="GetBill" FunctionName="QuanLyQuanCaFeModel.Store.GetBill">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.GetBill_Result">
@@ -1058,31 +1030,32 @@ warning 6002: The table/view 'QuanLyQuanCaFe.dbo.CHITIETPHIEUNHAP' does not have
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="inserBill" FunctionName="QuanLyQuanCaFeModel.Store.inserBill" />
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QuanLyQuanCaFeModel.Store.sp_helpdiagramdefinition">
+          <FunctionImportMapping FunctionImportName="getListHD" FunctionName="QuanLyQuanCaFeModel.Store.getListHD">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QuanLyQuanCaFeModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
+              <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.getListHD_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+                <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+                <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+                <ScalarProperty Name="MaBan" ColumnName="MaBan" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyQuanCaFeModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="inserBill" FunctionName="QuanLyQuanCaFeModel.Store.inserBill" />
+          <FunctionImportMapping FunctionImportName="inserBillInfo" FunctionName="QuanLyQuanCaFeModel.Store.inserBillInfo" />
+          <FunctionImportMapping FunctionImportName="insertBillInfo" FunctionName="QuanLyQuanCaFeModel.Store.insertBillInfo" />
+          <FunctionImportMapping FunctionImportName="QuanLyBan" FunctionName="QuanLyQuanCaFeModel.Store.QuanLyBan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.QuanLyBan_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="updteBill" FunctionName="QuanLyQuanCaFeModel.Store.updteBill" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

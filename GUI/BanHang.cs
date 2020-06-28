@@ -248,7 +248,8 @@ namespace GUI
             cboMenu.DataSource = listMenu;
 
         }
-
+        
+        
         private void cboBanTrong_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -256,7 +257,7 @@ namespace GUI
 
         private void cboMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //txtGia.Text = MenuBus.Instance.HienThiDonGia(cboMenu.SelectedValue.ToString());
         }
 
         private void cboLoaiMenu_SelectedIndexChanged(object sender, EventArgs e)

@@ -76,6 +76,9 @@ namespace GUI
             
         }
 
-        
+        private void grb_DangNhap_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

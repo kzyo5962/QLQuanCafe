@@ -37,10 +37,22 @@ namespace DAO
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<PHIEUNHAP> PHIEUNHAPs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<CHITIETHOADON> CHITIETHOADONs { get; set; }
         public virtual DbSet<CHITIETPHIEUNHAP> CHITIETPHIEUNHAPs { get; set; }
+    
+        public virtual int ChuyenBan(Nullable<int> iDCu, Nullable<int> iDMoi)
+        {
+            var iDCuParameter = iDCu.HasValue ?
+                new ObjectParameter("IDCu", iDCu) :
+                new ObjectParameter("IDCu", typeof(int));
+    
+            var iDMoiParameter = iDMoi.HasValue ?
+                new ObjectParameter("IDMoi", iDMoi) :
+                new ObjectParameter("IDMoi", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ChuyenBan", iDCuParameter, iDMoiParameter);
+        }
     
         public virtual ObjectResult<GetBill_Result> GetBill(Nullable<int> maBan)
         {
@@ -49,6 +61,19 @@ namespace DAO
                 new ObjectParameter("maBan", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetBill_Result>("GetBill", maBanParameter);
+        }
+    
+        public virtual ObjectResult<getListHD_Result> getListHD(Nullable<System.DateTime> tuNgay, Nullable<System.DateTime> denNgay)
+        {
+            var tuNgayParameter = tuNgay.HasValue ?
+                new ObjectParameter("TuNgay", tuNgay) :
+                new ObjectParameter("TuNgay", typeof(System.DateTime));
+    
+            var denNgayParameter = denNgay.HasValue ?
+                new ObjectParameter("DenNgay", denNgay) :
+                new ObjectParameter("DenNgay", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getListHD_Result>("getListHD", tuNgayParameter, denNgayParameter);
         }
     
         public virtual int inserBill(Nullable<int> idTable, Nullable<int> maNv)
@@ -64,107 +89,72 @@ namespace DAO
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("inserBill", idTableParameter, maNvParameter);
         }
     
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        public virtual int inserBillInfo(Nullable<int> maHd, Nullable<int> maMenu, Nullable<int> soLuong, Nullable<double> giamGia, Nullable<double> giaBan)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var maHdParameter = maHd.HasValue ?
+                new ObjectParameter("MaHd", maHd) :
+                new ObjectParameter("MaHd", typeof(int));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
+            var maMenuParameter = maMenu.HasValue ?
+                new ObjectParameter("MaMenu", maMenu) :
+                new ObjectParameter("MaMenu", typeof(int));
     
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
     
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
+            var giamGiaParameter = giamGia.HasValue ?
+                new ObjectParameter("GiamGia", giamGia) :
+                new ObjectParameter("GiamGia", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+            var giaBanParameter = giaBan.HasValue ?
+                new ObjectParameter("GiaBan", giaBan) :
+                new ObjectParameter("GiaBan", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("inserBillInfo", maHdParameter, maMenuParameter, soLuongParameter, giamGiaParameter, giaBanParameter);
         }
     
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        public virtual int insertBillInfo(Nullable<int> maHd, Nullable<int> maMenu, Nullable<int> soLuong, Nullable<double> giamGia, Nullable<double> giaBan)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var maHdParameter = maHd.HasValue ?
+                new ObjectParameter("MaHd", maHd) :
+                new ObjectParameter("MaHd", typeof(int));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
+            var maMenuParameter = maMenu.HasValue ?
+                new ObjectParameter("MaMenu", maMenu) :
+                new ObjectParameter("MaMenu", typeof(int));
     
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
+            var soLuongParameter = soLuong.HasValue ?
+                new ObjectParameter("SoLuong", soLuong) :
+                new ObjectParameter("SoLuong", typeof(int));
     
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
+            var giamGiaParameter = giamGia.HasValue ?
+                new ObjectParameter("GiamGia", giamGia) :
+                new ObjectParameter("GiamGia", typeof(double));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+            var giaBanParameter = giaBan.HasValue ?
+                new ObjectParameter("GiaBan", giaBan) :
+                new ObjectParameter("GiaBan", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insertBillInfo", maHdParameter, maMenuParameter, soLuongParameter, giamGiaParameter, giaBanParameter);
         }
     
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
+        public virtual ObjectResult<QuanLyBan_Result> QuanLyBan()
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<QuanLyBan_Result>("QuanLyBan");
         }
     
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual int updteBill(Nullable<int> maHd, Nullable<System.DateTime> ngay)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var maHdParameter = maHd.HasValue ?
+                new ObjectParameter("maHd", maHd) :
+                new ObjectParameter("maHd", typeof(int));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
+            var ngayParameter = ngay.HasValue ?
+                new ObjectParameter("Ngay", ngay) :
+                new ObjectParameter("Ngay", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updteBill", maHdParameter, ngayParameter);
         }
     }
 }

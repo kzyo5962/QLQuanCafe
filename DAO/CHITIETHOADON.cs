@@ -20,6 +20,7 @@ namespace DAO
         public int SoLuong { get; set; }
         public Nullable<double> GiamGia { get; set; }
         public Nullable<double> GiaBan { get; set; }
+        public Nullable<int> trangthai { get; set; }
     
         public virtual HOADON HOADON { get; set; }
         public virtual MENU MENU { get; set; }

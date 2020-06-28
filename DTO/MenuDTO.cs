@@ -13,5 +13,7 @@ namespace DTO
         public int MaLoai { get; set; }
         public int TrangThai { get; set; }
 
+        public Nullable<double> DonGia { get; set; }
+
     }
 }

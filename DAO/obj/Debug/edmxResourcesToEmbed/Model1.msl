@@ -4,10 +4,10 @@
     <EntitySetMapping Name="BANs">
       <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.BAN">
         <MappingFragment StoreEntitySet="BAN">
-          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,18 +59,19 @@
           <ScalarProperty Name="TenMenu" ColumnName="TenMenu" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="NGUYENLIEUx">
       <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.NGUYENLIEU">
         <MappingFragment StoreEntitySet="NGUYENLIEU">
-          <ScalarProperty Name="SLTon" ColumnName="SLTon" />
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenNL" ColumnName="TenNL" />
           <ScalarProperty Name="DVT" ColumnName="DVT" />
           <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="SLTon" ColumnName="SLTon" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -89,46 +90,35 @@
     <EntitySetMapping Name="NHANVIENs">
       <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
-          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="TenNV" ColumnName="TenNV" />
           <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
           <ScalarProperty Name="diachi" ColumnName="diachi" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PHIEUNHAPs">
       <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.PHIEUNHAP">
         <MappingFragment StoreEntitySet="PHIEUNHAP">
-          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="TAIKHOANs">
       <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.TAIKHOAN">
         <MappingFragment StoreEntitySet="TAIKHOAN">
-          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="pass" ColumnName="pass" />
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -141,21 +131,23 @@
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
           <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="CHITIETPHIEUNHAPs">
       <EntityTypeMapping TypeName="QuanLyQuanCaFeModel.CHITIETPHIEUNHAP">
         <MappingFragment StoreEntitySet="CHITIETPHIEUNHAP">
-          <ScalarProperty Name="DVT" ColumnName="DVT" />
-          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
           <ScalarProperty Name="MaNL" ColumnName="MaNL" />
           <ScalarProperty Name="MaPhieuNhap" ColumnName="MaPhieuNhap" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="DVT" ColumnName="DVT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ChuyenBan" FunctionName="QuanLyQuanCaFeModel.Store.ChuyenBan" />
     <FunctionImportMapping FunctionImportName="GetBill" FunctionName="QuanLyQuanCaFeModel.Store.GetBill">
       <ResultMapping>
         <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.GetBill_Result">
@@ -166,30 +158,31 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="inserBill" FunctionName="QuanLyQuanCaFeModel.Store.inserBill" />
-    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_alterdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_creatediagram" />
-    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_dropdiagram" />
-    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QuanLyQuanCaFeModel.Store.sp_helpdiagramdefinition">
+    <FunctionImportMapping FunctionImportName="getListHD" FunctionName="QuanLyQuanCaFeModel.Store.getListHD">
       <ResultMapping>
-        <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.sp_helpdiagramdefinition_Result">
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QuanLyQuanCaFeModel.Store.sp_helpdiagrams">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.sp_helpdiagrams_Result">
-          <ScalarProperty Name="Database" ColumnName="Database" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+        <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.getListHD_Result">
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+          <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+          <ScalarProperty Name="trangthai" ColumnName="trangthai" />
+          <ScalarProperty Name="MaBan" ColumnName="MaBan" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QuanLyQuanCaFeModel.Store.sp_renamediagram" />
-    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QuanLyQuanCaFeModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="inserBill" FunctionName="QuanLyQuanCaFeModel.Store.inserBill" />
+    <FunctionImportMapping FunctionImportName="inserBillInfo" FunctionName="QuanLyQuanCaFeModel.Store.inserBillInfo" />
+    <FunctionImportMapping FunctionImportName="insertBillInfo" FunctionName="QuanLyQuanCaFeModel.Store.insertBillInfo" />
+    <FunctionImportMapping FunctionImportName="QuanLyBan" FunctionName="QuanLyQuanCaFeModel.Store.QuanLyBan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QuanLyQuanCaFeModel.QuanLyBan_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SoGhe" ColumnName="SoGhe" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="updteBill" FunctionName="QuanLyQuanCaFeModel.Store.updteBill" />
   </EntityContainerMapping>
 </Mapping>
