@@ -167,7 +167,17 @@
     <Compile Include="QuanLyTaiKhoan.Designer.cs">
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ThongKe.cs">
+=======
+    <Compile Include="TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrangChu.Designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uctHoaDon.cs">
+>>>>>>> 34c5a8ecb923d3e8de5fab8277aeecd828c007b2
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ThongKe.Designer.cs">
@@ -229,9 +239,17 @@
       <DependentUpon>QuanLyTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptHoaDon.rdlc" />
+<<<<<<< HEAD
     <EmbeddedResource Include="rptThongKeHD.rdlc" />
     <EmbeddedResource Include="ThongKe.resx">
       <DependentUpon>ThongKe.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uctHoaDon.resx">
+      <DependentUpon>uctHoaDon.cs</DependentUpon>
+>>>>>>> 34c5a8ecb923d3e8de5fab8277aeecd828c007b2
     </EmbeddedResource>
     <EmbeddedResource Include="uctThongKe.resx">
       <DependentUpon>uctThongKe.cs</DependentUpon>
@@ -323,7 +341,11 @@
     <None Include="Resources\icons8-export-40.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Images\" />
+=======
+    <None Include="Resources\Trangchu.jpg" />
+>>>>>>> 34c5a8ecb923d3e8de5fab8277aeecd828c007b2
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
