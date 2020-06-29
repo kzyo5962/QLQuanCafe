@@ -13,6 +13,14 @@ namespace GUI
 {
     public partial class QuanLyNguyenLieu : UserControl
     {
+        public string messageDeleteSucces = "Xóa nguyên liệu thành công";
+        public string messageDeleteFail = "Xóa nguyên liêu thất bại";
+        public string message = "Vui lòng nhập đầy đủ thông tin";
+        public string messageUdateSuccess = "Cập nhật thành công";
+        public string messageUpdateFail = "Cập nhật thất bại";
+        public string messageInsertSucces = "Thêm nguyên liệu thành công";
+        public string messageInsertFail = "Thêm nguyên liệu thất bại";
+        
         public QuanLyNguyenLieu()
         {
             InitializeComponent();
@@ -32,20 +40,18 @@ namespace GUI
 
         private void btn_LuuLai_Click(object sender, EventArgs e)
         {
-
-            string message = "Vui lòng nhập đầy đủ thông tin";
             if (txtMaNL.Text == "" || txtTenNL.Text == "" || txtDonViTinh.Text == "" || txtDonGia.Text == "")
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (BUS.NguyenLieuBUS.Instance.ThemNguyenLieu(txtMaNL.Text, txtTenNL.Text, txtDonViTinh.Text, txtDonGia.Text) > 0)
                 {
-                    MessageBox.Show("Thêm nguyên liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(messageInsertSucces, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     QuanLySanPham_Load(sender, e);
                     reset(sender, e);
                 }
                 else
-                    MessageBox.Show("Thêm nguyên liệu thất bại");
+                    MessageBox.Show(messageInsertFail,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
         }
@@ -60,9 +66,7 @@ namespace GUI
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string message = "Vui lòng nhập đầy đủ thông tin";
-            string messageSuccess = "Cập nhật thành công";
-            string messageFail = "Cập nhật thất bại";
+           
             if (txtMaNL.Text == "" || txtTenNL.Text == "" || txtDonViTinh.Text == "" || txtDonGia.Text == "")
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -70,28 +74,26 @@ namespace GUI
 
                 if (NguyenLieuBUS.Instance.CapNhatNguyeLieu(txtMaNL.Text, txtTenNL.Text, txtDonViTinh.Text, txtDonGia.Text) > 0)
                 {
-                    MessageBox.Show(messageSuccess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(messageUdateSuccess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     QuanLySanPham_Load(sender, e);
                     reset(sender, e);
                 }
                 else
-                    MessageBox.Show(messageFail, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(messageUpdateFail, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string messageSucces = "Xóa nguyên liệu thành công";
-            string messageFail = "Xóa nguyên liêu thất bại";
             string value = txtMaNL.Text;
             if (BUS.NguyenLieuBUS.Instance.XoaNguyenLieu(value) > 0)
             {
-                MessageBox.Show(messageSucces, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(messageDeleteSucces, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 QuanLySanPham_Load(sender, e);
                 reset(sender, e);
             }
             else
-                MessageBox.Show(messageFail, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(messageDeleteFail, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void dgv_NguyenLieu_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -32,10 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_Tiltle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cboBan = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
-            this.btn_LuuLai = new System.Windows.Forms.Button();
+            this.btn_Them = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenNL = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.sLTon1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nguyenLieuDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.cboBan = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,11 +99,26 @@
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(266, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(197, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // cboBan
+            // 
+            this.cboBan.FormattingEnabled = true;
+            this.cboBan.Location = new System.Drawing.Point(138, 21);
+            this.cboBan.Name = "cboBan";
+            this.cboBan.Size = new System.Drawing.Size(121, 24);
+            this.cboBan.TabIndex = 12;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnCapNhat);
             this.panel3.Controls.Add(this.btn_Xoa);
-            this.panel3.Controls.Add(this.btn_LuuLai);
+            this.panel3.Controls.Add(this.btn_Them);
             this.panel3.Controls.Add(this.txtDonGia);
             this.panel3.Controls.Add(this.txtDonViTinh);
             this.panel3.Controls.Add(this.txtTenNL);
@@ -147,19 +162,19 @@
             this.btn_Xoa.UseVisualStyleBackColor = false;
             this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
-            // btn_LuuLai
+            // btn_Them
             // 
-            this.btn_LuuLai.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_LuuLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LuuLai.ForeColor = System.Drawing.Color.Goldenrod;
-            this.btn_LuuLai.Image = global::GUI.Properties.Resources.icons8_add_64;
-            this.btn_LuuLai.Location = new System.Drawing.Point(94, 310);
-            this.btn_LuuLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_LuuLai.Name = "btn_LuuLai";
-            this.btn_LuuLai.Size = new System.Drawing.Size(88, 61);
-            this.btn_LuuLai.TabIndex = 30;
-            this.btn_LuuLai.UseVisualStyleBackColor = false;
-            this.btn_LuuLai.Click += new System.EventHandler(this.btn_LuuLai_Click);
+            this.btn_Them.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Them.ForeColor = System.Drawing.Color.Goldenrod;
+            this.btn_Them.Image = global::GUI.Properties.Resources.icons8_add_64;
+            this.btn_Them.Location = new System.Drawing.Point(94, 310);
+            this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Them.Name = "btn_Them";
+            this.btn_Them.Size = new System.Drawing.Size(88, 61);
+            this.btn_Them.TabIndex = 30;
+            this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_LuuLai_Click);
             // 
             // txtDonGia
             // 
@@ -318,26 +333,11 @@
             this.btn_TimKiem.UseVisualStyleBackColor = false;
             this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
-            // cboBan
-            // 
-            this.cboBan.FormattingEnabled = true;
-            this.cboBan.Location = new System.Drawing.Point(138, 21);
-            this.cboBan.Name = "cboBan";
-            this.cboBan.Size = new System.Drawing.Size(121, 24);
-            this.cboBan.TabIndex = 12;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(266, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 22);
-            this.textBox1.TabIndex = 13;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 32);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // QuanLyNguyenLieu
             // 
@@ -369,7 +369,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_LuuLai;
+        private System.Windows.Forms.Button btn_Them;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtTenNL;
