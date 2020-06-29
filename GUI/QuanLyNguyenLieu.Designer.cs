@@ -52,7 +52,9 @@
             this.sLTon1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nguyenLieuDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_TimKiem = new System.Windows.Forms.Button();
-            this.txt_TimKiem = new System.Windows.Forms.TextBox();
+            this.cboBan = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -84,10 +86,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.cboBan);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.dgv_NguyenLieu);
             this.panel2.Controls.Add(this.btn_TimKiem);
-            this.panel2.Controls.Add(this.txt_TimKiem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 57);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -315,13 +318,26 @@
             this.btn_TimKiem.UseVisualStyleBackColor = false;
             this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
-            // txt_TimKiem
+            // cboBan
             // 
-            this.txt_TimKiem.Location = new System.Drawing.Point(374, 30);
-            this.txt_TimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_TimKiem.Name = "txt_TimKiem";
-            this.txt_TimKiem.Size = new System.Drawing.Size(164, 22);
-            this.txt_TimKiem.TabIndex = 8;
+            this.cboBan.FormattingEnabled = true;
+            this.cboBan.Location = new System.Drawing.Point(138, 21);
+            this.cboBan.Name = "cboBan";
+            this.cboBan.Size = new System.Drawing.Size(121, 24);
+            this.cboBan.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(266, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(197, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 32);
             // 
             // QuanLyNguyenLieu
             // 
@@ -365,11 +381,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgv_NguyenLieu;
         private System.Windows.Forms.Button btn_TimKiem;
-        private System.Windows.Forms.TextBox txt_TimKiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenNL1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dVT1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGia1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLTon1DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource nguyenLieuDTOBindingSource;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cboBan;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

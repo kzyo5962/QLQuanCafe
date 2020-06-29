@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_Tiltle = new System.Windows.Forms.Label();
             this.txt_TimKiem = new System.Windows.Forms.TextBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.colMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iD1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNV1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayVaoLam1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDT1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diachi1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hinhAnh1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chucVu1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhanVienDTOBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lbTenNV = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
@@ -47,7 +50,11 @@
             this.dtpNgayVaoLam = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThemNV = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,17 +63,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnThemNV = new System.Windows.Forms.Button();
             this.pic = new System.Windows.Forms.PictureBox();
             this.btn_TimKiem = new System.Windows.Forms.Button();
+            this.nhanVienDTOBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nhanVienDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDTOBindingSource2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDTOBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,16 +110,19 @@
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.AutoGenerateColumns = false;
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.BackgroundColor = System.Drawing.Color.Moccasin;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaNV,
-            this.colTenNV,
-            this.colNgayVaoLam,
-            this.colSDT,
-            this.colDiaChi,
-            this.colChucVu});
+            this.iD1DataGridViewTextBoxColumn,
+            this.tenNV1DataGridViewTextBoxColumn,
+            this.ngayVaoLam1DataGridViewTextBoxColumn,
+            this.sDT1DataGridViewTextBoxColumn,
+            this.diachi1DataGridViewTextBoxColumn,
+            this.hinhAnh1DataGridViewTextBoxColumn,
+            this.chucVu1DataGridViewTextBoxColumn});
+            this.dgvNhanVien.DataSource = this.nhanVienDTOBindingSource2;
             this.dgvNhanVien.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvNhanVien.Location = new System.Drawing.Point(15, 72);
             this.dgvNhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -121,48 +132,60 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(581, 427);
             this.dgvNhanVien.TabIndex = 5;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
             // 
-            // colMaNV
+            // iD1DataGridViewTextBoxColumn
             // 
-            this.colMaNV.DataPropertyName = "ID1";
-            this.colMaNV.HeaderText = "Mã NV";
-            this.colMaNV.MinimumWidth = 6;
-            this.colMaNV.Name = "colMaNV";
+            this.iD1DataGridViewTextBoxColumn.DataPropertyName = "ID1";
+            this.iD1DataGridViewTextBoxColumn.HeaderText = "Mã NV";
+            this.iD1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iD1DataGridViewTextBoxColumn.Name = "iD1DataGridViewTextBoxColumn";
             // 
-            // colTenNV
+            // tenNV1DataGridViewTextBoxColumn
             // 
-            this.colTenNV.DataPropertyName = "TenNV1";
-            this.colTenNV.HeaderText = "Họ tên";
-            this.colTenNV.MinimumWidth = 6;
-            this.colTenNV.Name = "colTenNV";
+            this.tenNV1DataGridViewTextBoxColumn.DataPropertyName = "TenNV1";
+            this.tenNV1DataGridViewTextBoxColumn.HeaderText = "Tên NV";
+            this.tenNV1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNV1DataGridViewTextBoxColumn.Name = "tenNV1DataGridViewTextBoxColumn";
             // 
-            // colNgayVaoLam
+            // ngayVaoLam1DataGridViewTextBoxColumn
             // 
-            this.colNgayVaoLam.DataPropertyName = "NgayVaoLam1";
-            this.colNgayVaoLam.HeaderText = "Ngày vào làm";
-            this.colNgayVaoLam.MinimumWidth = 6;
-            this.colNgayVaoLam.Name = "colNgayVaoLam";
+            this.ngayVaoLam1DataGridViewTextBoxColumn.DataPropertyName = "NgayVaoLam1";
+            this.ngayVaoLam1DataGridViewTextBoxColumn.HeaderText = "Ngày vào làm";
+            this.ngayVaoLam1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayVaoLam1DataGridViewTextBoxColumn.Name = "ngayVaoLam1DataGridViewTextBoxColumn";
             // 
-            // colSDT
+            // sDT1DataGridViewTextBoxColumn
             // 
-            this.colSDT.DataPropertyName = "SDT1";
-            this.colSDT.HeaderText = "SĐT";
-            this.colSDT.MinimumWidth = 6;
-            this.colSDT.Name = "colSDT";
+            this.sDT1DataGridViewTextBoxColumn.DataPropertyName = "SDT1";
+            this.sDT1DataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDT1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sDT1DataGridViewTextBoxColumn.Name = "sDT1DataGridViewTextBoxColumn";
             // 
-            // colDiaChi
+            // diachi1DataGridViewTextBoxColumn
             // 
-            this.colDiaChi.DataPropertyName = "DiaChi1";
-            this.colDiaChi.HeaderText = "Địa chỉ";
-            this.colDiaChi.MinimumWidth = 6;
-            this.colDiaChi.Name = "colDiaChi";
+            this.diachi1DataGridViewTextBoxColumn.DataPropertyName = "Diachi1";
+            this.diachi1DataGridViewTextBoxColumn.HeaderText = "Địa chỉ";
+            this.diachi1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.diachi1DataGridViewTextBoxColumn.Name = "diachi1DataGridViewTextBoxColumn";
             // 
-            // colChucVu
+            // hinhAnh1DataGridViewTextBoxColumn
             // 
-            this.colChucVu.DataPropertyName = "LoaiNV1";
-            this.colChucVu.HeaderText = "Chức vụ";
-            this.colChucVu.MinimumWidth = 6;
-            this.colChucVu.Name = "colChucVu";
+            this.hinhAnh1DataGridViewTextBoxColumn.DataPropertyName = "HinhAnh1";
+            this.hinhAnh1DataGridViewTextBoxColumn.HeaderText = "Hình ảnh";
+            this.hinhAnh1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hinhAnh1DataGridViewTextBoxColumn.Name = "hinhAnh1DataGridViewTextBoxColumn";
+            // 
+            // chucVu1DataGridViewTextBoxColumn
+            // 
+            this.chucVu1DataGridViewTextBoxColumn.DataPropertyName = "ChucVu1";
+            this.chucVu1DataGridViewTextBoxColumn.HeaderText = "Chức vụ";
+            this.chucVu1DataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.chucVu1DataGridViewTextBoxColumn.Name = "chucVu1DataGridViewTextBoxColumn";
+            // 
+            // nhanVienDTOBindingSource2
+            // 
+            this.nhanVienDTOBindingSource2.DataSource = typeof(DTO.NhanVienDTO);
             // 
             // label1
             // 
@@ -260,6 +283,18 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::GUI.Properties.Resources.icons8_update_left_rotation_50;
+            this.button1.Location = new System.Drawing.Point(993, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 58);
+            this.button1.TabIndex = 65;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(9, 0);
@@ -268,6 +303,41 @@
             this.button2.TabIndex = 64;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
+            this.btnXoa.Location = new System.Drawing.Point(812, 422);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(68, 56);
+            this.btnXoa.TabIndex = 63;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::GUI.Properties.Resources.icons8_save_64;
+            this.btnLuu.Location = new System.Drawing.Point(900, 420);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(74, 58);
+            this.btnLuu.TabIndex = 62;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThemNV
+            // 
+            this.btnThemNV.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNV.Image = global::GUI.Properties.Resources.icons8_add_64;
+            this.btnThemNV.Location = new System.Drawing.Point(714, 422);
+            this.btnThemNV.Name = "btnThemNV";
+            this.btnThemNV.Size = new System.Drawing.Size(78, 56);
+            this.btnThemNV.TabIndex = 59;
+            this.btnThemNV.UseVisualStyleBackColor = false;
+            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // panel3
             // 
@@ -365,53 +435,6 @@
             this.label2.TabIndex = 57;
             this.label2.Text = "Mã NV:";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::GUI.Properties.Resources.icons8_update_left_rotation_50;
-            this.button1.Location = new System.Drawing.Point(993, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 58);
-            this.button1.TabIndex = 65;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Image = global::GUI.Properties.Resources.icons8_delete_bin_50;
-            this.btnXoa.Location = new System.Drawing.Point(812, 422);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(68, 56);
-            this.btnXoa.TabIndex = 63;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Image = global::GUI.Properties.Resources.icons8_save_64;
-            this.btnLuu.Location = new System.Drawing.Point(900, 420);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(74, 58);
-            this.btnLuu.TabIndex = 62;
-            this.btnLuu.UseVisualStyleBackColor = false;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnThemNV
-            // 
-            this.btnThemNV.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThemNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNV.Image = global::GUI.Properties.Resources.icons8_add_64;
-            this.btnThemNV.Location = new System.Drawing.Point(714, 422);
-            this.btnThemNV.Name = "btnThemNV";
-            this.btnThemNV.Size = new System.Drawing.Size(78, 56);
-            this.btnThemNV.TabIndex = 59;
-            this.btnThemNV.UseVisualStyleBackColor = false;
-            this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
-            // 
             // pic
             // 
             this.pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -437,6 +460,14 @@
             this.btn_TimKiem.TabIndex = 3;
             this.btn_TimKiem.UseVisualStyleBackColor = false;
             // 
+            // nhanVienDTOBindingSource1
+            // 
+            this.nhanVienDTOBindingSource1.DataSource = typeof(DTO.NhanVienDTO);
+            // 
+            // nhanVienDTOBindingSource
+            // 
+            this.nhanVienDTOBindingSource.DataSource = typeof(DTO.NhanVienDTO);
+            // 
             // QuanLyNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,11 +480,14 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDTOBindingSource2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDTOBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nhanVienDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -488,11 +522,15 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayVaoLam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colChucVu;
+        private System.Windows.Forms.BindingSource nhanVienDTOBindingSource;
+        private System.Windows.Forms.BindingSource nhanVienDTOBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iD1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNV1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayVaoLam1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDT1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diachi1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hinhAnh1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chucVu1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource nhanVienDTOBindingSource2;
     }
 }

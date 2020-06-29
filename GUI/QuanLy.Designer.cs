@@ -56,7 +56,7 @@
             this.quảnLýTàiKhoảnToolStripMenuItem});
             this.menuQuanLy.Location = new System.Drawing.Point(0, 0);
             this.menuQuanLy.Name = "menuQuanLy";
-            this.menuQuanLy.Size = new System.Drawing.Size(1251, 28);
+            this.menuQuanLy.Size = new System.Drawing.Size(1651, 28);
             this.menuQuanLy.TabIndex = 0;
             this.menuQuanLy.Text = "menuStrip1";
             // 
@@ -113,7 +113,7 @@
             this.quanLyBan1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quanLyBan1.Location = new System.Drawing.Point(0, 28);
             this.quanLyBan1.Name = "quanLyBan1";
-            this.quanLyBan1.Size = new System.Drawing.Size(1251, 677);
+            this.quanLyBan1.Size = new System.Drawing.Size(1651, 743);
             this.quanLyBan1.TabIndex = 3;
             this.quanLyBan1.Load += new System.EventHandler(this.quanLyBan1_Load);
             // 
@@ -122,9 +122,9 @@
             this.quanLyDoanhThu2.BackColor = System.Drawing.Color.Aquamarine;
             this.quanLyDoanhThu2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quanLyDoanhThu2.Location = new System.Drawing.Point(0, 28);
-            this.quanLyDoanhThu2.Margin = new System.Windows.Forms.Padding(4);
+            this.quanLyDoanhThu2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.quanLyDoanhThu2.Name = "quanLyDoanhThu2";
-            this.quanLyDoanhThu2.Size = new System.Drawing.Size(1251, 677);
+            this.quanLyDoanhThu2.Size = new System.Drawing.Size(1651, 743);
             this.quanLyDoanhThu2.TabIndex = 5;
             this.quanLyDoanhThu2.Load += new System.EventHandler(this.quanLyDoanhThu2_Load);
             // 
@@ -134,7 +134,7 @@
             this.quanLySanPham1.Location = new System.Drawing.Point(0, 28);
             this.quanLySanPham1.Margin = new System.Windows.Forms.Padding(4);
             this.quanLySanPham1.Name = "quanLySanPham1";
-            this.quanLySanPham1.Size = new System.Drawing.Size(1251, 677);
+            this.quanLySanPham1.Size = new System.Drawing.Size(1651, 743);
             this.quanLySanPham1.TabIndex = 4;
             // 
             // quanLyNhanVien1
@@ -143,7 +143,7 @@
             this.quanLyNhanVien1.Location = new System.Drawing.Point(0, 28);
             this.quanLyNhanVien1.Margin = new System.Windows.Forms.Padding(4);
             this.quanLyNhanVien1.Name = "quanLyNhanVien1";
-            this.quanLyNhanVien1.Size = new System.Drawing.Size(1251, 677);
+            this.quanLyNhanVien1.Size = new System.Drawing.Size(1651, 743);
             this.quanLyNhanVien1.TabIndex = 2;
             // 
             // QuanLy
@@ -158,7 +158,7 @@
             this.Controls.Add(this.menuQuanLy);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLy";
-            this.Size = new System.Drawing.Size(1251, 705);
+            this.Size = new System.Drawing.Size(1651, 771);
             this.Load += new System.EventHandler(this.QuanLy_Load);
             this.menuQuanLy.ResumeLayout(false);
             this.menuQuanLy.PerformLayout();

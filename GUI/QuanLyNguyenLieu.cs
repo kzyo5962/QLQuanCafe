@@ -27,7 +27,7 @@ namespace GUI
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
 
-            dgv_NguyenLieu.DataSource = BUS.NguyenLieuBUS.Instance.TimKiemNguyenLieuBUS(txt_TimKiem.Text);
+            //dgv_NguyenLieu.DataSource = BUS.NguyenLieuBUS.Instance.TimKiemNguyenLieuBUS(txt_TimKiem.Text);
         }
 
         private void btn_LuuLai_Click(object sender, EventArgs e)

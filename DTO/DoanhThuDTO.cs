@@ -35,7 +35,7 @@ namespace DTO
         {
             this.TenSP = (string)dataRow["TenMenu"];
             this.Gia = float.Parse(dataRow["GiaBan"].ToString());
-            this.GiamGia = float.Parse(dataRow["GiamGia"].ToString());
+            this.GiamGia = (float)double.Parse(dataRow["GiamGia"].ToString());
             this.SoLuong = (int)dataRow["SoLuong"];
             this.TongTien = (this.SoLuong * this.Gia) - ((this.SoLuong * this.Gia) * this.GiamGia);
         }

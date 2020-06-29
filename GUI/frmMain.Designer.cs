@@ -31,26 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnInfomation = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.btnQuanLy = new System.Windows.Forms.Button();
-            this.btnBanHang = new System.Windows.Forms.Button();
-            this.btnTrangChu = new System.Windows.Forms.Button();
             this.panTop = new System.Windows.Forms.Panel();
-            this.trangChu1 = new GUI.TrangChu();
             this.label1 = new System.Windows.Forms.Label();
             this.lblGiay = new System.Windows.Forms.Label();
             this.lblPhut = new System.Windows.Forms.Label();
             this.lblGio = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblLoaiTaiKhoan = new System.Windows.Forms.Label();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.lblNameStore = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.banHang1 = new GUI.BanHang();
-            this.quanLy1 = new GUI.QuanLy();
             this.timeBlock = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnInfomation = new System.Windows.Forms.Button();
+            this.btnThongKe = new System.Windows.Forms.Button();
+            this.btnQuanLy = new System.Windows.Forms.Button();
+            this.btnBanHang = new System.Windows.Forms.Button();
+            this.btnTrangChu = new System.Windows.Forms.Button();
+            this.thongKe1 = new GUI.ThongKe();
             this.panel1.SuspendLayout();
             this.panTop.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,26 +69,8 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(208, 750);
+            this.panel1.Size = new System.Drawing.Size(208, 853);
             this.panel1.TabIndex = 0;
-            // 
-            // btnInfomation
-            // 
-            this.btnInfomation.BackColor = System.Drawing.Color.Bisque;
-            this.btnInfomation.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInfomation.ForeColor = System.Drawing.Color.Crimson;
-            this.btnInfomation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfomation.ImageKey = "icons8-information-50.png";
-            this.btnInfomation.ImageList = this.imageList1;
-            this.btnInfomation.Location = new System.Drawing.Point(13, 354);
-            this.btnInfomation.Margin = new System.Windows.Forms.Padding(4);
-            this.btnInfomation.Name = "btnInfomation";
-            this.btnInfomation.Size = new System.Drawing.Size(185, 60);
-            this.btnInfomation.TabIndex = 4;
-            this.btnInfomation.Text = "Thông Tin";
-            this.btnInfomation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInfomation.UseVisualStyleBackColor = false;
-            this.btnInfomation.Click += new System.EventHandler(this.btnInfomation_Click);
             // 
             // imageList1
             // 
@@ -101,80 +82,6 @@
             this.imageList1.Images.SetKeyName(3, "icons8-favorite-cart-50.png");
             this.imageList1.Images.SetKeyName(4, "icons8-home-50.png");
             this.imageList1.Images.SetKeyName(5, "icons8-information-50.png");
-            // 
-            // btnThongKe
-            // 
-            this.btnThongKe.BackColor = System.Drawing.Color.Bisque;
-            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongKe.ForeColor = System.Drawing.Color.Crimson;
-            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.ImageKey = "icons8-business-report-50.png";
-            this.btnThongKe.ImageList = this.imageList1;
-            this.btnThongKe.Location = new System.Drawing.Point(13, 270);
-            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(185, 60);
-            this.btnThongKe.TabIndex = 3;
-            this.btnThongKe.Text = "Thống Kê";
-            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
-            // 
-            // btnQuanLy
-            // 
-            this.btnQuanLy.BackColor = System.Drawing.Color.Bisque;
-            this.btnQuanLy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanLy.ForeColor = System.Drawing.Color.Crimson;
-            this.btnQuanLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanLy.ImageKey = "icons8-admin-settings-male-50.png";
-            this.btnQuanLy.ImageList = this.imageList1;
-            this.btnQuanLy.Location = new System.Drawing.Point(13, 182);
-            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(4);
-            this.btnQuanLy.Name = "btnQuanLy";
-            this.btnQuanLy.Size = new System.Drawing.Size(185, 60);
-            this.btnQuanLy.TabIndex = 2;
-            this.btnQuanLy.Text = "Quản Lý";
-            this.btnQuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuanLy.UseVisualStyleBackColor = false;
-            this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
-            // 
-            // btnBanHang
-            // 
-            this.btnBanHang.BackColor = System.Drawing.Color.Bisque;
-            this.btnBanHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBanHang.ForeColor = System.Drawing.Color.Crimson;
-            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBanHang.ImageKey = "icons8-favorite-cart-50.png";
-            this.btnBanHang.ImageList = this.imageList1;
-            this.btnBanHang.Location = new System.Drawing.Point(13, 94);
-            this.btnBanHang.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(185, 60);
-            this.btnBanHang.TabIndex = 1;
-            this.btnBanHang.Text = "Bán Hàng";
-            this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBanHang.UseVisualStyleBackColor = false;
-            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
-            // 
-            // btnTrangChu
-            // 
-            this.btnTrangChu.BackColor = System.Drawing.Color.Bisque;
-            this.btnTrangChu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTrangChu.ForeColor = System.Drawing.Color.Crimson;
-            this.btnTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrangChu.ImageKey = "icons8-home-50.png";
-            this.btnTrangChu.ImageList = this.imageList1;
-            this.btnTrangChu.Location = new System.Drawing.Point(15, 24);
-            this.btnTrangChu.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTrangChu.Name = "btnTrangChu";
-            this.btnTrangChu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnTrangChu.Size = new System.Drawing.Size(185, 60);
-            this.btnTrangChu.TabIndex = 0;
-            this.btnTrangChu.TabStop = false;
-            this.btnTrangChu.Text = "Trang chủ";
-            this.btnTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTrangChu.UseVisualStyleBackColor = false;
-            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
             // panTop
             // 
@@ -191,19 +98,9 @@
             this.panTop.Location = new System.Drawing.Point(208, 0);
             this.panTop.Margin = new System.Windows.Forms.Padding(4);
             this.panTop.Name = "panTop";
-            this.panTop.Size = new System.Drawing.Size(1397, 71);
+            this.panTop.Size = new System.Drawing.Size(1474, 71);
             this.panTop.TabIndex = 2;
             this.panTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panTop_Paint);
-            // 
-            // trangChu1
-            // 
-            this.trangChu1.AutoSize = true;
-            this.trangChu1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("trangChu1.BackgroundImage")));
-            this.trangChu1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trangChu1.Location = new System.Drawing.Point(0, 0);
-            this.trangChu1.Name = "trangChu1";
-            this.trangChu1.Size = new System.Drawing.Size(1296, 727);
-            this.trangChu1.TabIndex = 8;
             // 
             // label1
             // 
@@ -253,18 +150,6 @@
             this.lblGio.TabIndex = 4;
             this.lblGio.Text = "00";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Image = global::GUI.Properties.Resources.icons8_export_301;
-            this.button1.Location = new System.Drawing.Point(1001, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 38);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lblLoaiTaiKhoan
             // 
             this.lblLoaiTaiKhoan.AutoSize = true;
@@ -304,44 +189,140 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.trangChu1);
-            this.panel2.Controls.Add(this.banHang1);
-            this.panel2.Controls.Add(this.quanLy1);
+            this.panel2.Controls.Add(this.thongKe1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(208, 71);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1296, 727);
+            this.panel2.Size = new System.Drawing.Size(1474, 782);
             this.panel2.TabIndex = 3;
-            // 
-            // banHang1
-            // 
-            this.banHang1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.banHang1.Location = new System.Drawing.Point(0, 0);
-            this.banHang1.maNV = 0;
-            this.banHang1.Margin = new System.Windows.Forms.Padding(5);
-            this.banHang1.Name = "banHang1";
-            this.banHang1.Size = new System.Drawing.Size(1296, 727);
-            this.banHang1.TabIndex = 1;
-            this.banHang1.Load += new System.EventHandler(this.banHang1_Load);
-            // 
-            // quanLy1
-            // 
-            this.quanLy1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.quanLy1.Location = new System.Drawing.Point(0, 0);
-            this.quanLy1.Margin = new System.Windows.Forms.Padding(5);
-            this.quanLy1.Name = "quanLy1";
-            this.quanLy1.Size = new System.Drawing.Size(1296, 727);
-            this.quanLy1.TabIndex = 0;
             // 
             // timeBlock
             // 
             this.timeBlock.Tick += new System.EventHandler(this.timeBlock_Tick);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Image = global::GUI.Properties.Resources.icons8_export_301;
+            this.button1.Location = new System.Drawing.Point(1001, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 38);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnInfomation
+            // 
+            this.btnInfomation.BackColor = System.Drawing.Color.Bisque;
+            this.btnInfomation.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInfomation.ForeColor = System.Drawing.Color.Crimson;
+            this.btnInfomation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInfomation.ImageKey = "icons8-information-50.png";
+            this.btnInfomation.ImageList = this.imageList1;
+            this.btnInfomation.Location = new System.Drawing.Point(13, 354);
+            this.btnInfomation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnInfomation.Name = "btnInfomation";
+            this.btnInfomation.Size = new System.Drawing.Size(185, 60);
+            this.btnInfomation.TabIndex = 4;
+            this.btnInfomation.Text = "Thông Tin";
+            this.btnInfomation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInfomation.UseVisualStyleBackColor = false;
+            this.btnInfomation.Click += new System.EventHandler(this.btnInfomation_Click);
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.Bisque;
+            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.Crimson;
+            this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongKe.ImageKey = "icons8-business-report-50.png";
+            this.btnThongKe.ImageList = this.imageList1;
+            this.btnThongKe.Location = new System.Drawing.Point(13, 270);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.Size = new System.Drawing.Size(185, 60);
+            this.btnThongKe.TabIndex = 3;
+            this.btnThongKe.Text = "Thống Kê";
+            this.btnThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThongKe.UseVisualStyleBackColor = false;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            // 
+            // btnQuanLy
+            // 
+            this.btnQuanLy.BackColor = System.Drawing.Color.Bisque;
+            this.btnQuanLy.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuanLy.ForeColor = System.Drawing.Color.Crimson;
+            this.btnQuanLy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuanLy.ImageKey = "icons8-admin-settings-male-50.png";
+            this.btnQuanLy.ImageList = this.imageList1;
+            this.btnQuanLy.Location = new System.Drawing.Point(13, 183);
+            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuanLy.Name = "btnQuanLy";
+            this.btnQuanLy.Size = new System.Drawing.Size(185, 60);
+            this.btnQuanLy.TabIndex = 2;
+            this.btnQuanLy.Text = "Quản Lý";
+            this.btnQuanLy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuanLy.UseVisualStyleBackColor = false;
+            this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
+            // 
+            // btnBanHang
+            // 
+            this.btnBanHang.BackColor = System.Drawing.Color.Bisque;
+            this.btnBanHang.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBanHang.ForeColor = System.Drawing.Color.Crimson;
+            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBanHang.ImageKey = "icons8-favorite-cart-50.png";
+            this.btnBanHang.ImageList = this.imageList1;
+            this.btnBanHang.Location = new System.Drawing.Point(13, 94);
+            this.btnBanHang.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.Size = new System.Drawing.Size(185, 60);
+            this.btnBanHang.TabIndex = 1;
+            this.btnBanHang.Text = "Bán Hàng";
+            this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBanHang.UseVisualStyleBackColor = false;
+            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
+            // 
+            // btnTrangChu
+            // 
+            this.btnTrangChu.BackColor = System.Drawing.Color.Bisque;
+            this.btnTrangChu.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrangChu.ForeColor = System.Drawing.Color.Crimson;
+            this.btnTrangChu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTrangChu.ImageKey = "icons8-home-50.png";
+            this.btnTrangChu.ImageList = this.imageList1;
+            this.btnTrangChu.Location = new System.Drawing.Point(15, 24);
+            this.btnTrangChu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTrangChu.Name = "btnTrangChu";
+            this.btnTrangChu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnTrangChu.Size = new System.Drawing.Size(185, 60);
+            this.btnTrangChu.TabIndex = 0;
+            this.btnTrangChu.TabStop = false;
+            this.btnTrangChu.Text = "Trang chủ";
+            this.btnTrangChu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTrangChu.UseVisualStyleBackColor = false;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
+            // 
+            // thongKe1
+            // 
+            this.thongKe1.Location = new System.Drawing.Point(14, 23);
+            this.thongKe1.Name = "thongKe1";
+            this.thongKe1.Size = new System.Drawing.Size(1261, 723);
+            this.thongKe1.TabIndex = 0;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1605, 750);
+            this.ClientSize = new System.Drawing.Size(1682, 853);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panTop);
             this.Controls.Add(this.panel1);
@@ -355,7 +336,6 @@
             this.panTop.ResumeLayout(false);
             this.panTop.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,5 +363,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ImageList imageList1;
         private TrangChu trangChu1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private ThongKe thongKe1;
     }
 }

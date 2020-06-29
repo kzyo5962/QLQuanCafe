@@ -33,7 +33,7 @@ namespace DAO
         public List<DoanhThuDTO> getSanPhamDaBan()
         {
             List<DoanhThuDTO> list = new List<DoanhThuDTO>();
-            string query = "SELECT b.TenMenu, a.GiaBan, a.SoLuong, a.GiamGia FROM CHITIETHOADON a, MENU b  WHERE a.MaMenu=b.ID ";
+            string query = "SELECT b.TenMenu, a.GiaBan, a.SoLuong, a.GiamGia/100 as GiamGia FROM CHITIETHOADON a, MENU b  WHERE a.MaMenu=b.ID ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -47,7 +47,7 @@ namespace DAO
         public string getTongDoanhThu()
         {
             string Result = "";
-            string query = "SELECT SUM(SoLuong*GiaBan-(SoLuong*GiaBan*GiamGia)) tongtien FROM CHITIETHOADON ";
+            string query = "exec getTongDoanhThu";
             DataTable data = new DataTable();
             data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow dataRow in data.Rows)
@@ -62,9 +62,15 @@ namespace DAO
         {
             string result ="";
             string query = "SELECT SUM(SoLuong*GiaBan-(SoLuong*GiaBan*GiamGia)) tongtien FROM CHITIETHOADON WHERE DAY(NgayLap)= DAY(getdate())";
+            
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if(data.Rows.Count == 0)
+            {
+                return "0";
+            } 
             foreach(DataRow dataRow in data.Rows)
             {
+                
                 result = dataRow["tongtien"].ToString();
             }
 

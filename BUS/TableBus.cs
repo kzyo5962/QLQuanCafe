@@ -39,13 +39,21 @@ namespace BUS
         {
             return TableDao.Instance.LoadListTableNull();
         }
+        public int update(int MaBan, int iTrangThai,int tinhtrang,int soghe)
+        {
+            return TableDao.Instance.update(MaBan, iTrangThai,tinhtrang,soghe);
+        }
+        public int InsertBan(int soGhe, int trangThai , int tinhTrang )
+        {
+            return TableDao.Instance.InsertBan(soGhe, trangThai, tinhTrang);
+        }
         public bool CapNhatBan(int MaBan, int iTrangThai)
         {
             return TableDao.Instance.CapNhatBan(MaBan, iTrangThai);
         }
-        public bool InsertBan(int soGhe, int trangThai = 0, int tinhTrang = 1)
+        public List<TableDTO> listYeuCau(string cbo, string txt)
         {
-            return TableDao.Instance.InsertBan(soGhe, trangThai, tinhTrang);
+            return TableDao.Instance.listYeuCau(cbo, txt);
         }
     }
 }

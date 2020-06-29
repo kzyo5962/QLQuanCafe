@@ -31,8 +31,8 @@ namespace GUI
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            trangChu1.BringToFront();
-            banHang1.maNV = TaiKhoan1.MaNV;
+            //trangChu1.BringToFront();
+            //banHang1.maNV = TaiKhoan1.MaNV;
             if(TaiKhoan1.MaLoai==2)
             {
                 btnQuanLy.Enabled = false;
@@ -74,7 +74,7 @@ namespace GUI
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-
+            thongKe1.BringToFront();
             //panHover.Top = btnThongKe.Top;
             //panHover.Height = btnThongKe.Height;
         }

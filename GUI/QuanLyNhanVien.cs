@@ -74,12 +74,12 @@ namespace GUI
                 return;
             else
             {
-                txtDiaChi.Text = dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtMaNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtTenNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtSDT.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
-                dtpNgayVaoLam.Text= dgvNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtMaNV.Text= dgvNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();
-                cboChucVu.Text= dgvNhanVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+                dtpNgayVaoLam.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtSDT.Text= dgvNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDiaChi.Text= dgvNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cboChucVu.Text= dgvNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
             }                
         }
 
@@ -149,6 +149,11 @@ namespace GUI
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -37,7 +37,7 @@
             this.AutoSize = true;
             this.BackgroundImage = global::GUI.Properties.Resources.Trangchu;
             this.Name = "TrangChu";
-            this.Size = new System.Drawing.Size(1347, 666);
+            this.Size = new System.Drawing.Size(1482, 800);
             this.ResumeLayout(false);
 
         }

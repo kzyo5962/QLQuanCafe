@@ -33,26 +33,16 @@ namespace DAO
         {
 
         }
-        //Them Ban
-        public bool InsertBan(int soGhe,int trangThai=0,int tinhTrang=1)
+        
+        public int InsertBan(int soGhe, int trangThai, int tinhTrang)
         {
-            try
-            {
-                BAN ban = new BAN
-                {
-                    SoGhe = soGhe,
-                    TrangThai = trangThai,
-                    TinhTrang = tinhTrang
-                };
-                _qlcfEf.BANs.Add(ban);
-                _qlcfEf.SaveChanges();
-               
-                return true;
-            }catch(Exception e)
-            {
-                return false;
-            }
-            
+            string query = string.Format("insert ban(SoGhe,TrangThai,TinhTrang) values('{0}','{1}','{2}')",soGhe,trangThai,tinhTrang);
+            int resutl = DataProvider.Instance.ExecuteNonQuery(query);
+            if (resutl > 0)
+                return 1;
+            else
+                return 0;
+
         }
         public List<TableDTO> LoadListTable()
         {
@@ -66,6 +56,14 @@ namespace DAO
             }
             return list;
         }
+        public int update(int MaBan, int iTrangThai, int TinhTrang,int soghe)
+        {
+            string query = string.Format("update ban set TrangThai='{0}', TinhTrang='{1}', SoGhe='{2}' where ID='{3}'", iTrangThai, TinhTrang,soghe,MaBan);
+            if (DataProvider.Instance.ExecuteNonQuery(query) > 0)
+                return 1;
+            else
+                return 0;
+        }
         public bool CapNhatBan(int MaBan, int iTrangThai)
         {
             try
@@ -75,7 +73,8 @@ namespace DAO
                 ban.TrangThai = iTrangThai;
                 _qlcfEf.SaveChanges();
                 return true;
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 return false;
             }
@@ -100,6 +99,36 @@ namespace DAO
             {
               
                 TableDTO item = new TableDTO(row,1);
+                list.Add(item);
+            }
+            return list;
+        }
+        public List<TableDTO> listYeuCau(string cbo, string txt)
+        {
+            string query = "";
+            if(cbo == "Mã bàn")
+            {
+                query = string.Format("select * from Ban where ID LIKE '%{0}%' ", txt);
+            } 
+            else if(cbo == "Số ghế")
+            {
+                query = string.Format("select * from Ban where SoGhe = '{0}' ", txt);
+            }
+            else if (cbo == "Trạng thái")
+            {
+                query = string.Format("select * from Ban where TrangThai = '{0}' ", txt);
+            }
+            else
+            {
+                query = string.Format("select * from Ban where TinhTrang = '{0}' ", txt);
+            }
+
+            List<TableDTO> list = new List<TableDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+
+                TableDTO item = new TableDTO(row);
                 list.Add(item);
             }
             return list;

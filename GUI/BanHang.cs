@@ -183,10 +183,10 @@ namespace GUI
                     if(dialogResult==DialogResult.Yes)
                     {
                         resultBill = BillBus.Instance.UpdateBill(idBill);
-                        resultBill = TableBus.Instance.CapNhatBan(maBanClick, 0);
+                        resultBill =BUS.TableBus.Instance.CapNhatBan(maBanClick, 0);
                         LoadBan();
-                        uctHoaDon uctHd = new uctHoaDon();
-                        uctHd.BringToFront();
+                        
+                       
                     }
 
                 }
@@ -285,6 +285,11 @@ namespace GUI
             {
                 e.Handled = true;
             }
+        }
+
+        private void fPannelBan_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -36,7 +36,7 @@ namespace BUS
 
         public int CapNhatNhanVien(string tenNV, string diachi, string sdt, string ngayVaoLam, int id,string chucvu)
         {
-            return DAO.NhanVienDAO.Intance.CapNhatNhanVien(tenNV, diachi, sdt, ngayVaoLam,id, chucvu);
+            return DAO.NhanVienDAO.Intance.CapNhatNhanVien(tenNV, diachi, sdt, ngayVaoLam,id,chucvu);
         }
         public int XoaNhanVien(int ID)
         {
