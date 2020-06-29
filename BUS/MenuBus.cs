@@ -34,6 +34,11 @@ namespace BUS
         {
             return MenuDao.Instance.ListMenuById(maLoai);
         }
-            
+        //public string HienThiDonGia(string tenMenu)
+        //{
+        //    return MenuDao.Instance.HienThiDonGia(tenMenu);
+        //}
+
+
     }
 }

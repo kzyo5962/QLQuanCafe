@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
+<<<<<<< HEAD
     public partial class ThongKe : UserControl
     {
         public ThongKe()
@@ -23,5 +24,19 @@ namespace GUI
 
             hd.ShowDialog();
         }
+=======
+<<<<<<< HEAD:GUI/ThongKeNhapHang.cs
+    public partial class ThongKeNhapHang : UserControl
+    {
+        public ThongKeNhapHang()
+=======
+    public partial class ThongKe : UserControl
+    {
+        public ThongKe()
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2:GUI/ThongKe.cs
+        {
+            InitializeComponent();
+        }
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
     }
 }

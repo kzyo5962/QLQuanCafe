@@ -47,7 +47,7 @@
             this.giaBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Huy = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.billInfoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Xh = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -189,7 +189,7 @@
             this.giaBanDataGridViewTextBoxColumn,
             this.soLuongDataGridViewTextBoxColumn,
             this.thanhTienDataGridViewTextBoxColumn,
-            this.Huy});
+            this.Delete});
             this.drvBillInfo.DataSource = this.billInfoDTOBindingSource;
             this.drvBillInfo.Location = new System.Drawing.Point(569, 226);
             this.drvBillInfo.Margin = new System.Windows.Forms.Padding(4);
@@ -227,12 +227,18 @@
             this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
             // 
-            // Huy
+            // Delete
             // 
+<<<<<<< HEAD
             this.Huy.DataPropertyName = "trangthai";
             this.Huy.HeaderText = "Hủy";
             this.Huy.MinimumWidth = 6;
             this.Huy.Name = "Huy";
+=======
+            this.Delete.HeaderText = "Hủy món";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "X";
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             // 
             // billInfoDTOBindingSource
             // 
@@ -477,13 +483,20 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.BindingSource tableDTOBindingSource;
+        private System.Windows.Forms.Label Gia;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenMenuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn giaBanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTienDataGridViewTextBoxColumn;
+<<<<<<< HEAD
         private System.Windows.Forms.DataGridViewButtonColumn Huy;
         private System.Windows.Forms.Label Gia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtGia;
+=======
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
     }
 }

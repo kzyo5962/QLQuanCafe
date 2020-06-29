@@ -50,15 +50,29 @@ namespace BUS
         {
             return BillDAO.Instance.UpdateBill(Mabill);
         }
+<<<<<<< HEAD
         public List<BillDTO> getListHD()
         {
             return BillDAO.Instance.getListHD();
         }
+=======
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
         public List<BillDTO> getListHD(string tuNgay, string denNgay)
         {
             return BillDAO.Instance.getListHD(tuNgay, denNgay);
         }
+<<<<<<< HEAD
 
         
+=======
+<<<<<<< HEAD
+        public List<BillDTO> getListHD()
+        {
+            return BillDAO.Instance.getListHD();
+        }
+
+=======
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
     }
 }

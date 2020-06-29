@@ -72,7 +72,7 @@ namespace DAO
                 bill.CheckOut = now;
                 _qlcfEf.SaveChanges();
                 return true;
-
+                
 
             }
             catch(Exception e)
@@ -80,14 +80,31 @@ namespace DAO
                 return false;
             }
         }
+<<<<<<< HEAD
         public List<BillDTO> getListHD()
         {
             string query = "select * from HOADON where trangthai = 1 order by CheckOut desc";
             List<BillDTO> listData = new List<BillDTO>();
+=======
+<<<<<<< HEAD
+        public List<BillDTO> getListHD(string tuNgay, string denNgay)
+        {
+            string query = string.Format("exec getListHD '{0}', '{1}'", tuNgay, denNgay);
+            List<BillDTO> listData = new List<BillDTO>();
+=======
+
+        public List<BillDTO> getListHD(string tuNgay, string denNgay)
+        {
+            
+            string query = string.Format("SELECT a.ID, b.TenNV, a.NgayLap, a.trangthai, a.MaBan, a.CheckOut from HOADON a, NHANVIEN b where a.MaNV = B.ID and a.Checkout between '{0}' and '{1}'", tuNgay, denNgay);
+            List<BillDTO> lst = new List<BillDTO>();
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
                 BillDTO item = new BillDTO(row);
+<<<<<<< HEAD
                 listData.Add(item);
             }
             return listData;   
@@ -96,6 +113,16 @@ namespace DAO
         {
 
             string query = string.Format("SELECT a.ID, a.MaNV, a.NgayLap, a.trangthai, a.MaBan, a.CheckOut from HOADON a, NHANVIEN b where a.MaNV = B.ID and a.Checkout between '{0}' and '{1}'", tuNgay, denNgay);
+=======
+<<<<<<< HEAD
+                listData.Add(item);
+            }
+            return listData;
+        }
+        public List<BillDTO> getListHD()
+        {
+            string query = "select * from HOADON where trangthai = 1 order by CheckOut desc";
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             List<BillDTO> listData = new List<BillDTO>();
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
@@ -104,6 +131,14 @@ namespace DAO
                 listData.Add(item);
             }
             return listData;
+<<<<<<< HEAD
+=======
+=======
+                lst.Add(item);
+            }
+            return lst;
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
         }
     }
 }

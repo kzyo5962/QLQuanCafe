@@ -42,6 +42,7 @@ namespace GUI
             {
                 btnThongKe.Enabled = false;
             }
+            banHang1.BringToFront();
 
         }
         
@@ -77,6 +78,7 @@ namespace GUI
             thongKe1.BringToFront();
             //panHover.Top = btnThongKe.Top;
             //panHover.Height = btnThongKe.Height;
+            uctThongKe1.BringToFront();
         }
 
         private void btnInfomation_Click(object sender, EventArgs e)

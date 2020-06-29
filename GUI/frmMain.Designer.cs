@@ -42,6 +42,7 @@
             this.lblNameStore = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.timeBlock = new System.Windows.Forms.Timer(this.components);
+<<<<<<< HEAD
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.btnInfomation = new System.Windows.Forms.Button();
@@ -50,6 +51,9 @@
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnTrangChu = new System.Windows.Forms.Button();
             this.thongKe1 = new GUI.ThongKe();
+=======
+            this.uctThongKe1 = new GUI.uctThongKe();
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             this.panel1.SuspendLayout();
             this.panTop.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,6 +154,25 @@
             this.lblGio.TabIndex = 4;
             this.lblGio.Text = "00";
             // 
+<<<<<<< HEAD
+=======
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+<<<<<<< HEAD
+            this.button1.Location = new System.Drawing.Point(751, 5);
+=======
+            this.button1.Image = global::GUI.Properties.Resources.icons8_export_301;
+            this.button1.Location = new System.Drawing.Point(1001, 6);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+>>>>>>> 34c5a8ecb923d3e8de5fab8277aeecd828c007b2
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 38);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             // lblLoaiTaiKhoan
             // 
             this.lblLoaiTaiKhoan.AutoSize = true;
@@ -189,8 +212,18 @@
             // 
             // panel2
             // 
+<<<<<<< HEAD
             this.panel2.Controls.Add(this.thongKe1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+=======
+<<<<<<< HEAD
+            this.panel2.Controls.Add(this.uctThongKe1);
+=======
+            this.panel2.Controls.Add(this.trangChu1);
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
+            this.panel2.Controls.Add(this.banHang1);
+            this.panel2.Controls.Add(this.quanLy1);
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             this.panel2.Location = new System.Drawing.Point(208, 71);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
@@ -318,6 +351,15 @@
             this.thongKe1.Size = new System.Drawing.Size(1261, 723);
             this.thongKe1.TabIndex = 0;
             // 
+            // uctThongKe1
+            // 
+            this.uctThongKe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uctThongKe1.Location = new System.Drawing.Point(0, 0);
+            this.uctThongKe1.Margin = new System.Windows.Forms.Padding(2);
+            this.uctThongKe1.Name = "uctThongKe1";
+            this.uctThongKe1.Size = new System.Drawing.Size(972, 591);
+            this.uctThongKe1.TabIndex = 2;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,9 +403,16 @@
         private QuanLy quanLy1;
         private System.Windows.Forms.Timer timeBlock;
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD
+        private uctThongKe uctThongKe1;
+=======
         private System.Windows.Forms.ImageList imageList1;
         private TrangChu trangChu1;
+<<<<<<< HEAD
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private ThongKe thongKe1;
+=======
+>>>>>>> d87ad6287aa2d11f00defadc1326879aaa8d94ec
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
     }
 }

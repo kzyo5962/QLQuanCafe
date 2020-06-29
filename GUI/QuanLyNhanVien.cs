@@ -20,6 +20,7 @@ namespace GUI
           
 
         }
+        string CorrectFileName = null;
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
@@ -28,19 +29,26 @@ namespace GUI
 
         private void btnBrowser_Click(object sender, EventArgs e)
         {
-            try
+            OpenFileDialog open = new OpenFileDialog();
+            open.InitialDirectory = "C:\\";
+            open.Filter = "Image Files (*.jpg)|*.jpg|All Files(*.*)|*.*";
+            open.FilterIndex = 1;
+
+            if (open.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
+                if (open.CheckFileExists)
                 {
-                    if(ofd.ShowDialog()==DialogResult.OK)
-                    {
-                        pic.Image = Image.FromFile(ofd.FileName);
-                    }    
-                }                    
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                    string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 10);
+                    CorrectFileName = System.IO.Path.GetFileName(open.FileName);
+                    System.IO.File.Copy(open.FileName, paths + "\\Images\\" + CorrectFileName);
+
+                    pic.Image = Image.FromFile(paths + "\\Images\\" + CorrectFileName);
+                    MessageBox.Show("Tải ảnh thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy ảnh!");
+                }
             }
         }
 
@@ -52,16 +60,17 @@ namespace GUI
             } 
             else
             {
-                if (BUS.NhanVienBUS.Instance.ThemNhanVien(txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, dtpNgayVaoLam.Text, "",cboChucVu.Text) >= 1)
-                {
-                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    load();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    load();
-                }
+                //DateTime ngayVaoLam = Convert.ToDateTime(dtpNgayVaoLam.Value.ToString("yyyy/MM/dd"));
+                //if (BUS.NhanVienBUS.Instance.ThemNhanVien(txtTenNV.Text, txtDiaChi.Text, txtSDT.Text, ngayVaoLam, "\\Images\\" + CorrectFileName, cboChucVu.Text) >= 1)
+                //{
+                //    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    load();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    load();
+                //}
             }
          
         }
@@ -76,10 +85,19 @@ namespace GUI
             {
                 txtMaNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[0].Value.ToString();
                 txtTenNV.Text = dgvNhanVien.Rows[e.RowIndex].Cells[1].Value.ToString();
+<<<<<<< HEAD
                 dtpNgayVaoLam.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtSDT.Text= dgvNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtDiaChi.Text= dgvNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();
                 cboChucVu.Text= dgvNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString();
+=======
+                txtSDT.Text = dgvNhanVien.Rows[e.RowIndex].Cells[2].Value.ToString();
+                dtpNgayVaoLam.Text= dgvNhanVien.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtMaNV.Text= dgvNhanVien.Rows[e.RowIndex].Cells[4].Value.ToString();
+                cboChucVu.Text= dgvNhanVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+                string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 10);
+                //pic.Image = Image.FromFile(paths + dgvNhanVien.Rows[e.RowIndex].Cells[6].Value.ToString());
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             }                
         }
 
@@ -115,6 +133,7 @@ namespace GUI
             txtTenNV.ResetText();
             txtSDT.ResetText();
             txtDiaChi.ResetText();
+            pic.Image = null;
             dgvNhanVien.DataSource = BUS.NhanVienBUS.Instance.listNhanVien();
            
         }

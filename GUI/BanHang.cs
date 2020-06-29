@@ -185,8 +185,13 @@ namespace GUI
                         resultBill = BillBus.Instance.UpdateBill(idBill);
                         resultBill =BUS.TableBus.Instance.CapNhatBan(maBanClick, 0);
                         LoadBan();
+<<<<<<< HEAD
                         
                        
+=======
+                        //uctHoaDon uctHd = new uctHoaDon();
+                        //uctHd.BringToFront();
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
                     }
 
                 }
@@ -248,7 +253,8 @@ namespace GUI
             cboMenu.DataSource = listMenu;
 
         }
-
+        
+        
         private void cboBanTrong_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -256,7 +262,7 @@ namespace GUI
 
         private void cboMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //txtGia.Text = MenuBus.Instance.HienThiDonGia(cboMenu.SelectedValue.ToString());
         }
 
         private void cboLoaiMenu_SelectedIndexChanged(object sender, EventArgs e)
@@ -268,7 +274,13 @@ namespace GUI
 
         private void drvBillInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //if (drvBillInfo.Columns[e.ColumnIndex].Name == "Delete")
+            //{
+            //    if(MessageBox.Show("Bạn muốn hủy món này ?", "Hủy món", MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            //    {
+            //        billInfoDTOBindingSource.RemoveCurrent();
+            //    }    
+            //}
         }
 
         private void txtGia_TextChanged(object sender, EventArgs e)

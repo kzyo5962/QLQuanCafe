@@ -25,7 +25,11 @@ namespace DTO
         public BillDTO(DataRow dataRow)
         {
             this.ID = (int)dataRow["Id"];
+<<<<<<< HEAD
             this.NgayLap =Convert.ToDateTime( dataRow["NgayLap"]);            
+=======
+            this.NgayLap =Convert.ToDateTime( dataRow["NgayLap"]);
+>>>>>>> 3559d59891222dee2850978d2a175a0865918ce2
             int trangthai = (int)dataRow["trangthai"];
             this.MaNV = (int)dataRow["MaNV"];
             if(trangthai == 0)

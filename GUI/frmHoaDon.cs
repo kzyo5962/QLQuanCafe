@@ -17,6 +17,13 @@ namespace GUI
     {
         List<BillInfoDTO> _list;
         string _total, _cash, _change, _date, _dateCheckout;
+
+        private void frmHoaDon_Load_1(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
+        }
+
         public frmHoaDon(List<BillInfoDTO> dataSource, string total, string cash, string change, string date, string dateCheckout)
         {
             InitializeComponent();
